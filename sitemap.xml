@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2015/10/19/test/</loc>
-    <lastmod>2015-10-19T02:07:09.052Z</lastmod>
+    <loc>http://yoursite.com/test.html</loc>
+    <lastmod>2015-10-19T02:12:38.089Z</lastmod>
   </url>
   
   <url>
-    <loc>http://yoursite.com/2015/10/19/hello-world/</loc>
+    <loc>http://yoursite.com/hello-world.html</loc>
     <lastmod>2015-10-18T13:12:47.287Z</lastmod>
   </url>
   
