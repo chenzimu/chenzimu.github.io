@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-language" content="zh-cn">
+  
+  <title>flexbox属性详细介绍【译】 | 臣子木</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="flexbox属性详细介绍【译】">
+<meta property="og:url" content="http://yoursite.com/flexbox学习笔记.html">
+<meta property="og:site_name" content="臣子木">
+<meta property="og:description" content="Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的">
+<meta property="og:updated_time" content="2015-10-20T05:16:41.805Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="flexbox属性详细介绍【译】">
+<meta name="twitter:description" content="Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的">
+  
+    <link rel="alternative" href="/atom.xml" title="臣子木" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">臣子木</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">臣子木，永不止步</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-flexbox学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/flexbox学习笔记.html" class="article-date">
+  <time datetime="2015-10-20T01:59:15.000Z" itemprop="datePublished">2015-10-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      flexbox属性详细介绍【译】
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。<br>许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的时候很容易，而且对于很复杂的布局可以用更少的代码即可完成。flexbox布局的算法是基于direction的，而之前我们常用的块布局和行内布局是基于水平方向和垂直方向的。flexbox布局应当被应用到小型应用中，因为新的CSS Grid布局模型将被应用到大型布局中。<br>这篇文章将会重点教给您flex属性是怎样影响布局的。<br><a id="more"></a></p>
+<h2 id="1、基础">1、基础</h2><p>在我们深入讲解之前先让我介绍一下flexbox模型的一些基础知识。flex布局包含一个父级盒子叫做flex container，flex container的孩子元素都被称作flex items，如下图所示，<br>flexbox布局2009年开始经过了多次更新，所以为了避免麻烦，我们将使用2014年9月份的语法，如果你需要兼容一些老版本浏览器的话可以阅读这篇文章<a href="https://css-tricks.com/using-flexbox/" target="_blank" rel="external">https://css-tricks.com/using-flexbox/</a></p>
+<h3 id="支持最新的flexbox语法的浏览器有：">支持最新的flexbox语法的浏览器有：</h3><blockquote>
+<p>Chrome 29+<br>Firefox 28+<br>Internet Explorer 11+<br>Opera 17+<br>Safari 6.1+ (prefixed with -webkit-)<br>Android 4.4+<br>iOS 7.1+ (prefixed with -webkit-)</p>
+</blockquote>
+<h2 id="2、应用">2、应用</h2><p>应用flexbox布局很简单，你只需要在父级元素上添加display属性即可：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-flex</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> flex</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>如果你希望元素以行内显示，则应用下边的代码；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> -webkit-inline-flex</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">display</span>:<span class="value"> inline-flex</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Note：这是唯一一个需要在父级元素上设置的属性，设置这个属性之后，它所有的孩子元素都自动变为flex items。</p>
+</blockquote>
+<p>目前有很多组织flexbox属性的方法，我所知的虽简单的并可以加快理解的方法是将其分成两部分，一部分为flex container，另一部分是flex items。下边我将依次介绍这些属性以及它们是如何影响布局的。</p>
+<h2 id="3、flexbox_container属性">3、flexbox container属性</h2><h3 id="flex-direction">flex-direction</h3><p>这个属性的作用是指定通过设置flex container的main轴的方向来指定flex items的布局方向（row：横向，column：竖向）。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-direction</span>:<span class="value"> row</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-direction</span>:<span class="value">         row</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>通过设置row，flex items在ltr上下文中从左到右横向布局<br>如下图所示：<br>通过row-reverse，flex items在ltr上下文中从右向左横向布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-direction</span>:<span class="value"> row-reverse</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-direction</span>:<span class="value">         row-reverse</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>如下图所示：<br>通过设置column，flex items从上到下纵向布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-direction</span>:<span class="value"> column</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-direction</span>:<span class="value">         column</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>如下图所示：<br>通过row-reverse，flex items从下向上纵向布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-direction</span>:<span class="value"> column-reverse</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-direction</span>:<span class="value">         column-reverse</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>默认值：row</p>
+<h3 id="flex-wrap">flex-wrap</h3><p>flexbox最原始的概念是将它的子级元素布局为单独的一行。而flex-wrap的作用则是控制flex container的子元素是在一行还是在多行中显示，以及新的一行的布局方向。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-wrap</span>:<span class="value"> nowrap</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-wrap</span>:<span class="value">         nowrap</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码使子元素在一行中显示，元素宽度会随元素个数的增加逐渐减小，以适应container的宽度。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-wrap</span>:<span class="value"> wrap</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-wrap</span>:<span class="value">         wrap</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码使子元素在多行显示，遵循从左向右从上到下的顺序。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-wrap</span>:<span class="value"> wrap-reverse</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-wrap</span>:<span class="value">         wrap-reverse</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码使子元素在多行显示，遵循从左向右从下到上的顺序。<br>默认值：nowrap</p>
+<h3 id="flex-flow">flex-flow</h3><p>这个属性是flex-direction和flex-wrap的简写形式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-flow</span>:<span class="value"> &lt;flex-direction&gt; || &lt;flex-wrap&gt;</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-flow</span>:<span class="value">         &lt;flex-direction&gt; || &lt;flex-wrap&gt;</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>默认值：row nowrap</p>
+<h3 id="justify-content">justify-content</h3><p>justify-conten的作用是使子元素沿着container的主轴进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-justify-content</span>:<span class="value"> flex-start</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">justify-content</span>:<span class="value">         flex-start</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素会以左边界为起点进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-justify-content</span>:<span class="value"> flex-end</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">justify-content</span>:<span class="value">         flex-end</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素会以右边界为起点进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-justify-content</span>:<span class="value"> center</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">justify-content</span>:<span class="value">         center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素会以中间为起点分别向左右进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-justify-content</span>:<span class="value"> space-between</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">justify-content</span>:<span class="value">         space-between</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素平均分配到container中，其中第一个元素和最后一个元素在container的边界上。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-justify-content</span>:<span class="value"> space-around</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">justify-content</span>:<span class="value">         space-around</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素平均分配到container中，与上一个不同的地方在于，第一个元素和最后一个元素不再靠到container边界上，而是与其他元素一样，周围有大小相同的空间。<br>默认值:flex-start</p>
+<h3 id="align-items">align-items</h3><p>与justify-content的作用类似，只不过这一属性控制的是沿着穿越轴(cross axis)的元素的布局，在这里是垂直方向。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> stretch</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-items</span>:<span class="value">         stretch</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>子元素会被拉伸直到填充满container的高或宽，方向为cross start–&gt;cross end<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> flex-start</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-items</span>:<span class="value">         flex-start</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>子元素会同时被布局到cross start，如果高度不够填充满container的话也不会被拉伸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> flex-end</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-items</span>:<span class="value">         flex-end</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>子元素会同时被布局到cross end，如果高度不够填充满container的话也不会被拉伸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> flex-center</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-items</span>:<span class="value">         flex-center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>子元素会同时被布局到穿越轴(cross axis)，如果高度不够填充满container的话也不会被拉伸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-items</span>:<span class="value"> baseline</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-items</span>:<span class="value">         baseline</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>子元素会同时根据自己的基线进行布局。对于基线的具体定义：<a href="http://www.w3.org/TR/css-flexbox/#flex-baselines" target="_blank" rel="external">http://www.w3.org/TR/css-flexbox/#flex-baselines</a><br>默认值:stretch</p>
+<h3 id="align-content">align-content</h3><p>align-content会调整元素沿cross axis的布局方式，与justify-content沿max axis调整单独的元素的方式类似。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-content</span>:<span class="value"> stretch</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-content</span>:<span class="value">         stretch</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素的行与行之间分配相同的空间。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-content</span>:<span class="value"> flex-start</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-content</span>:<span class="value">         flex-start</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素的各行都向cross start进行靠拢。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-content</span>:<span class="value"> flex-end</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-content</span>:<span class="value">         flex-end</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素的各行都向cross end。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-content</span>:<span class="value"> center</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-content</span>:<span class="value">         center</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素的各行都向container中间靠拢。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-content</span>:<span class="value"> space-between</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-content</span>:<span class="value">         space-between</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素的各行分散开，其中第一行向cross start靠拢,最后一行向cross end靠拢,中间各行则根据空间大小平均分开。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-container</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-align-content</span>:<span class="value"> space-around</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">align-content</span>:<span class="value">         space-around</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>上边代码会使子元素的各行分散开，与space-between的不同指出在于第一行元素和第二行元素不会向两边靠拢，而是和其他元素一样根据空间大小进行平均分布。<br>默认值:stretch</p>
+<blockquote>
+<p>Note:这个属性只有在container中的元素有多行时才会起作用。</p>
+</blockquote>
+<h2 id="4、flexbox_item属性">4、flexbox item属性</h2><h3 id="order">order</h3><p>order属性的作用是决定container中元素的布局顺序。默认的顺序是根据元素添加到container中的顺序。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-item</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-order</span>:<span class="value"> &lt;integer&gt;</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">order</span>:<span class="value">         &lt;integer&gt;</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>container的子元素会根据order的值重新排列，而无需我们手动修改html代码。<br>默认值:0</p>
+<h3 id="flex-grow">flex-grow</h3><p>这个属性可以改变container中某个元素的大小，如果所有子元素有相同的flex-grow值的话子元素会以相同大小分布在container中，如果其中一个元素的flex-grow值大于其他元素，相对其他元素来说这个元素会根据空间大小占据更大的空间，而其他元素也会根据空间大小相应的占据更小的空间。<br>默认值:0</p>
+<blockquote>
+<p>Note:flex-grow不允许使用负数</p>
+</blockquote>
+<h3 id="flex-shink">flex-shink</h3><p>这个属性可以改变container中某个元素的大小，如果所有子元素有相同的flex-grow值的话子元素会以相同大小分布在container中，如果其中一个元素的flex-grow值小于其他元素，相对其他元素来说这个元素会根据空间大小占据更大的空间，而其他元素也会根据空间大小相应的占据更小的空间。值为0的话元素会以原始大小进行显示。<br>默认值:1</p>
+<blockquote>
+<p>Note:flex-grow不允许使用负数</p>
+</blockquote>
+<h3 id="flex-basis">flex-basis</h3><p>flex-basis属性的作用是设置子元素宽度，如果所有元素宽度相加大于container宽度的话其他元素会根据空间相应的减小尺寸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-item</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-basis</span>:<span class="value"> auto | &lt;width&gt;</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-basis</span>:<span class="value">         auto | &lt;width&gt;</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>默认值:auto</p>
+<h3 id="flex">flex</h3><p>flex是flex-grow, flex-shrink和flex-basis属性的简写。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-item</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex</span>:<span class="value"> none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ]</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex</span>:<span class="value">         none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ]</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Note: W3C 鼓励使用简写形式。</p>
+</blockquote>
+<h3 id="align-self">align-self</h3><p>align-self属性可以设定单个元素的布局方式，同时它会覆盖掉之前align-items设定的布局方式。<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.flex-item &#123;</span><br><span class="line">  -webkit-align-self: auto |<span class="string"> flex-start </span>|<span class="string"> flex-end </span>|<span class="string"> center </span>|<span class="string"> baseline </span>|<span class="string"> stretch; /* Safari */</span><br><span class="line">  align-self:         auto </span>|<span class="string"> flex-start </span>|<span class="string"> flex-end </span>|<span class="string"> center </span>|<span class="string"> baseline </span>|<span class="string"> stretch;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>默认值:auto</p>
+<blockquote>
+<p>Note: auto值会先根据item的父级元素所设定的align-items的值进行设置，如果父级元素没有的话默认使用stretch。</p>
+</blockquote>
+<p><strong>Note: float、clear和vertical-align属性对flex item没有影响，它们不会使其脱离文档流。</strong></p>
+<p>翻译自:<a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="external">https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/flexbox学习笔记.html" data-id="cifyxavqu0006eovmsdeuevbe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css3/">css3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/flexbox/">flexbox</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/傻逼360浏览器.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">傻逼360浏览器</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/360/">360</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css3/">css3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flexbox/">flexbox</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/360/" style="font-size: 10px;">360</a> <a href="/tags/css3/" style="font-size: 10px;">css3</a> <a href="/tags/flexbox/" style="font-size: 10px;">flexbox</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">十月 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/flexbox学习笔记.html">flexbox属性详细介绍【译】</a>
+          </li>
+        
+          <li>
+            <a href="/傻逼360浏览器.html">傻逼360浏览器</a>
+          </li>
+        
+          <li>
+            <a href="/test.html">测试文章</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 chenzimu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
