@@ -1,0 +1,837 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+
+
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
+
+
+    <meta name="description" content="臣子木的博客 | web前端 | html | css | html5 | css3 | javascript | jquery | nodejs | angularjs" />
+
+
+
+  <meta name="keywords" content="HTML5,web前端," />
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+<meta name="description" content="HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Ba">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML5笔记">
+<meta property="og:url" content="http://chenzimu.com/HTML5笔记.html">
+<meta property="og:site_name" content="臣子木">
+<meta property="og:description" content="HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Ba">
+<meta property="og:updated_time" content="2015-10-22T05:39:01.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML5笔记">
+<meta name="twitter:description" content="HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Ba">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'always'
+  };
+</script>
+
+
+
+  <title> HTML5笔记 | 臣子木 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">臣子木</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">臣子木的学习、生活</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content"> 
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML5笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-10-21T14:31:12+08:00" content="2015-10-21">
+              2015-10-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/web前端/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/HTML5笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="HTML5笔记.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><p>HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Based Rich Internet Application，RIA），例如：Adobe Flash、Microsoft Silverlight与Oracle JavaFX的需求，并且提供更多能有效加强网络应用的标准集。【转自维基百科】<br><a id="more"></a></p>
+<h2 id="HTML5元素简短介绍">HTML5元素简短介绍</h2><h3 id="MIME_TYPE">MIME TYPE</h3><p>当每次请求一个页面的时候，web服务器在将整个页面返回给你之前会先发送’headers’，这个’header’的作用是告诉浏览器该怎么渲染发过来的页面。</p>
+<h3 id="检测浏览器是否支持某一个HTML5标签–Modernizr">检测浏览器是否支持某一个HTML5标签–Modernizr</h3><p>Modernizr是一个专门用于检测浏览器是否支持某个HTML5&amp;CSS3标签的库，你可以在页面中引用它。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>Dive Into HTML5<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"modernizr.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure><br>Modernizr不需要任何的初始化即可使用，加入你想要检测浏览器是否支持canvas标签，你只需要调用Modernizr.canvas,如果支持的话它会返回一个布尔值true，否则的话就返回false。</p>
+<h3 id="CANVAS">CANVAS</h3><p>canvas元素是定义在浏览器上的一块矩形区域，类似于一张画布，而Javascript就是一支笔，所以我们可以用Javascript这支笔在画布上画任意的图画。HTML5内置了一些用于画图的API，在用Javascript画图时直接调用就可以了。可以用Modernizr的方法检测浏览器是否支持canvas，然后用自定义函数检测浏览器是否支持某一个canvas属性即canvas API：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_canvas</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !!<span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>).getContext;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="CANVAS_TEXT">CANVAS TEXT</h4><p>即使浏览器支持canvas，也不一定支持canvas text API。因为canvas text API出现的较晚。</p>
+<h3 id="VIDEO">VIDEO</h3><p>HTML5定义了一个新的video标签，它可以使浏览器在不使用第三方插件的情况下就可以向网页中嵌入视频。在不支持video标签的浏览器中，浏览器会直接忽视它。可以使用下边的函数检测浏览器是否支持video：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_video</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//利用双感叹号的作用是如果返回值不是布尔类型则将其强制转换为布尔。</span></span><br><span class="line">  <span class="keyword">return</span> !!<span class="built_in">document</span>.createElement(<span class="string">'video'</span>).canPlayType;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="VIEDO_FORMATS">VIEDO FORMATS</h4><p>VIDEO FORMATS就像书写，不同的国家的人会写出不同的文字，所以不同的浏览器也会解析不同格式的视频。下边的函数将检测由Macs和iPhones所支持的视频格式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_h264_baseline_video</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!supports_video()) &#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;</span><br><span class="line">  <span class="keyword">var</span> v = <span class="built_in">document</span>.createElement(<span class="string">"video"</span>);</span><br><span class="line">  <span class="keyword">return</span> v.canPlayType(<span class="string">'video/mp4; codecs="avc1.42E01E, mp4a.40.2"'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>canPlayType函数的返回类型不是布尔，而是string，如果浏览器十分确定不支持此视频格式的话会返回’probably’，如果浏览器不十分确定则返回’maybe’，如果浏览器十分确定不支持此视频格式的话会返回空字符串。</p>
+</blockquote>
+<p>下边的函数检测浏览器是否支持火狐以及其它一些开源浏览器所支持的视频格式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_ogg_theora_video</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!supports_video()) &#123; <span class="keyword">return</span> <span class="literal">false</span>; &#125;</span><br><span class="line">  <span class="keyword">var</span> v = <span class="built_in">document</span>.createElement(<span class="string">"video"</span>);</span><br><span class="line">  <span class="keyword">return</span> v.canPlayType(<span class="string">'video/ogg; codecs="theora, vorbis"'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="LOCAL_STORAGE">LOCAL STORAGE</h3><p>LOCAL STORAGE实现了在电脑上存储信息,需要用的时候再取出的方法。它和cookies非常类似，不同之处在于LOCAL STORAGE所存储的信息的数量要比cookie大得多。如果浏览器支持LOCAL STORAGE的话，你可以在window对象上查找到localStorage属性。可以用下边的函数进行检测：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_local_storage</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'localStorage'</span> <span class="keyword">in</span> <span class="built_in">window</span> &amp;&amp; <span class="built_in">window</span>[<span class="string">'localStorage'</span>] !== <span class="literal">null</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span>(e)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>用try..catch的原因是在旧版本的火狐浏览器中如果cookie被禁用的话会出现异常。</p>
+</blockquote>
+<h3 id="WEB_WORKERS">WEB WORKERS</h3><p>WEB WORKERS为浏览器提供了一种执行javascript的标准方式。和LOCAL STORAGE一样，如果浏览器支持的话window对象上会有一个Worker属性。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_web_workers</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !!<span class="built_in">window</span>.Worker;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="OFFLINE_WEB_APPLICATIONS">OFFLINE WEB APPLICATIONS</h3><p>当第一次访问离线应用页面时，web服务器会告诉浏览器哪些文件需要离线到本地，这样当电脑没有联网时依旧可以利用这些离线文件访问页面，当电脑再次联网时，在本地文件的任何修改都会被返回到web服务器。检测offline的函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_offline</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !!<span class="built_in">window</span>.applicationCache;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="GEOLOCATION">GEOLOCATION</h3><p>GEOLOCATION可以获取你所在的位置，并分享给他人。检测函数如下:<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_geolocation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'geolocation'</span> <span class="keyword">in</span> navigator;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如果浏览器不支持这个方法的话，可以利用<a href="https://github.com/estebanav/javascript-mobile-desktop-geolocation" target="_blank" rel="external">https://github.com/estebanav/javascript-mobile-desktop-geolocation</a> 使旧版本的浏览器支持这一方法。</p>
+</blockquote>
+<h3 id="INPUT_TYPES">INPUT TYPES</h3><p>占位###########################################################</p>
+<h3 id="HISTORY_API">HISTORY API</h3><p>HISTORY API是通过javascript来操作浏览器历史的标准方法。检测函数如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">supports_history_api</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !!(<span class="built_in">window</span>.history &amp;&amp; history.pushState);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="深入介绍HTML5">深入介绍HTML5</h2><h3 id="DOCTYPE">DOCTYPE</h3><p>HTML5的DOCTYPE非常的简洁：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="根元素">根元素</h3><p>一个html页面的根元素就是html，在HTML5中书写根元素的方法同样很简单：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">html</span> lang=<span class="string">"en"</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="head元素">head元素</h3><p>head元素中包含了关于网页页面的所有信息。在HTML5页面中之前的<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html; charset=utf-8"</span>&gt;</span></span><br></pre></td></tr></table></figure><br>替换为了:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个标签是每个页面都必须的，如果不设置的话会导致一些安全性问题。</p>
+</blockquote>
+<h4 id="link标签">link标签</h4><h5 id="REL_=_STYLESHEET">REL = STYLESHEET</h5><p>在HTML5中不需要再声明type=”text/css”，只需要将link写为：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"style-original.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="HTML5中的新标签">HTML5中的新标签</h2><h3 id="section">section</h3><h3 id="nav">nav</h3><h3 id="article">article</h3><h3 id="aside">aside</h3><h3 id="hgroup">hgroup</h3><p>hgroup标签将多个标题元素(h1,h2…)包围起来，使他们之间产生关系。</p>
+<h3 id="header">header</h3><p>在之前的版本中当我们定义头部的时候会利用这样的方法:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="property">id</span>=<span class="string">"header"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br></pre></td></tr></table></figure><br>上边的代码没有任何含义，只是一个带id的普通div，为了让头部予以花，HTML5提供了header标签，所以上边的代码可以修改为：<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">header</span>&gt;</span><br><span class="line"><span class="attribute">...</span></span><br><span class="line">&lt;/<span class="keyword">header</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="footer">footer</h3><h3 id="time">time</h3><h3 id="mark">mark</h3><blockquote>
+<p>在支持HTML5的浏览器中，块级比标签有article,aside,details,figcaption,figure,<br>footer,header,hgroup,menu,nav,section，所以在不支持HTML5的浏览器中必须为这些元素手动添加默认的样式：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">article</span>,<span class="tag">aside</span>,<span class="tag">details</span>,<span class="tag">figcaption</span>,<span class="tag">figure</span>,</span><br><span class="line"><span class="tag">footer</span>,<span class="tag">header</span>,<span class="tag">hgroup</span>,<span class="tag">menu</span>,<span class="tag">nav</span>,<span class="tag">section</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>但这些标签在IE9之前的浏览器中是会被忽略的，解决方法就是用javascript创建这些元素即可。如：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  var e = ("abbr,article,aside,audio,canvas,datalist,details," +</span><br><span class="line">    "figure,footer,header,hgroup,mark,menu,meter,nav,output," +</span><br><span class="line">    "progress,section,time,video").split(',');</span><br><span class="line">  for (var i = 0; i &lt; e.length; i++) &#123;</span><br><span class="line">    document.createElement(e[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="CANVAS详解">CANVAS详解</h2><p>canvas没有特别的地方，它就是一个普通的HTML元素，而且自身没有任何的样式，你可以像下边这样定义一个canvas：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">canvas</span> id=<span class="string">"a"</span> <span class="attribute">width</span>=<span class="string">"300"</span> <span class="attribute">height</span>=<span class="string">"225"</span>&gt;&lt;/canvas&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="canvas简单图形绘制">canvas简单图形绘制</h3><p>每个canvas都有一个绘图的上下文，我们就是将图像绘制到这个上下文的范围之内的。在这个上下文中包含了所有的用于绘图的方法和属性：</p>
+<p><strong>fillStyle</strong><br>fillStyle属性的参数可以是一个css格式的颜色、图案或是渐变色等，fillStyle的默认样式是纯黑色。每个绘图的上下文都会记住它自己属性所设定的值。<br><strong>fillRect(x,y,width,height)</strong><br>fillRect会利用fillStyle所设定的样式绘制一个矩形。<br><strong>strokeStyle</strong><br>strokeStyle与fillStyle类似，不过它绘制的是矩形边的样式。<br><strong>strokeRect(x,y,width,height)</strong><br>strokeRect只会根据strokeStyle的样式绘制一个空心的矩形。<br><strong>clearRect(x, y, width, height)</strong><br>clearRect会清除所矩形。</p>
+<h3 id="canvas坐标">canvas坐标</h3><p>canvas是一个二维的网格，坐标(0,0)即在网格的最左上角。这类似于数学中直角坐标系的第四像素。接下来绘制一个下边的坐标系统：<br>首先我们先在页面中定义这个canvas元素：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">canvas</span> id=<span class="string">"c"</span> <span class="attribute">width</span>=<span class="string">"500"</span> <span class="attribute">height</span>=<span class="string">"375"</span>&gt;&lt;/canvas&gt;</span><br></pre></td></tr></table></figure><br>然后需要用JavaScript获取到这个canvas以及它的上下文：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> c_canvas</span> = document.getElementById(<span class="string">"c"</span>);</span><br><span class="line"><span class="variable"><span class="keyword">var</span> context</span> = c_canvas.getContext(<span class="string">"2d"</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="路径">路径</h3><p>canvas有路径的概念，你可以将JavaScript调用的绘图API想象为画笔，路径就是你要在上下文中所要画的线条。如果要画一条直线需要用到下面两个方法：</p>
+<ol>
+<li>moveTo(x, y)这个方法可以确定你下笔的地方，即直线的起点</li>
+<li>lineTo(x, y)这个方法是你结束绘画的地方，即直线的终点</li>
+</ol>
+<p>现在我们开始绘制灰色的网格：</p>
+<ol>
+<li><p>绘制垂直网格</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (var x = <span class="number">0.5</span>; x &lt; <span class="number">500</span>; x += <span class="number">10</span>) &#123;</span><br><span class="line">  context.moveTo(x, <span class="number">0</span>);</span><br><span class="line">  context.lineTo(x, <span class="number">375</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>绘制水平网格</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (var y = <span class="number">0.5</span>; y &lt; <span class="number">375</span>; y += <span class="number">10</span>) &#123;</span><br><span class="line">  context.moveTo(<span class="number">0</span>, y);</span><br><span class="line">  context.lineTo(<span class="number">500</span>, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>x和y都是从0.5开始绘制的原因#################################</p>
+</blockquote>
+<p>此时看不出canvas上下文中有任何变化，我们还需要对网格的边进行着色:<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">context</span>.strokeStyle = <span class="string">"#eee"</span>;</span><br><span class="line"><span class="keyword">context</span>.stroke();</span><br></pre></td></tr></table></figure></p>
+<p>下边开始绘制水平方向的箭头,由于箭头的颜色与网格的不同，所以我们会绘制一个新的路径：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">context.beginPath();</span><br><span class="line">context.moveTo(<span class="number">0</span>, <span class="number">40</span>);</span><br><span class="line">context.lineTo(<span class="number">240</span>, <span class="number">40</span>);</span><br><span class="line">context.moveTo(<span class="number">260</span>, <span class="number">40</span>);</span><br><span class="line">context.lineTo(<span class="number">500</span>, <span class="number">40</span>);</span><br><span class="line">context.moveTo(<span class="number">495</span>, <span class="number">35</span>);</span><br><span class="line">context.lineTo(<span class="number">500</span>, <span class="number">40</span>);</span><br><span class="line">context.lineTo(<span class="number">495</span>, <span class="number">45</span>);</span><br></pre></td></tr></table></figure><br>垂直方向箭头的画法类似:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">context.moveTo(<span class="number">60</span>, <span class="number">0</span>);</span><br><span class="line">context.lineTo(<span class="number">60</span>, <span class="number">153</span>);</span><br><span class="line">context.moveTo(<span class="number">60</span>, <span class="number">173</span>);</span><br><span class="line">context.lineTo(<span class="number">60</span>, <span class="number">375</span>);</span><br><span class="line">context.moveTo(<span class="number">65</span>, <span class="number">370</span>);</span><br><span class="line">context.lineTo(<span class="number">60</span>, <span class="number">375</span>);</span><br><span class="line">context.lineTo(<span class="number">55</span>, <span class="number">370</span>);</span><br></pre></td></tr></table></figure><br>接下来还需要给两个箭头添加上颜色并进行描边：<br><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">context.strokeStyle = '#000'<span class="comment">;</span></span><br><span class="line">context.stroke()<span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="TEXT文字">TEXT文字</h3><p>除了可以在canvas上绘制线条，还可以在上面绘制文字。canvas上的文字与普通网页中的文字不同，几乎无法用CSS对其设置样式。下边几个属性可以应用到canvas中的文字上：</p>
+<ol>
+<li>font</li>
+<li>textAlign</li>
+<li>textBaseline</li>
+</ol>
+<p>canvas中绘制的字体样式继承自canvas元素，也可以通过对其设置font来覆盖默认的样式。 fillText()方法就是用来绘制文字的。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">context.font = <span class="string">"bold 12px sans-serif"</span>;</span><br><span class="line">context.fillText(<span class="string">"x"</span>, <span class="number">248</span>, <span class="number">43</span>);</span><br><span class="line">context.fillText(<span class="string">"y"</span>, <span class="number">58</span>, <span class="number">165</span>);</span><br></pre></td></tr></table></figure><br>接下来是绘制左上角的(0,0)和右下角的(492,370)<br><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">context</span>.textBaseline = <span class="string">"top"</span>;</span><br><span class="line"><span class="keyword">context</span>.fillText(<span class="string">"( 0 , 0 )"</span>, <span class="number">8</span>, <span class="number">5</span>);</span><br><span class="line"><span class="keyword">context</span>.textAlign = <span class="string">"right"</span>;</span><br><span class="line"><span class="keyword">context</span>.textBaseline = <span class="string">"bottom"</span>;</span><br><span class="line"><span class="keyword">context</span>.fillText(<span class="string">"( 500 , 375 )"</span>, <span class="number">500</span>, <span class="number">375</span>);</span><br></pre></td></tr></table></figure><br>最后还需要画上右上角和左下角的两个实心圆点，因为画圆的方法还没有介绍，这里先用矩形代替：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">context.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">3</span>, <span class="number">3</span>);</span><br><span class="line">context.fillRect(<span class="number">497</span>, <span class="number">372</span>, <span class="number">3</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure><br>这样一个模仿canvas坐标的图形就画完了。</p>
+<h3 id="渐变">渐变</h3><p>canvas支持两种渐变，一种是线性渐变，另一种是径向渐变。</p>
+<ol>
+<li>createLinearGradient(x0, y0, x1, y1)绘制一个从(x0,y0)到(x1,y1)的线性渐变</li>
+<li>createRadialGradient(x0, y0, r0, x1, y1, r1)前三个参数代表一个圆形，圆心为(x0,y0)半径为r0,后三个参数也代表一个圆形，圆心为(x1,y1)半径为r1。</li>
+</ol>
+<p>现在我们绘制一个线性渐变：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var my_gradient = context.createLinearGradient(<span class="number">0</span>, <span class="number">0</span>, <span class="number">300</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>因为起点和终点的y坐标均为0，所以这个线性渐变是水平从左向右的。</p>
+</blockquote>
+<p>现在我们获得了一个绘制渐变的gradient对象，接下来需要定义渐变色了，这里需要用到addColorStop方法，它可以在0-1的任意位置设置渐变的颜色。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_gradient.addColorStop(<span class="number">0</span>, <span class="string">"black"</span>);</span><br><span class="line">my_gradient.addColorStop(<span class="number">1</span>, <span class="string">"white"</span>);</span><br></pre></td></tr></table></figure><br>上边的代码并没有在canvas上绘制任何看得到的东西，my_gradient只是一个经过装饰的对象，如果需要用渐变的画必须调用fillStyle方法，将渐变填充到图形中。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">context.fillStyle = my_gradient;</span><br><span class="line">context.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">300</span>, <span class="number">225</span>);</span><br></pre></td></tr></table></figure><br>上下渐变以及对角渐变与上述类似，请自行练习。</p>
+<h3 id="图片">图片</h3><p>canvas的绘画上下文定义了一个drawImage()方法用于在canvas上绘制图片。这个方法可以分别赋予3个、5个或9个参数。</p>
+<ol>
+<li>drawImage(image, dx, dy) image即要绘制的图片，dx和dy是要绘制图片的起始点。</li>
+<li>drawImage(image, dx, dy, dw, dh) 前三个参数与上边相同，dx和dw是将绘制图片的大小设置为dx*dy</li>
+<li>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)这个方法是从图片的(sx,sy)开始截取sw <em> sh大小的图片然后在canvas的(dx,dy)位置绘制dw </em> dh大小的图片。<blockquote>
+<p>不管你在canvas上绘制的图片是一个已经存在页面中的img还是一个new Image()，都必须确保一点，即都要在确保图片加载完毕之后才能将其绘制到canvas上。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="关于IE浏览器">关于IE浏览器</h3><p>IE9之前的浏览器都不支持canvas，<a href="http://code.google.com/p/explorercanvas/可以使IE支持canvas，在页面中添加如下代码即可" target="_blank" rel="external">http://code.google.com/p/explorercanvas/可以使IE支持canvas，在页面中添加如下代码即可</a>:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span><br><span class="line">    &lt;script src="excanvas.js"&gt;&lt;/script&gt;</span><br><span class="line">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="跳棋例子">跳棋例子</h3><p>###############################################占位</p>
+<h2 id="Local_Storage详解">Local Storage详解</h2><p>Local Storage和Cookies有一些类似，但是cookies有一下几个缺点：</p>
+<ol>
+<li>每次HTTP请求都会产生cookies，这样的重复的发送数据会减慢应用的运行速度</li>
+<li>每次HTTP请求都会产生cookies，所以如果不是通过SSL的话会通过互联网发送未经加密的信息</li>
+<li>cookies所能容纳数据的大小被限制为大约4KB，虽然不大也足以减慢应用运行速度，但对于应用来说这点数据显然是不够的</li>
+</ol>
+<p>我们需要的功能有：</p>
+<ol>
+<li>大容量的存储空间</li>
+<li>必须存储在客户端</li>
+<li>页面刷新后数据也不会消失</li>
+<li>数据不会被发送到服务端</li>
+</ol>
+<p>在HTML5出现之前要实现这样的功能是很难的。</p>
+<h3 id="什么是Local_Storage">什么是Local Storage</h3><p>Local Storage是允许web浏览器在本地存储key/value数据的一种技术。和cookies一样，即使你打开别的网页、关闭这个网页抑或是关闭浏览器，存储在本地的数据都不会消失。和cookies不同之处在于，这些数据不会自动发送给服务器端。使用它之前可以用下边这个函数进行检测:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">support_html5_storage</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">try</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'localStorage'</span> <span class="keyword">in</span> <span class="built_in">window</span> &amp;&amp; <span class="built_in">window</span>[<span class="string">'localStorage'</span>] !== <span class="literal">null</span>;</span><br><span class="line">  &#125;<span class="keyword">catch</span>(e)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>也可以用Modernizr进行检测。</p>
+<h3 id="HTML5_Storage的用法">HTML5 Storage的用法</h3><p>HTML5 Storage存储的数据是基于key/value形式的，每个key对应一个数据value，可以根据key读取数据，key是string格式的，key所对应的数据可以是javascript所支持的任何类型，但在存储时所有的数据都被存储为string类型，所以当在读取数据时你必须用parseInt这样的方法强制将其转换为需要的类型。<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Storage</span> &#123;</span><br><span class="line">  <span class="function">getter any <span class="title">getItem</span>(<span class="params"><span class="keyword">in</span> DOMString key</span>)</span>;</span><br><span class="line">  <span class="function">setter creator <span class="keyword">void</span> <span class="title">setItem</span>(<span class="params"><span class="keyword">in</span> DOMString key, <span class="keyword">in</span> any data</span>)</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>setItem()方法中的key如果同存储中的key相同的话会将其覆盖掉，getItem()方法的key如果存储中没有的话会返回null。<br>和其他的javascript对象一样，可以将localStorage对象看作是联合数组，所以一下两组代码的效果是一样的：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> foo</span> = localStorage.getItem(<span class="string">"bar"</span>);</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">localStorage.setItem(<span class="string">"bar"</span>, foo);</span><br></pre></td></tr></table></figure><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> foo</span> = localStorage[<span class="string">"bar"</span>];</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line">localStorage[<span class="string">"bar"</span>] = foo;</span><br></pre></td></tr></table></figure><br>要移除存储的某条数据或清空所有的数据需要用到下面的方法：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Storage</span> &#123;</span><br><span class="line">  <span class="function">deleter <span class="keyword">void</span> <span class="title">removeItem</span>(<span class="params"><span class="keyword">in</span> DOMString key</span>)</span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">clear</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>下边的方法是获取storage中所有的数据条数以及通过索引对所有的key值进行遍历：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title">Storage</span> &#123;</span><br><span class="line">  <span class="keyword">readonly</span> attribute unsigned <span class="keyword">long</span> length;</span><br><span class="line">  <span class="function">getter DOMString <span class="title">key</span>(<span class="params"><span class="keyword">in</span> unsigned <span class="keyword">long</span> index</span>)</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><br>对于key()方法中的参数如果不是介于0-(length-1)话会返回null</p>
+<h3 id="“监控”storage的变化情况">“监控”storage的变化情况</h3><p>storage事件就是用来“监控”storage变化情况的事件，当setItem(), removeItem()等方法被调用且改变了storage中的内容的话storage事件就会被触发。</p>
+<blockquote>
+<p>该事件一定是storage中有内容改变的时候才会触发</p>
+</blockquote>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.addEventListener) &#123;</span><br><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">"storage"</span>, handle_storage, <span class="literal">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">window</span>.attachEvent(<span class="string">"onstorage"</span>, handle_storage);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上述回调函数handle_storage的参数中会自动包含一个StorageEvent对象，但在IE中这个事件存储在window对象上，所以需要下边的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle_storage</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!e)&#123;</span><br><span class="line">    e = <span class="built_in">window</span>.event;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>StorageEvent对象包含以下几个属性：</p>
+<ol>
+<li>key:string类型，添加、修改或删除的key值</li>
+<li>oldValue:任意类型，修改之前的值，如果是新添加的话为null</li>
+<li>newValue:任意类型，新的值，如果值被删除的话newValue为null</li>
+<li>url*:string类型，调用此方法并触发此事件的页面url</li>
+</ol>
+<h3 id="HTML5_storage实践">HTML5 storage实践</h3><p>##########################################################占位，与之前的跳棋例子相联系</p>
+<h3 id="Web_Server_Database">Web Server Database</h3><p>##########################################################占位</p>
+<h2 id="HTML5离线">HTML5离线</h2><p>HTML5的离线很容易理解，在web服务端有一个text格式文件，上边列举了客户端需要离线存储的文件url，当访问web应用时，浏览器会读取这个文件并根据文件内容将需要离线的文件下载到本地，而且会根据web内容的更新自动更新本地的存储内容，当在联网的状态下访问这个web应用的时候我web浏览器会自动读取这些离线的数据，这样可以在不联网的情况下访问web应用了。</p>
+<h3 id="cache_manifest">cache manifest</h3><p>manifest文件对于HTML5应用来说非常重要，它的作用是当离线(断网)的时候web浏览器应该去访问的文件列表，为了使浏览器能够准确的下载和存贮这些资源，需要在html标签上添加一个manifest属性来指向manifest文件。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span> <span class="attribute">manifest</span>=<span class="value">"/cache.manifest"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure><br>这个文件可以存放在web服务器的任意位置，但必须指定页面的content-type,即text/cache-manifest，并确保该文件的扩展名为.manifest。</p>
+<h3 id="manifest文件详解">manifest文件详解</h3><p>manifest文件的第一行是CACHE MANIFEST，每一个manifest文件都被分为三个部分：explicit、fallback和online whitelist。每个部分都有一个header加以区分。</p>
+<p><strong>explicit部分</strong></p>
+<blockquote>
+<p>CACHE MANIFEST<br>/clock.css<br>/clock.js<br>/clock-face.jpg</p>
+</blockquote>
+<p>这个manifest文件没有加header，所以默认全部都属于explicit，在explicit中的文件将会被离线到本地。</p>
+<p><strong>online whitelist部分</strong></p>
+<p>假设有一个应用需要根据用户的行为，需要用到一个tracking.cgi文件，但是如果这个文件被离线的话会妨碍应用去跟踪用户，为了防止应用离线这个文件，可以对manifest文件作如下修改：</p>
+<blockquote>
+<p>CACHE MANIFEST<br>NETWORK:<br>/tracking.cgi<br>CACHE:<br>/clock.css<br>/clock.js<br>/clock-face.jpg</p>
+</blockquote>
+<p>NETWORK指的就是online whitelist，在这一部分的文件均不会被离线，CACHE代表的是explicit部分。</p>
+<p><strong>fallback部分（这个部分没太理解）</strong></p>
+<p>在fullback部分可以为那些没有离线成功的文件定义一些替代的文件。</p>
+<blockquote>
+<p>CACHE MANIFEST<br>FALLBACK:<br>/ /offline.html<br>NETWORK:</p>
+<ul>
+<li><blockquote>
+<p>其中*号是一个通配符，它表示即使application cache中不存在的文件也可以被离线到本地。</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="事件触发的流程">事件触发的流程</h3><p>当浏览器访问到一个页面的manifest文件的时候就会触发window.applicationCache对象上的一系列的事件：</p>
+<ol>
+<li>当浏览器在html标签上发现一个manifest属性的时候会首先触发一个checking事件，而且无论之前是否访问过指向这个manifest文件的页面checking事件都会被触发；</li>
+<li>如果浏览器之前从未访问过这个manifest文件：<ol>
+<li>浏览器会触发一个downloading事件，并离线manifest中需要离线的文件</li>
+<li>在离线过程中，浏览器会不断的触发progress事件，这个事件包含已经离线文件数和剩余离线文件数的信息</li>
+<li>在所有离线完成之后，会触发一个cached事件，表示所有文件离线完成</li>
+</ol>
+</li>
+<li>如果浏览器之前访问过这个manifest文件，则本地的appcache中就已经有了需要离线的文件，所以现在的问题是，浏览器需要确定manifest文件是否有变动<ol>
+<li>如果没有变动的话，浏览器会触发一个noupdate事件，直接执行应用</li>
+<li>如果文件有变动的话，浏览器就会触发downloading事件，同时会触发progress事件</li>
+<li>当数据更新完成之后，浏览器会触发updateready事件，这表明所有更新的数据已经离线完成并可以开始使用了。如果不想让用户重新加载才能使用这些数据的话可以调用window.applicationCache.swapCache()函数</li>
+</ol>
+</li>
+<li>如果应用不小心发生错误的话会触发一个error事件并停止运行。</li>
+</ol>
+<h3 id="DEBUGGING">DEBUGGING</h3><p>######################################################占位</p>
+<h3 id="实践">实践</h3><p>########################################################占位 需要与跳棋应用结合</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML5/" rel="tag">#HTML5</a>
+          
+            <a href="/tags/web前端/" rel="tag">#web前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/flexbox属性详细介绍【译】.html" rel="next">
+                flexbox属性详细介绍【译】 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+ </div>
+
+        
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="HTML5笔记.html"
+                   data-title="HTML5笔记" data-url="http://chenzimu.com/HTML5笔记.html">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="chenzimu" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">chenzimu</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description">臣子木的博客 | web前端 | html | css | html5 | css3 | javascript | jquery | nodejs | angularjs</p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分類</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">標籤</span>
+              
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5元素简短介绍"><span class="nav-number">1.</span> <span class="nav-text">HTML5元素简短介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MIME_TYPE"><span class="nav-number">1.1.</span> <span class="nav-text">MIME TYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#检测浏览器是否支持某一个HTML5标签–Modernizr"><span class="nav-number">1.2.</span> <span class="nav-text">检测浏览器是否支持某一个HTML5标签–Modernizr</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CANVAS"><span class="nav-number">1.3.</span> <span class="nav-text">CANVAS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CANVAS_TEXT"><span class="nav-number">1.3.1.</span> <span class="nav-text">CANVAS TEXT</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VIDEO"><span class="nav-number">1.4.</span> <span class="nav-text">VIDEO</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VIEDO_FORMATS"><span class="nav-number">1.4.1.</span> <span class="nav-text">VIEDO FORMATS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LOCAL_STORAGE"><span class="nav-number">1.5.</span> <span class="nav-text">LOCAL STORAGE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB_WORKERS"><span class="nav-number">1.6.</span> <span class="nav-text">WEB WORKERS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OFFLINE_WEB_APPLICATIONS"><span class="nav-number">1.7.</span> <span class="nav-text">OFFLINE WEB APPLICATIONS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GEOLOCATION"><span class="nav-number">1.8.</span> <span class="nav-text">GEOLOCATION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INPUT_TYPES"><span class="nav-number">1.9.</span> <span class="nav-text">INPUT TYPES</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HISTORY_API"><span class="nav-number">1.10.</span> <span class="nav-text">HISTORY API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入介绍HTML5"><span class="nav-number">2.</span> <span class="nav-text">深入介绍HTML5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">2.1.</span> <span class="nav-text">DOCTYPE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#根元素"><span class="nav-number">2.2.</span> <span class="nav-text">根元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#head元素"><span class="nav-number">2.3.</span> <span class="nav-text">head元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#link标签"><span class="nav-number">2.3.1.</span> <span class="nav-text">link标签</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#REL_=_STYLESHEET"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">REL = STYLESHEET</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5中的新标签"><span class="nav-number">3.</span> <span class="nav-text">HTML5中的新标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#section"><span class="nav-number">3.1.</span> <span class="nav-text">section</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nav"><span class="nav-number">3.2.</span> <span class="nav-text">nav</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#article"><span class="nav-number">3.3.</span> <span class="nav-text">article</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aside"><span class="nav-number">3.4.</span> <span class="nav-text">aside</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hgroup"><span class="nav-number">3.5.</span> <span class="nav-text">hgroup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#header"><span class="nav-number">3.6.</span> <span class="nav-text">header</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#footer"><span class="nav-number">3.7.</span> <span class="nav-text">footer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time"><span class="nav-number">3.8.</span> <span class="nav-text">time</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mark"><span class="nav-number">3.9.</span> <span class="nav-text">mark</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CANVAS详解"><span class="nav-number">4.</span> <span class="nav-text">CANVAS详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#canvas简单图形绘制"><span class="nav-number">4.1.</span> <span class="nav-text">canvas简单图形绘制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#canvas坐标"><span class="nav-number">4.2.</span> <span class="nav-text">canvas坐标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路径"><span class="nav-number">4.3.</span> <span class="nav-text">路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TEXT文字"><span class="nav-number">4.4.</span> <span class="nav-text">TEXT文字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐变"><span class="nav-number">4.5.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片"><span class="nav-number">4.6.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于IE浏览器"><span class="nav-number">4.7.</span> <span class="nav-text">关于IE浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跳棋例子"><span class="nav-number">4.8.</span> <span class="nav-text">跳棋例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Local_Storage详解"><span class="nav-number">5.</span> <span class="nav-text">Local Storage详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Local_Storage"><span class="nav-number">5.1.</span> <span class="nav-text">什么是Local Storage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_Storage的用法"><span class="nav-number">5.2.</span> <span class="nav-text">HTML5 Storage的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“监控”storage的变化情况"><span class="nav-number">5.3.</span> <span class="nav-text">“监控”storage的变化情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5_storage实践"><span class="nav-number">5.4.</span> <span class="nav-text">HTML5 storage实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Web_Server_Database"><span class="nav-number">5.5.</span> <span class="nav-text">Web Server Database</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML5离线"><span class="nav-number">6.</span> <span class="nav-text">HTML5离线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cache_manifest"><span class="nav-number">6.1.</span> <span class="nav-text">cache manifest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manifest文件详解"><span class="nav-number">6.2.</span> <span class="nav-text">manifest文件详解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件触发的流程"><span class="nav-number">6.3.</span> <span class="nav-text">事件触发的流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DEBUGGING"><span class="nav-number">6.4.</span> <span class="nav-text">DEBUGGING</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实践"><span class="nav-number">6.5.</span> <span class="nav-text">实践</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner"> <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chenzimu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+ </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"chenzimu"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
+</body>
+</html>
