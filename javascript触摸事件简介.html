@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="javascript,touch," />
 
 
 
@@ -45,15 +45,34 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="臣子木的博客 | web前端 | html | css | html5 | css3 | javascript | jquery | nodejs | angularjs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="臣子木">
-<meta property="og:url" content="http://chenzimu.com/index.html">
+<meta name="description" content="javascript触摸事件在javascript中支持以下几个触摸事件:
+
+touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。
+touchmove,当用户在屏幕上移动“触摸点”时触发。
+touchend，当用户“触摸点”离开屏幕时触发。
+touchenter，当“触摸点”进入对应元素触发，不会冒泡。
+touchleave,当“触摸点”离开对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript触摸事件简介">
+<meta property="og:url" content="http://chenzimu.com/javascript触摸事件简介.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="臣子木的博客 | web前端 | html | css | html5 | css3 | javascript | jquery | nodejs | angularjs">
+<meta property="og:description" content="javascript触摸事件在javascript中支持以下几个触摸事件:
+
+touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。
+touchmove,当用户在屏幕上移动“触摸点”时触发。
+touchend，当用户“触摸点”离开屏幕时触发。
+touchenter，当“触摸点”进入对应元素触发，不会冒泡。
+touchleave,当“触摸点”离开对">
+<meta property="og:updated_time" content="2015-10-26T06:16:13.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="臣子木">
-<meta name="twitter:description" content="臣子木的博客 | web前端 | html | css | html5 | css3 | javascript | jquery | nodejs | angularjs">
+<meta name="twitter:title" content="javascript触摸事件简介">
+<meta name="twitter:description" content="javascript触摸事件在javascript中支持以下几个触摸事件:
+
+touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。
+touchmove,当用户在屏幕上移动“触摸点”时触发。
+touchend，当用户“触摸点”离开屏幕时触发。
+touchenter，当“触摸点”进入对应元素触发，不会冒泡。
+touchleave,当“触摸点”离开对">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -65,7 +84,7 @@
 
 
 
-  <title> 臣子木 </title>
+  <title> javascript触摸事件简介 | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -86,9 +105,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -164,9 +181,9 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -182,9 +199,7 @@
             
             
               
-                <a class="post-title-link" href="/javascript触摸事件简介.html" itemprop="url">
-                  javascript触摸事件简介
-                </a>
+                javascript触摸事件简介
               
             
           </h1>
@@ -251,10 +266,7 @@
       
 
       
-        
-          <span itemprop="articleBody">
-            
-              <h2 id="javascript触摸事件">javascript触摸事件</h2><p>在javascript中支持以下几个触摸事件:</p>
+        <span itemprop="articleBody"><h2 id="javascript触摸事件">javascript触摸事件</h2><p>在javascript中支持以下几个触摸事件:</p>
 <ol>
 <li>touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。</li>
 <li>touchmove,当用户在屏幕上移动“触摸点”时触发。</li>
@@ -306,436 +318,61 @@
 </blockquote>
 </blockquote>
 <h2 id="利用触摸事件移动元素">利用触摸事件移动元素</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css"></span><br><span class="line">        *<span class="rules">&#123;</span><br><span class="line">            <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">            <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">        &#125;</span></span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width: 100px; height: 100px; background: red; position: absolute;"</span> <span class="attribute">id</span>=<span class="value">"div1"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">        <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">var</span> touchObj = <span class="literal">null</span><span class="comment">//触摸对象,</span></span><br><span class="line">            boxLeft = <span class="number">0</span><span class="comment">//div相对于屏幕左边缘距离,</span></span><br><span class="line">            startX = <span class="number">0</span><span class="comment">//触摸点开始的水平坐标;</span></span><br><span class="line"></span><br><span class="line">        oDiv.addEventListener(<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">            touchObj = e.changedTouches[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            boxLeft = <span class="built_in">parseInt</span>(oDiv.offsetLeft);</span><br><span class="line"></span><br><span class="line">            startX = <span class="built_in">parseInt</span>(touchObj.clientX);</span><br><span class="line"></span><br><span class="line">            e.preventDefault();</span><br><span class="line"></span><br><span class="line">        &#125;,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">        oDiv.addEventListener(<span class="string">'touchmove'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">            touchObj = e.changedTouches[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">var</span> dist = <span class="built_in">parseInt</span>(touchObj.clientX) - startX;</span><br><span class="line"></span><br><span class="line">            oDiv.style.left = boxLeft + dist + <span class="string">"px"</span>;</span><br><span class="line"></span><br><span class="line">            e.preventDefault();</span><br><span class="line"></span><br><span class="line">        &#125;,<span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-            
-          </span>
-        
+</span>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/HTML5笔记.html" itemprop="url">
-                  HTML5笔记【未完成】
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-21T14:31:12+08:00" content="2015-10-21">
-              2015-10-21
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/HTML5/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML5</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
-
+            <a href="/tags/touch/" rel="tag">#touch</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/HTML5笔记.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="HTML5笔记.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <p>HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Based Rich Internet Application，RIA），例如：Adobe Flash、Microsoft Silverlight与Oracle JavaFX的需求，并且提供更多能有效加强网络应用的标准集。【转自维基百科】<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/HTML5笔记.html#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/HTML5笔记.html" rel="next">
+                HTML5笔记【未完成】 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                <a class="post-title-link" href="/flexbox属性详细介绍【译】.html" itemprop="url">
-                  flexbox属性详细介绍【译】
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-20T09:59:15+08:00" content="2015-10-20">
-              2015-10-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/css3/" itemprop="url" rel="index">
-                    <span itemprop="name">css3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/flexbox属性详细介绍【译】.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="flexbox属性详细介绍【译】.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。<br>许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的时候很容易，而且对于很复杂的布局可以用更少的代码即可完成。flexbox布局的算法是基于direction的，而之前我们常用的块布局和行内布局是基于水平方向和垂直方向的。flexbox布局应当被应用到小型应用中，因为新的CSS Grid布局模型将被应用到大型布局中。<br>这篇文章将会重点教给您flex属性是怎样影响布局的。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/flexbox属性详细介绍【译】.html#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/360浏览器的两种渲染模式.html" itemprop="url">
-                  360浏览器的两种渲染模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-19T13:32:27+08:00" content="2015-10-19">
-              2015-10-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/记录/" itemprop="url" rel="index">
-                    <span itemprop="name">记录</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/360浏览器的两种渲染模式.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="360浏览器的两种渲染模式.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <p>今天在做一个页面的时候出现了一个问题，页面在谷歌等浏览器中没有问题，但是打开360浏览器一看，尼玛，直接变样了，但是将浏览器模式调为极速模式就正常了，于是google了一下，果然问题出在SB360身上。在此记录一下。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/360浏览器的两种渲染模式.html#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/test.html" itemprop="url">
-                  测试文章
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-19T10:06:57+08:00" content="2015-10-19">
-              2015-10-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/test.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="test.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody">
-            
-              <p>测试文章</p>
-
-            
-          </span>
-        
+    <div class="post-spread">
       
     </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
  </div>
 
         
 
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="javascript触摸事件简介.html"
+                   data-title="javascript触摸事件简介" data-url="http://chenzimu.com/javascript触摸事件简介.html">
+              </div>
+            
+          </div>
         
       </div>
 
@@ -753,6 +390,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -800,6 +446,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript触摸事件"><span class="nav-number">1.</span> <span class="nav-text">javascript触摸事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸过程中的事件对象"><span class="nav-number">2.</span> <span class="nav-text">触摸过程中的事件对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用触摸事件移动元素"><span class="nav-number">3.</span> <span class="nav-text">利用触摸事件移动元素</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
       
 
     </div>
@@ -887,6 +544,165 @@
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
 
   <script type="text/javascript">
     $(document).ready(function () {
