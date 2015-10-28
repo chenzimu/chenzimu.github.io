@@ -51,7 +51,7 @@
 <meta property="og:url" content="http://chenzimu.com/HTML5笔记.html">
 <meta property="og:site_name" content="臣子木">
 <meta property="og:description" content="HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Ba">
-<meta property="og:updated_time" content="2015-10-26T01:58:51.289Z">
+<meta property="og:updated_time" content="2015-10-28T08:52:34.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5笔记【未完成】">
 <meta name="twitter:description" content="HTML5是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。目标是取代1999年所制定的HTML 4.01和XHTML 1.0标准，以期能在互联网应用迅速发展的时候，使网络标准达到符合当代的网络需求。广义论及HTML5时，实际指的是包括HTML、CSS和JavaScript在内的一套技术组合。它希望能够减少网页浏览器对于需要插件的丰富性网络应用服务（Plug-in-Ba">
@@ -325,7 +325,7 @@
 <p>现在我们获得了一个绘制渐变的gradient对象，接下来需要定义渐变色了，这里需要用到addColorStop方法，它可以在0-1的任意位置设置渐变的颜色。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">my_gradient.addColorStop(<span class="number">0</span>, <span class="string">"black"</span>);</span><br><span class="line">my_gradient.addColorStop(<span class="number">1</span>, <span class="string">"white"</span>);</span><br></pre></td></tr></table></figure><br>上边的代码并没有在canvas上绘制任何看得到的东西，my_gradient只是一个经过装饰的对象，如果需要用渐变的画必须调用fillStyle方法，将渐变填充到图形中。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">context.fillStyle = my_gradient;</span><br><span class="line">context.fillRect(<span class="number">0</span>, <span class="number">0</span>, <span class="number">300</span>, <span class="number">225</span>);</span><br></pre></td></tr></table></figure><br>上下渐变以及对角渐变与上述类似，请自行练习。</p>
 <h3 id="图片">图片</h3><p>canvas的绘画上下文定义了一个drawImage()方法用于在canvas上绘制图片。这个方法可以分别赋予3个、5个或9个参数。</p>
 <ol>
-<li>drawImage(image, dx, dy) image即要绘制的图片，dx和dy是要绘制图片的起始点。</li>
+<li>drawImage(image, dx, dy) image即要绘制的图片，dx和dy是要绘制图片在画布上的起始点。</li>
 <li>drawImage(image, dx, dy, dw, dh) 前三个参数与上边相同，dx和dw是将绘制图片的大小设置为dx*dy</li>
 <li>drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh)这个方法是从图片的(sx,sy)开始截取sw <em> sh大小的图片然后在canvas的(dx,dy)位置绘制dw </em> dh大小的图片。<blockquote>
 <p>不管你在canvas上绘制的图片是一个已经存在页面中的img还是一个new Image()，都必须确保一点，即都要在确保图片加载完毕之后才能将其绘制到canvas上。</p>
@@ -521,21 +521,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">分類</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">標籤</span>
               
           </div>

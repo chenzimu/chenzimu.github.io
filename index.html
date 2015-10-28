@@ -182,6 +182,128 @@
             
             
               
+                <a class="post-title-link" href="/javascript设计模式笔记.html" itemprop="url">
+                  javascript设计模式笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-10-28T17:17:46+08:00" content="2015-10-28">
+              2015-10-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/javascript设计模式笔记.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="javascript设计模式笔记.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <h2 id="构造者模式">构造者模式</h2><h3 id="js中创建对象的三种方法">js中创建对象的三种方法</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newObject = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> newObject = <span class="built_in">Object</span>.create(<span class="built_in">Object</span>.prototype);</span><br><span class="line"><span class="keyword">var</span> newObject = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+<h3 id="为对象赋值的四种方法">为对象赋值的四种方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newObject = &#123;&#125;;</span><br><span class="line"><span class="comment">//1</span></span><br><span class="line">newObject.newValue = <span class="string">'chenzimu'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newObject.newValue);</span><br><span class="line"><span class="comment">//2</span></span><br><span class="line">newObject[<span class="string">"newValue"</span>] = <span class="string">'ccc'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newObject[<span class="string">"newValue"</span>]);</span><br><span class="line"><span class="comment">//3</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(newObject, <span class="string">'newValue'</span>, &#123;</span><br><span class="line">    value : <span class="string">'ddd'</span>,</span><br><span class="line">    writable : <span class="literal">true</span>,</span><br><span class="line">    enumerable : <span class="literal">true</span>,</span><br><span class="line">    configurable : <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(newObject.newValue);</span><br><span class="line"><span class="comment">//上边的方法有些麻烦可以封装为一个函数</span></span><br><span class="line"><span class="keyword">var</span> defineProp = <span class="function"><span class="keyword">function</span>(<span class="params">o,key,value</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">Object</span>.defineProperty(o, key, &#123;</span><br><span class="line">        value : value,</span><br><span class="line">        writable : <span class="literal">true</span>,</span><br><span class="line">        enumerable : <span class="literal">true</span>,</span><br><span class="line">        configurable : <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">defineProp(newObject,<span class="string">'newValue'</span>,<span class="string">'eee'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newObject.newValue);</span><br></pre></td></tr></table></figure>
+<h3 id="基本的构造函数">基本的构造函数</h3><p>基本的构造函数长这样:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model,year,miles</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.model = model;</span><br><span class="line">    <span class="keyword">this</span>.year = year;</span><br><span class="line">    <span class="keyword">this</span>.miles = miles;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">' has done '</span> + <span class="keyword">this</span>.miles + <span class="string">' miles'</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个新的Car实例</span></span><br><span class="line"><span class="keyword">var</span> civic = <span class="keyword">new</span> Car(<span class="string">'Honda Civic'</span>,<span class="number">2009</span>,<span class="number">20000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(civic.toString());</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>缺点：很难实现继承，每生成一个构造函数的实例都要重新定义一遍其中的方法。</p>
+</blockquote>
+<h3 id="原型构造函数">原型构造函数</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">model,year,miles</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.model = model;</span><br><span class="line">    <span class="keyword">this</span>.year = year;</span><br><span class="line">    <span class="keyword">this</span>.miles = miles;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Car.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.model + <span class="string">' has done '</span> + <span class="keyword">this</span>.miles + <span class="string">' miles'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建一个新的Car实例</span></span><br><span class="line"><span class="keyword">var</span> civic = <span class="keyword">new</span> Car(<span class="string">'Honda Civic'</span>,<span class="number">2009</span>,<span class="number">20000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(civic.toString());</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在上边的方法中，每一个构造函数实例都将使用同一个toString方法，它们都来自于Car的原型。</p>
+</blockquote>
+<h2 id="模块模式">模块模式</h2><p>在js中模块模式是为了模拟面向对象语言中类中的私有变量和公有变量的。这样做的好处在于可以防止函数命名的冲突。</p>
+<h3 id="模块模式的基本形式">模块模式的基本形式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> testModule = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> counter = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        incrementCounter : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> counter++;</span><br><span class="line">        &#125;,</span><br><span class="line">        resetCounter : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            counter = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    &#125;)();</span><br><span class="line"><span class="built_in">console</span>.log(testModule.incrementCounter());</span><br><span class="line"><span class="built_in">console</span>.log(testModule.incrementCounter());</span><br><span class="line">testModule.resetCounter();</span><br><span class="line"><span class="built_in">console</span>.log(testModule.incrementCounter());</span><br></pre></td></tr></table></figure>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/在每一个阶段监听touch事件.html" itemprop="url">
                   在每一个阶段监听touch事件
                 </a>
@@ -1148,21 +1270,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">分類</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">標籤</span>
               
           </div>
