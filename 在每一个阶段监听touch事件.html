@@ -45,34 +45,31 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="javascript触摸事件在javascript中支持以下几个触摸事件:
+<meta name="description" content="改进的ontouch函数之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。
+See the Pen eprvZY by chenzimu (@chenzimu) on CodePen.
 
-touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。
-touchmove,当用户在屏幕上移动“触摸点”时触发。
-touchend，当用户“触摸点”离开屏幕时触发。
-touchenter，当“触摸点”进入对应元素触发，不会冒泡。
-touchleave,当“触摸点”离开对">
+
+
+在touch事件的每一个阶段–’">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript触摸事件简介">
-<meta property="og:url" content="http://chenzimu.com/javascript触摸事件简介.html">
+<meta property="og:title" content="在每一个阶段监听touch事件">
+<meta property="og:url" content="http://chenzimu.com/在每一个阶段监听touch事件.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="javascript触摸事件在javascript中支持以下几个触摸事件:
+<meta property="og:description" content="改进的ontouch函数之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。
+See the Pen eprvZY by chenzimu (@chenzimu) on CodePen.
 
-touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。
-touchmove,当用户在屏幕上移动“触摸点”时触发。
-touchend，当用户“触摸点”离开屏幕时触发。
-touchenter，当“触摸点”进入对应元素触发，不会冒泡。
-touchleave,当“触摸点”离开对">
-<meta property="og:updated_time" content="2015-10-28T01:55:57.473Z">
+
+
+在touch事件的每一个阶段–’">
+<meta property="og:updated_time" content="2015-10-28T02:39:23.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript触摸事件简介">
-<meta name="twitter:description" content="javascript触摸事件在javascript中支持以下几个触摸事件:
+<meta name="twitter:title" content="在每一个阶段监听touch事件">
+<meta name="twitter:description" content="改进的ontouch函数之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。
+See the Pen eprvZY by chenzimu (@chenzimu) on CodePen.
 
-touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。
-touchmove,当用户在屏幕上移动“触摸点”时触发。
-touchend，当用户“触摸点”离开屏幕时触发。
-touchenter，当“触摸点”进入对应元素触发，不会冒泡。
-touchleave,当“触摸点”离开对">
+
+
+在touch事件的每一个阶段–’">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -84,7 +81,7 @@ touchleave,当“触摸点”离开对">
 
 
 
-  <title> javascript触摸事件简介 | 臣子木 </title>
+  <title> 在每一个阶段监听touch事件 | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -199,7 +196,7 @@ touchleave,当“触摸点”离开对">
             
             
               
-                javascript触摸事件简介
+                在每一个阶段监听touch事件
               
             
           </h1>
@@ -208,8 +205,8 @@ touchleave,当“触摸点”离开对">
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-10-26T10:59:48+08:00" content="2015-10-26">
-              2015-10-26
+            <time itemprop="dateCreated" datetime="2015-10-28T09:47:53+08:00" content="2015-10-28">
+              2015-10-28
             </time>
           </span>
 
@@ -246,8 +243,8 @@ touchleave,当“触摸点”离开对">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/javascript触摸事件简介.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="javascript触摸事件简介.html" itemprop="commentsCount"></span>
+                <a href="/在每一个阶段监听touch事件.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="在每一个阶段监听touch事件.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -266,62 +263,14 @@ touchleave,当“触摸点”离开对">
       
 
       
-        <span itemprop="articleBody"><h2 id="javascript触摸事件">javascript触摸事件</h2><p>在javascript中支持以下几个触摸事件:</p>
-<ol>
-<li>touchstart,当用户触摸到屏幕表面时即触发这一事件,并在这一事件所对应的元素上创建一个“触摸点”。</li>
-<li>touchmove,当用户在屏幕上移动“触摸点”时触发。</li>
-<li>touchend，当用户“触摸点”离开屏幕时触发。</li>
-<li>touchenter，当“触摸点”进入对应元素触发，不会冒泡。</li>
-<li>touchleave,当“触摸点”离开对应元素触发，不会冒泡。</li>
-<li>touchcancel，当“触摸点”不再被注册到触摸屏上时触发。<a id="more"></a>
-这些事件可以绑定到任何元素上，并会自动传递一个包含“触摸点”细节的对象到事件函数中，利用element.addEventListener()来注册事件。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'onload'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">document</span>.body.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">        alert(e.changedTouches[<span class="number">0</span>].pageX) <span class="comment">// alert pageX coordinate of touch point</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-touchstart的回调函数中的event对象中包含了与触摸行为相关的所有信息。下边是一个将touchstart、touchmove与touchend相结合的例子:</li>
-</ol>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="xwWNGY" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/xwWNGY/" target="_blank" rel="external">xwWNGY</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+        <span itemprop="articleBody"><h2 id="改进的ontouch函数">改进的ontouch函数</h2><p>之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。</p>
+<p></p><p data-height="268" data-theme-id="0" data-slug-hash="eprvZY" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/eprvZY/" target="_blank" rel="external">eprvZY</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-<ul>
-<li>e.preventDefault()的作用是防止触摸事件的默认行为的发生。对于touchstart和touchend来说，如果目标元素是一个a链接的话可以防止浏览器跳转到新页面，对于touchmove可以防止用户在目标元素内移动手指时使页面发生滚动。</li>
-<li>touchObj指代所有放到触摸屏上所有触发触摸事件的对象中的第一个“触摸点”，然后利用clientX获得“触摸点”相对于浏览器边缘的水平距离。通过在touchmove中使用可以获得每次移动的坐标相对于“触摸点”的水平相对距离。</li>
-<li>即使手指离开事件绑定的元素，touchend依旧会触发并显示此时的x坐标。<h2 id="触摸过程中的事件对象">触摸过程中的事件对象</h2></li>
-</ul>
-<ol>
-<li>changedTouches:包含了所有触发“触摸点”的触摸对象的集合，具体的有:<ol>
-<li>touchstart,包含所有触摸到屏幕的所有“触摸点”</li>
-<li>touchmove,包含所有获得到“触摸点”后移动的对象</li>
-<li>touchend，包含所有将手指离开触摸屏的对象集合</li>
-<li>touchenter,包含所有在触摸事件中进入绑定元素范围的对象集合</li>
-<li>touchleave,包含所有在触摸事件中离开绑定元素范围的对象集合</li>
-</ol>
-</li>
-<li>targetTouches：一个包含绑定元素内部触发的触摸事件信息的集合</li>
-<li>touches：所有“触摸点”的集合</li>
-<li>altkey，布尔类型，表示在触摸事件发生时，是否按下alt。相似的还有ctrlKey、metaKey、shiftKey。</li>
-<li>type,触发事件的类型</li>
-<li>触发事件所对应的目标元素</li>
-</ol>
-<p>例如，在touchstart事件中，事件对象的touches属性可以获得目前所有的“触摸点”：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">'touchstart'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> touchlist = e.touches;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; touchlist.length;i++)&#123;</span><br><span class="line">                <span class="comment">//do something with every touch point</span></span><br><span class="line">            &#125;</span><br><span class="line">            e.preventDefault();</span><br><span class="line">        &#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br>触摸过程中每个触摸对象包含的属性:</p>
-<ol>
-<li>identifier,可以唯一的代表某一个“触摸点”。起始值为0，每增加一个触摸点加1。加入你将两根手指放到屏幕上，这时就可以利用这一属性对每一根手指添加不同的事件。</li>
-<li>screenX，用户“触摸点”相对于用户的设备屏幕左边缘的x坐标</li>
-<li>screenY，用户“触摸点”相对于用户的设备屏幕上边缘的y坐标</li>
-<li>clientX，用户“触摸点”相对于视窗左边缘的x坐标，不包括滚动条</li>
-<li>clientY,用户“触摸点”相对于视窗上边缘的y坐标，不包括滚动条</li>
-<li>pageX, 用户“触摸点”相对于视窗左边缘的x坐标，包括滚动条</li>
-<li>pageY，用户“触摸点”相对于视窗上边缘的y坐标，包括滚动条</li>
-<li>radiusX，触摸区域相对于x轴的椭圆区域的半径</li>
-<li>radiusY，触摸区域相对于y轴的椭圆区域的半径</li>
-<li>rotationAngle，由radiusX和radiusY所确定的椭圆区域绕中心点所转动的角度</li>
-<li>force，返回加到触摸屏上的力量大小，数值为0-1</li>
-<li>target，“触摸点”作用到的目标元素。</li>
-</ol>
 <blockquote>
-<p>Touches, changedTouches, 和 targetTouches之间的不同：Touches包含当前所有“触发点”的集合。changedTouches包含当前所发生的触摸事件的所有“触摸点”的集合，比如在一个touchmove事件中，changedTouches只包含当前正在move的“触摸点”，Touches则包含所有的“触摸点”，targetTouches只包含当前在绑定元素上触发的触摸事件。</p>
-<blockquote>
-<p>When I put a finger down, all three lists will have the same information. It will be in changedTouches because putting the finger down is what caused the event<br>When I put a second finger down, touches will have two items, one for each finger. targetTouches will have two items only if the finger was placed in the same node as the first finger. changedTouches will have the information related to the second finger, because it’s what caused the event<br>If I put two fingers down at exactly the same time, it’s possible to have two items in changedTouches, one for each finger<br>If I move my fingers, the only list that will change is changedTouches and will contain information related to as many fingers as have moved (at least one).<br>When I lift a finger, it will be removed from touches, targetTouches and will appear in changedTouches since it’s what caused the event<br>Removing my last finger will leave touches and targetTouches empty, and changedTouches will contain information for the last finger</p>
+<p>在touch事件的每一个阶段–’touchstart’、’touchmove’和’touchend’，均获取“触摸点”的方向以及移动距离，在’touchend’阶段遵循与swipeDetect函数相同的规则来判断手指的触摸方向。</p>
 </blockquote>
-</blockquote>
-<h2 id="利用触摸事件移动元素">利用触摸事件移动元素</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="OyvYVK" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/OyvYVK/" target="_blank" rel="external">OyvYVK</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<h2 id="图片滑动例子">图片滑动例子</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="KdRWXO" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/KdRWXO/" target="_blank" rel="external">KdRWXO</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 
@@ -344,16 +293,12 @@ touchstart的回调函数中的event对象中包含了与触摸行为相关的�
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/用javascript的touch事件实现滑动.html" rel="prev">
-                <i class="fa fa-chevron-left"></i> 用javascript的touch事件实现滑动
-              </a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/HTML5笔记.html" rel="next">
-                HTML5笔记【未完成】 <i class="fa fa-chevron-right"></i>
+              <a href="/HTML5-canvas-颜色拾取器.html" rel="next">
+                HTML5 canvas 颜色拾取器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -379,8 +324,8 @@ touchstart的回调函数中的event对象中包含了与触摸行为相关的�
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="javascript触摸事件简介.html"
-                   data-title="javascript触摸事件简介" data-url="http://chenzimu.com/javascript触摸事件简介.html">
+              <div class="ds-thread" data-thread-key="在每一个阶段监听touch事件.html"
+                   data-title="在每一个阶段监听touch事件" data-url="http://chenzimu.com/在每一个阶段监听touch事件.html">
               </div>
             
           </div>
@@ -463,7 +408,7 @@ touchstart的回调函数中的event对象中包含了与触摸行为相关的�
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript触摸事件"><span class="nav-number">1.</span> <span class="nav-text">javascript触摸事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#触摸过程中的事件对象"><span class="nav-number">2.</span> <span class="nav-text">触摸过程中的事件对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用触摸事件移动元素"><span class="nav-number">3.</span> <span class="nav-text">利用触摸事件移动元素</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#改进的ontouch函数"><span class="nav-number">1.</span> <span class="nav-text">改进的ontouch函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片滑动例子"><span class="nav-number">2.</span> <span class="nav-text">图片滑动例子</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
