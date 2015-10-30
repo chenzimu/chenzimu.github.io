@@ -51,7 +51,7 @@
 <meta property="og:url" content="http://chenzimu.com/flexbox属性详细介绍【译】.html">
 <meta property="og:site_name" content="臣子木">
 <meta property="og:description" content="Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的">
-<meta property="og:updated_time" content="2015-10-28T02:43:46.513Z">
+<meta property="og:updated_time" content="2015-10-30T08:19:47.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flexbox属性详细介绍【译】">
 <meta name="twitter:description" content="Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的">
@@ -272,9 +272,9 @@
 <blockquote>
 <p>Note:flex-grow不允许使用负数</p>
 </blockquote>
-<h3 id="flex-shink">flex-shink</h3><p>这个属性可以改变container中某个元素的大小，如果所有子元素有相同的flex-grow值的话子元素会以相同大小分布在container中，如果其中一个元素的flex-grow值小于其他元素，相对其他元素来说这个元素会根据空间大小占据更大的空间，而其他元素也会根据空间大小相应的占据更小的空间。值为0的话元素会以原始大小进行显示。<br>默认值:1</p>
+<h3 id="flex-shink">flex-shink</h3><p>这个属性可以改变container中某个元素的大小，如果所有子元素有相同的flex-shink值的话子元素会以相同大小分布在container中，如果其中一个元素的flex-shink值小于其他元素，相对其他元素来说这个元素会根据空间大小占据更大的空间，而其他元素也会根据空间大小相应的占据更小的空间。值为0的话元素会以原始大小进行显示。<br>默认值:1</p>
 <blockquote>
-<p>Note:flex-grow不允许使用负数</p>
+<p>Note:flex-shink不允许使用负数</p>
 </blockquote>
 <h3 id="flex-basis">flex-basis</h3><p>flex-basis属性的作用是设置子元素宽度，如果所有元素宽度相加大于container宽度的话其他元素会根据空间相应的减小尺寸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-item</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex-basis</span>:<span class="value"> auto | &lt;width&gt;</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex-basis</span>:<span class="value">         auto | &lt;width&gt;</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure><br>默认值:auto</p>
 <h3 id="flex">flex</h3><p>flex是flex-grow, flex-shrink和flex-basis属性的简写。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.flex-item</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-flex</span>:<span class="value"> none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ]</span></span>; <span class="comment">/* Safari */</span></span><br><span class="line">  <span class="rule"><span class="attribute">flex</span>:<span class="value">         none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ]</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
