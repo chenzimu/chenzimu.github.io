@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="javascript,touch," />
+  <meta name="keywords" content="javascript,闭包," />
 
 
 
@@ -45,16 +45,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。">
+<meta name="description" content="闭包的概念很难懂，这篇文章也只是我的一个学习笔记吧，其中尤其是闭包在循环中的运用尤其最难理解。用一句话总结闭包就是:闭包就是函数中的一些变量，当函数返回的时候，这些变量并没有随之销毁。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用javascript的touch事件实现滑动">
-<meta property="og:url" content="http://chenzimu.com/用javascript的touch事件实现滑动.html">
+<meta property="og:title" content="javascript闭包">
+<meta property="og:url" content="http://chenzimu.com/javascript闭包.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。">
-<meta property="og:updated_time" content="2015-10-28T02:43:31.626Z">
+<meta property="og:description" content="闭包的概念很难懂，这篇文章也只是我的一个学习笔记吧，其中尤其是闭包在循环中的运用尤其最难理解。用一句话总结闭包就是:闭包就是函数中的一些变量，当函数返回的时候，这些变量并没有随之销毁。">
+<meta property="og:updated_time" content="2015-10-30T06:19:53.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用javascript的touch事件实现滑动">
-<meta name="twitter:description" content="首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。">
+<meta name="twitter:title" content="javascript闭包">
+<meta name="twitter:description" content="闭包的概念很难懂，这篇文章也只是我的一个学习笔记吧，其中尤其是闭包在循环中的运用尤其最难理解。用一句话总结闭包就是:闭包就是函数中的一些变量，当函数返回的时候，这些变量并没有随之销毁。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +66,7 @@
 
 
 
-  <title> 用javascript的touch事件实现滑动 | 臣子木 </title>
+  <title> javascript闭包 | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -181,7 +181,7 @@
             
             
               
-                用javascript的touch事件实现滑动
+                javascript闭包
               
             
           </h1>
@@ -190,8 +190,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-10-27T09:14:30+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2014-12-30T10:42:45+08:00" content="2014-12-30">
+              2014-12-30
             </time>
           </span>
 
@@ -200,19 +200,7 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/javascript/" itemprop="url" rel="index">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
                     <span itemprop="name">javascript</span>
                   </a>
                 </span>
@@ -228,8 +216,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/用javascript的touch事件实现滑动.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="用javascript的touch事件实现滑动.html" itemprop="commentsCount"></span>
+                <a href="/javascript闭包.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="javascript闭包.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -248,16 +236,30 @@
       
 
       
-        <span itemprop="articleBody"><p>首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。<br><a id="more"></a></p>
-<h2 id="向右滑动例子">向右滑动例子</h2><p>这里我们以向右滑动为例，我们约定，当手指在200ms时间内由左向右水平移动至少150px的距离时视作一次向右滑动。同时还要设置一个垂直方向的100px以内的移动距离，避免当用户在向右上方滑动手指时不被判断为右滑动。</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="OyvGga" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/OyvGga/" target="_blank" rel="external">OyvGga</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-
-<h2 id="滑动检测函数完整版">滑动检测函数完整版</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="zvWXpo" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/zvWXpo/" target="_blank" rel="external">zvWXpo</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>参考自:<a href="http://www.javascriptkit.com/javatutors/touchevents.shtml" target="_blank" rel="external">http://www.javascriptkit.com/javatutors/touchevents.shtml</a></p>
+        <span itemprop="articleBody"><p>闭包的概念很难懂，这篇文章也只是我的一个学习笔记吧，其中尤其是闭包在循环中的运用尤其最难理解。<br>用一句话总结闭包就是:闭包就是函数中的一些变量，当函数返回的时候，这些变量并没有随之销毁。<br><a id="more"></a></p>
+<h2 id="一个闭包的基础例子">一个闭包的基础例子</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">(name)</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> text = <span class="string">'Hello '</span> + name;</span><br><span class="line">    <span class="keyword">var</span> helloAlert = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        alert(text);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> helloAlert;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> hello = sayHello(<span class="string">'Chenzimu'</span>);</span><br><span class="line">hello();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在javascript中，可以将一个函数引用变量看作是对一个函数的引用以及对一个闭包的隐式引用。代码中匿名函数定义在函数sayHello中形成了一个闭包。</p>
+</blockquote>
+<h2 id="更多闭包的例子">更多闭包的例子</h2><h3 id="例一">例一</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say2015</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">2014</span>;</span><br><span class="line">    <span class="keyword">var</span> sayAlert = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">        alert(num);</span><br><span class="line">    &#125;;</span><br><span class="line">    num++;</span><br><span class="line">    <span class="keyword">return</span> sayAlert;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> say = say2015();</span><br><span class="line">say();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个例子展示了闭包中本地变量是通过引用而不是复制获取的。</p>
+</blockquote>
+<h3 id="例二">例二</h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function setupSomeGlobals()&#123;</span><br><span class="line">    var num = 666<span class="comment">;</span></span><br><span class="line">    alertNum = function()&#123;</span><br><span class="line">        alert(num)<span class="comment">;</span></span><br><span class="line">    &#125;<span class="comment">;</span></span><br><span class="line">    incNum = function()&#123;</span><br><span class="line">        num++<span class="comment">;</span></span><br><span class="line">    &#125;<span class="comment">;</span></span><br><span class="line">    setNum = function(x)&#123;</span><br><span class="line">        num = x<span class="comment">;</span></span><br><span class="line">    &#125;<span class="comment">;</span></span><br><span class="line">&#125;<span class="comment">;</span></span><br><span class="line">setupSomeGlobals()<span class="comment">;</span></span><br><span class="line">alertNum()<span class="comment">;</span></span><br><span class="line">incNum()<span class="comment">;</span></span><br><span class="line">alertNum()<span class="comment">;</span></span><br><span class="line">setNum(888)<span class="comment">;</span></span><br><span class="line">alertNum()<span class="comment">;</span></span><br><span class="line">setupSomeGlobals()<span class="comment">;</span></span><br><span class="line">alertNum()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例子中三个全局函数都引用了同一个闭包，因为三个函数都有对num的引用，即都对setupSomeGlobals()的引用(因为num是setupSomeGlobals作用域中的变量)。</p>
+<blockquote>
+<p>注意：当再次执行setupSomeGlobals函数时，就会创建一个新的闭包，则之前执行过的函数和得到的值都会被覆盖掉。（在javascript中，当在一个函数中定义另一个函数时，每次外部函数的执行都会导致内部函数的重新初始化创建。）</p>
+</blockquote>
+</blockquote>
+<h3 id="例三(较难理解)">例三(较难理解)</h3><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function buildList(list)&#123;</span><br><span class="line"><span class="keyword">var</span> <span class="literal">result</span> = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; list.length;i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> item = 'item' + list[i];</span><br><span class="line">    <span class="literal">result</span>.push(</span><br><span class="line">        function()&#123;</span><br><span class="line">            alert(item + ' ' + list[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    );//引用函数<span class="type">pointer</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br><span class="line">function testList()&#123;</span><br><span class="line">    <span class="keyword">var</span> fnlist = buildList([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</span><br><span class="line">    fnlist[<span class="number">0</span>]();</span><br><span class="line">    fnlist[<span class="number">1</span>]();</span><br><span class="line">    fnlist[<span class="number">2</span>]();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">testList();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在for循环中使用闭包得到的结果会和我们想象中的不一样，上边的例子中，当testList函数运行时，会先执行buildList([1,2,3])，在for循环中匿名函数并没有立即执行，而是先push进了result数组，当执行fnlist时，fnlist使用的是for循环执行结束之后的i的值，即2，而后边的</p>
+</blockquote>
+<h3 id="例四">例四</h3><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function newClosure(someNum,someRef)&#123;</span><br><span class="line">    <span class="keyword">var</span> num = someNum;</span><br><span class="line">    <span class="keyword">var</span> anArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">ref</span> = someRef;</span><br><span class="line">    <span class="keyword">return</span> function(x)&#123;</span><br><span class="line">        num += x;</span><br><span class="line">        anArray.push(num);</span><br><span class="line">        alert('num: ' + num + '\nanArray ' + anArray.toString() + '\nref.someVar ' + <span class="keyword">ref</span>.someVar);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> closure1 = newClosure(<span class="number">40</span>,&#123;someVar : 'closure1'&#125;);</span><br><span class="line">closure1(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">var</span> closure2 = newClosure(<span class="number">1000</span>,&#123;someVar : 'closure2'&#125;);</span><br><span class="line">closure2(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上边的例子显示每次对newClosure函数的调用都生成一个闭包，两个闭包之间不会相互影响。</p>
+</blockquote>
 </span>
       
     </div>
@@ -268,7 +270,7 @@
           
             <a href="/tags/javascript/" rel="tag">#javascript</a>
           
-            <a href="/tags/touch/" rel="tag">#touch</a>
+            <a href="/tags/闭包/" rel="tag">#闭包</a>
           
         </div>
       
@@ -277,17 +279,13 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/纯css形状.html" rel="prev">
-                <i class="fa fa-chevron-left"></i> 纯css形状
+              <a href="/javascript设计模式笔记.html" rel="prev">
+                <i class="fa fa-chevron-left"></i> javascript设计模式笔记
               </a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/javascript触摸事件简介.html" rel="next">
-                javascript触摸事件简介 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -312,8 +310,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="用javascript的touch事件实现滑动.html"
-                   data-title="用javascript的touch事件实现滑动" data-url="http://chenzimu.com/用javascript的touch事件实现滑动.html">
+              <div class="ds-thread" data-thread-key="javascript闭包.html"
+                   data-title="javascript闭包" data-url="http://chenzimu.com/javascript闭包.html">
               </div>
             
           </div>
@@ -396,7 +394,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#向右滑动例子"><span class="nav-number">1.</span> <span class="nav-text">向右滑动例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动检测函数完整版"><span class="nav-number">2.</span> <span class="nav-text">滑动检测函数完整版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个闭包的基础例子"><span class="nav-number">1.</span> <span class="nav-text">一个闭包的基础例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多闭包的例子"><span class="nav-number">2.</span> <span class="nav-text">更多闭包的例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例一"><span class="nav-number">2.1.</span> <span class="nav-text">例一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例二"><span class="nav-number">2.2.</span> <span class="nav-text">例二</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例三(较难理解)"><span class="nav-number">2.3.</span> <span class="nav-text">例三(较难理解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#例四"><span class="nav-number">2.4.</span> <span class="nav-text">例四</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

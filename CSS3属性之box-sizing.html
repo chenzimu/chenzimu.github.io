@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="javascript,touch," />
+  <meta name="keywords" content="box-sizing,css3," />
 
 
 
@@ -45,16 +45,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。">
+<meta name="description" content="box-sizing是css3中新添加的一个属性，它可以使布局更加的简单和直观。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用javascript的touch事件实现滑动">
-<meta property="og:url" content="http://chenzimu.com/用javascript的touch事件实现滑动.html">
+<meta property="og:title" content="CSS3属性之box-sizing">
+<meta property="og:url" content="http://chenzimu.com/CSS3属性之box-sizing.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。">
-<meta property="og:updated_time" content="2015-10-28T02:43:31.626Z">
+<meta property="og:description" content="box-sizing是css3中新添加的一个属性，它可以使布局更加的简单和直观。">
+<meta property="og:updated_time" content="2015-10-30T06:10:38.467Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用javascript的touch事件实现滑动">
-<meta name="twitter:description" content="首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。">
+<meta name="twitter:title" content="CSS3属性之box-sizing">
+<meta name="twitter:description" content="box-sizing是css3中新添加的一个属性，它可以使布局更加的简单和直观。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +66,7 @@
 
 
 
-  <title> 用javascript的touch事件实现滑动 | 臣子木 </title>
+  <title> CSS3属性之box-sizing | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -181,7 +181,7 @@
             
             
               
-                用javascript的touch事件实现滑动
+                CSS3属性之box-sizing
               
             
           </h1>
@@ -190,8 +190,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-10-27T09:14:30+08:00" content="2015-10-27">
-              2015-10-27
+            <time itemprop="dateCreated" datetime="2015-10-30T13:05:07+08:00" content="2015-10-30">
+              2015-10-30
             </time>
           </span>
 
@@ -200,20 +200,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/css3/" itemprop="url" rel="index">
+                    <span itemprop="name">css3</span>
                   </a>
                 </span>
 
@@ -228,8 +216,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/用javascript的touch事件实现滑动.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="用javascript的touch事件实现滑动.html" itemprop="commentsCount"></span>
+                <a href="/CSS3属性之box-sizing.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="CSS3属性之box-sizing.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -248,16 +236,32 @@
       
 
       
-        <span itemprop="articleBody"><p>首先我们先定义一下究竟什么样的行为算是一次滑动，当手指朝某一方向划过屏幕触发’touchstart’和’touchend’事件之后，有两个变量值可以供我们使用：一个是手指滑动的距离，另一个是手指滑动的时间。通过这两个值的变化我们就可以确定是否为滑动事件以及滑动的方向了。<br><a id="more"></a></p>
-<h2 id="向右滑动例子">向右滑动例子</h2><p>这里我们以向右滑动为例，我们约定，当手指在200ms时间内由左向右水平移动至少150px的距离时视作一次向右滑动。同时还要设置一个垂直方向的100px以内的移动距离，避免当用户在向右上方滑动手指时不被判断为右滑动。</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="OyvGga" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/OyvGga/" target="_blank" rel="external">OyvGga</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+        <span itemprop="articleBody"><p>box-sizing是css3中新添加的一个属性，它可以使布局更加的简单和直观。<br><a id="more"></a></p>
+<h2 id="盒子模型的历史">盒子模型的历史</h2><p>从css开始出现的时候开始，计算盒子模型大小的公式为:</p>
+<blockquote>
+<p>width+padding+border=盒子的实际宽度<br>height+padding+border=盒子的实际高度</p>
+</blockquote>
+<p>这看起来有点XX，因为当你给盒子设置了width和height之后可能感觉不到盒子有什么异样，但当给盒子设置了padding和border之后，盒子的宽度和高度就不会像我们之前期望的那样了。<br>在IE浏览器中有一种“怪异模式”，在“怪异模式”中盒子模型的计算方法是这样的:</p>
+<blockquote>
+<p>width=盒子实际看到的宽度<br>height=盒子实际看到的高度<br>border和padding的值反而减小了width的值。</p>
+</blockquote>
+<p>如下图所示:</p>
+<h2 id="当代:box-sizing">当代:box-sizing</h2><p>box-sizing有三个值:content-box|padding-box|border-box,其中用的最多的一个是border-box。<br>如今，所有的新版本的浏览器所用的盒子模型都是“标准模式”中的计算方法,即:</p>
+<blockquote>
+<p>width+padding+border=盒子的实际宽度<br>height+padding+border=盒子的实际高度</p>
+</blockquote>
+<p>如果用了属性box-sizing:border-box;之后，盒子模型就会变为“怪异模式”的样子，即padding和border不会影响盒子实际所看到的宽度，这在响应式的网页设计中很有用。</p>
+<h2 id="例子">例子</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="meKrNj" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/meKrNj/" target="_blank" rel="external">meKrNj</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-
-<h2 id="滑动检测函数完整版">滑动检测函数完整版</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="zvWXpo" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/zvWXpo/" target="_blank" rel="external">zvWXpo</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>参考自:<a href="http://www.javascriptkit.com/javatutors/touchevents.shtml" target="_blank" rel="external">http://www.javascriptkit.com/javatutors/touchevents.shtml</a></p>
+<blockquote>
+<p>在上边的例子中如果box-sizing为content-box的话，子div的宽度会因为设置了border和padding而超出父元素，如果将box-sizing设置为border-box，则padding和border都不会影响子div的宽度可，从而也不会使其超出父元素。</p>
+</blockquote>
+<h2 id="最好的box-sizing重置方法">最好的box-sizing重置方法</h2><p>最后的重置box-sizing的方法是:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">* <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>上边的重置方法没什么大的问题，但是没有对伪类元素进行重置，所以可以使用下边的方法:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*, *<span class="pseudo">:before</span>, *<span class="pseudo">:after</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>上边的方法同样也没有什么大的问题，但是这样重置<em>选择符的话，如果开发者在别处使用content-box和padding-box的话会被\</em>号的重置给覆盖掉。所以重置box-sizing的最佳方法是(可以参考这篇文章的讲解<a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/" target="_blank" rel="external">Inheriting box-sizing Probably Slightly Better Best-Practice</a>):<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line">*, *<span class="pseudo">:before</span>, *<span class="pseudo">:after</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> inherit</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="前缀">前缀</h2><p>新版本的浏览器都支持box-sizing，但是如果对于老版本的浏览器如：Safari (&lt; 5.1), Chrome (&lt; 10), and Firefox (&lt; 29)，则必须添加前缀:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">html</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-moz-box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> border-box</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line">*, *<span class="pseudo">:before</span>, *<span class="pseudo">:after</span> <span class="rules">&#123;</span><br><span class="line">  <span class="rule"><span class="attribute">-webkit-box-sizing</span>:<span class="value"> inherit</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">-moz-box-sizing</span>:<span class="value"> inherit</span></span>;</span><br><span class="line">  <span class="rule"><span class="attribute">box-sizing</span>:<span class="value"> inherit</span></span>;</span><br><span class="line">  &#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="存在的问题">存在的问题</h2><p>只有firerfox支持padding-box，在IE8中如果元素上使用了min/max-width 或 min/max-height，它就不认识box-sizing了，IE7及以下版本的浏览器都不认识box-sizing。要修复IE7一下版本请点击<a href="https://github.com/Schepp/box-sizing-polyfill" target="_blank" rel="external">box-sizing-polyfill</a></p>
 </span>
       
     </div>
@@ -266,9 +270,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/box-sizing/" rel="tag">#box-sizing</a>
           
-            <a href="/tags/touch/" rel="tag">#touch</a>
+            <a href="/tags/css3/" rel="tag">#css3</a>
           
         </div>
       
@@ -277,16 +281,12 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/纯css形状.html" rel="prev">
-                <i class="fa fa-chevron-left"></i> 纯css形状
-              </a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/javascript触摸事件简介.html" rel="next">
-                javascript触摸事件简介 <i class="fa fa-chevron-right"></i>
+              <a href="/在每一个阶段监听touch事件.html" rel="next">
+                在每一个阶段监听touch事件 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -312,8 +312,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="用javascript的touch事件实现滑动.html"
-                   data-title="用javascript的touch事件实现滑动" data-url="http://chenzimu.com/用javascript的touch事件实现滑动.html">
+              <div class="ds-thread" data-thread-key="CSS3属性之box-sizing.html"
+                   data-title="CSS3属性之box-sizing" data-url="http://chenzimu.com/CSS3属性之box-sizing.html">
               </div>
             
           </div>
@@ -396,7 +396,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#向右滑动例子"><span class="nav-number">1.</span> <span class="nav-text">向右滑动例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑动检测函数完整版"><span class="nav-number">2.</span> <span class="nav-text">滑动检测函数完整版</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型的历史"><span class="nav-number">1.</span> <span class="nav-text">盒子模型的历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当代:box-sizing"><span class="nav-number">2.</span> <span class="nav-text">当代:box-sizing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例子"><span class="nav-number">3.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最好的box-sizing重置方法"><span class="nav-number">4.</span> <span class="nav-text">最好的box-sizing重置方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前缀"><span class="nav-number">5.</span> <span class="nav-text">前缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#存在的问题"><span class="nav-number">6.</span> <span class="nav-text">存在的问题</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
