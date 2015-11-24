@@ -182,6 +182,123 @@
             
             
               
+                <a class="post-title-link" href="/jquery中data-和attr-的区别.html" itemprop="url">
+                  jquery中data()和attr()的区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-11-24T16:16:18+08:00" content="2015-11-24">
+              2015-11-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/jquery中data-和attr-的区别.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="jquery中data-和attr-的区别.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>之前用过jquery中的data()和attr()方法，只知道它们之间一点区别在于如果属性中没有’data-‘前缀的话data是无法读取该属性的，对于它们两个的主要区别没有研究，正好看到这个地方在此记录一下：<br>jquery的文档中是这样描述这两个属性的：</p>
+<blockquote>
+<blockquote>
+<p>.data()<br>存储与目标元素相关的任意的数据，并返回所设定的数据的值。</p>
+<p>.attr()<br>获得匹配元素中第一个元素的属性值，或者设置一个或多个匹配元素的属性值。</p>
+</blockquote>
+</blockquote>
+<h2 id="两者究竟有什么不同">两者究竟有什么不同</h2><p>说实话，文档中的句子读完还是不知道什么意思，实际上如果我们仔细观察会发现attr()会影响DOM，当我们为某个元素设置属性或修改属性时，查看源码会发现HTML元素上所对应的属性值要么更改了要么又新添加了一个属性。而data()方法取得的值是从jquery内部的cache中,这个cache是jquery中新建的一个空对象jQuery.cache，它就是用来存储用data设置的属性的，对于每个用data操作过的DOM元素，这个对象中会有一个唯一的ID作为key值与其相对应，如果修改值的话修改的也是cache中的值，对于DOM元素没有任何的影响。同时,attr()方法获取的属性值的类型全部为字符串，而data()则是根据引号中的数据格式确定值的类型。还有一个不同在于data()的属性名需要以’data-‘为前缀才可以获取和修改。所以两者之间有任意一方修改了属性值的话对另一方是没有影响的。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
                 <a class="post-title-link" href="/em和rem简介.html" itemprop="url">
                   em和rem简介
                 </a>
@@ -1139,104 +1256,6 @@
 
 
     
-      
-
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                <a class="post-title-link" href="/360浏览器的两种渲染模式.html" itemprop="url">
-                  360浏览器的两种渲染模式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-10-19T13:32:27+08:00" content="2015-10-19">
-              2015-10-19
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/记录/" itemprop="url" rel="index">
-                    <span itemprop="name">记录</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/360浏览器的两种渲染模式.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="360浏览器的两种渲染模式.html" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>今天在做一个页面的时候出现了一个问题，页面在谷歌等浏览器中没有问题，但是打开360浏览器一看，尼玛，直接变样了，但是将浏览器模式调为极速模式就正常了，于是google了一下，果然问题出在SB360身上。在此记录一下。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/360浏览器的两种渲染模式.html#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1277,21 +1296,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">分類</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">標籤</span>
               
           </div>
