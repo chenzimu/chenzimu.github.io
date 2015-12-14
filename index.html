@@ -252,19 +252,12 @@
 
       
         
-          <span itemprop="articleBody">
-            
-              <p>之前用过jquery中的data()和attr()方法，只知道它们之间一点区别在于如果属性中没有’data-‘前缀的话data是无法读取该属性的，对于它们两个的主要区别没有研究，正好看到这个地方在此记录一下：<br>jquery的文档中是这样描述这两个属性的：</p>
-<blockquote>
-<blockquote>
-<p>.data()<br>存储与目标元素相关的任意的数据，并返回所设定的数据的值。</p>
-<p>.attr()<br>获得匹配元素中第一个元素的属性值，或者设置一个或多个匹配元素的属性值。</p>
-</blockquote>
-</blockquote>
-<h2 id="两者究竟有什么不同">两者究竟有什么不同</h2><p>说实话，文档中的句子读完还是不知道什么意思，实际上如果我们仔细观察会发现attr()会影响DOM，当我们为某个元素设置属性或修改属性时，查看源码会发现HTML元素上所对应的属性值要么更改了要么又新添加了一个属性。而data()方法取得的值是从jquery内部的cache中,这个cache是jquery中新建的一个空对象jQuery.cache，它就是用来存储用data设置的属性的，对于每个用data操作过的DOM元素，这个对象中会有一个唯一的ID作为key值与其相对应，如果修改值的话修改的也是cache中的值，对于DOM元素没有任何的影响。同时,attr()方法获取的属性值的类型全部为字符串，而data()则是根据引号中的数据格式确定值的类型。还有一个不同在于data()的属性名需要以’data-‘为前缀才可以获取和修改。所以两者之间有任意一方修改了属性值的话对另一方是没有影响的。</p>
-
-            
-          </span>
+          <p>之前用过jquery中的data()和attr()方法，只知道它们之间一点区别在于如果属性中没有’data-‘前缀的话data是无法读取该属性的，对于它们两个的主要区别没有研究，正好看到这个地方在此记录一下：<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/jquery中data-和attr-的区别.html#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
