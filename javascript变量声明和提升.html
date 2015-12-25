@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="变量声明,变量提升," />
+  <meta name="keywords" content="变量声明,变量声明提升," />
 
 
 
@@ -51,7 +51,7 @@
 <meta property="og:url" content="http://chenzimu.com/javascript变量声明和提升.html">
 <meta property="og:site_name" content="臣子木">
 <meta property="og:description" content="要明确变量声明、初始化、变量声明提升的概念及区别。">
-<meta property="og:updated_time" content="2015-12-25T04:34:48.185Z">
+<meta property="og:updated_time" content="2015-12-25T04:35:06.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript变量声明和提升">
 <meta name="twitter:description" content="要明确变量声明、初始化、变量声明提升的概念及区别。">
@@ -248,7 +248,7 @@
 <blockquote>
 <p>这里有一个需要注意的地方，只有变量的声明被提升了，如果变量同时初始化了值的话，变量的初始化是不会被提升的。</p>
 </blockquote>
-<h3 id="变量声明、初始化及变量提升">变量声明、初始化及变量提升</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chenzimu;<span class="comment">//变量声明</span></span><br><span class="line"><span class="keyword">var</span> chenzimu = <span class="number">1024</span>;<span class="comment">//变量初始化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//变量声明提升，但初始化不提升，则上边函数等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">    <span class="keyword">var</span> b;</span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    b = <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="变量声明、初始化及变量声明提升">变量声明、初始化及变量声明提升</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> chenzimu;<span class="comment">//变量声明</span></span><br><span class="line"><span class="keyword">var</span> chenzimu = <span class="number">1024</span>;<span class="comment">//变量初始化</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//变量声明提升，但初始化不提升，则上边函数等同于</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a;</span><br><span class="line">    <span class="keyword">var</span> b;</span><br><span class="line">    a = <span class="number">1</span>;</span><br><span class="line">    b = <span class="number">2</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>所以回到前边的例子:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">()</span> &#123;</span><br><span class="line">    alert<span class="list">(<span class="keyword">chenzimu</span>)</span><span class="comment">;</span></span><br><span class="line">    var chenzimu = <span class="number">2015</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="list">()</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>上边代码中，对于var chenzimu = 2015;由于变量提升会变成:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">()</span> &#123;</span><br><span class="line">    var chenzimu<span class="comment">;</span></span><br><span class="line">    alert<span class="list">(<span class="keyword">chenzimu</span>)</span><span class="comment">;</span></span><br><span class="line">    chenzimu = <span class="number">2015</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="list">()</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><br>所以，浏览器弹出的值是undefined</p>
@@ -263,7 +263,7 @@
           
             <a href="/tags/变量声明/" rel="tag">#变量声明</a>
           
-            <a href="/tags/变量提升/" rel="tag">#变量提升</a>
+            <a href="/tags/变量声明提升/" rel="tag">#变量声明提升</a>
           
         </div>
       
@@ -359,7 +359,7 @@
 
           <div class="site-state-item site-state-tags">
             
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">標籤</span>
               
           </div>
@@ -387,7 +387,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的声明被提升了"><span class="nav-number">1.</span> <span class="nav-text">变量的声明被提升了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明、初始化及变量提升"><span class="nav-number">1.1.</span> <span class="nav-text">变量声明、初始化及变量提升</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的声明被提升了"><span class="nav-number">1.</span> <span class="nav-text">变量的声明被提升了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明、初始化及变量声明提升"><span class="nav-number">1.1.</span> <span class="nav-text">变量声明、初始化及变量声明提升</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
