@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="css,em,rem," />
+  <meta name="keywords" content="变量声明,变量提升," />
 
 
 
@@ -45,16 +45,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="em和rem两个单位都是根据页面中的字体大小来决定其他元素的属性大小，如padding、margin等，这两个单位给我们带来了很多的灵活性，但是它们也有一些不同的地方。">
+<meta name="description" content="test">
 <meta property="og:type" content="article">
-<meta property="og:title" content="em和rem简介">
-<meta property="og:url" content="http://chenzimu.com/em和rem简介.html">
+<meta property="og:title" content="javascript变量声明和提升">
+<meta property="og:url" content="http://chenzimu.com/javascript变量声明和提升.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="em和rem两个单位都是根据页面中的字体大小来决定其他元素的属性大小，如padding、margin等，这两个单位给我们带来了很多的灵活性，但是它们也有一些不同的地方。">
-<meta property="og:updated_time" content="2015-11-12T07:42:31.746Z">
+<meta property="og:description" content="test">
+<meta property="og:updated_time" content="2015-12-25T03:28:34.495Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="em和rem简介">
-<meta name="twitter:description" content="em和rem两个单位都是根据页面中的字体大小来决定其他元素的属性大小，如padding、margin等，这两个单位给我们带来了很多的灵活性，但是它们也有一些不同的地方。">
+<meta name="twitter:title" content="javascript变量声明和提升">
+<meta name="twitter:description" content="test">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +66,7 @@
 
 
 
-  <title> em和rem简介 | 臣子木 </title>
+  <title> javascript变量声明和提升 | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -181,7 +181,7 @@
             
             
               
-                em和rem简介
+                javascript变量声明和提升
               
             
           </h1>
@@ -190,8 +190,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-11-12T12:38:44+08:00" content="2015-11-12">
-              2015-11-12
+            <time itemprop="dateCreated" datetime="2015-12-25T11:27:35+08:00" content="2015-12-25">
+              2015-12-25
             </time>
           </span>
 
@@ -200,20 +200,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/css/" itemprop="url" rel="index">
-                    <span itemprop="name">css</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -228,8 +216,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/em和rem简介.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="em和rem简介.html" itemprop="commentsCount"></span>
+                <a href="/javascript变量声明和提升.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="javascript变量声明和提升.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -248,25 +236,7 @@
       
 
       
-        <span itemprop="articleBody"><p>em和rem两个单位都是根据页面中的字体大小来决定其他元素的属性大小，如padding、margin等，这两个单位给我们带来了很多的灵活性，但是它们也有一些不同的地方。<br><a id="more"></a></p>
-<h2 id="rem">rem</h2><p>对于rem来说，元素各个属性的大小是根据根结点（通常指html元素）的字体大小来决定的。假如html字体的大小为16px，而一个div的字体大小设置为18px，该div的padding设置为10em,则浏览器就会将其padding解析为160px。</p>
-<h2 id="em">em</h2><p>对于em来说，元素各个属性的大小是根据当前元素的字体大小来决定的。假如html字体大小为16px，一个div的字体大小设置为18px，该div的padding设置为10em，则浏览器会将其padding解析为180px。</p>
-<h2 id="继承对于em的影响">继承对于em的影响</h2><p>对于一个元素如果没有设置font-size的话，它会继承父级元素的字体大小，所以这给em的运用带来了一些容易出错的地方。</p>
-<h3 id="例子">例子</h3><p>假如有一个页面html的默认字体大小为16px,在页面中添加一个div，给该div添加padding值为2em，由于该div没有设置font-size，那它会继承html元素的字体大小16px，相应的它的padding会被解析为32px—-2*16</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="qOLWEz" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/qOLWEz/" target="_blank" rel="external">qOLWEz</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-如果在上个例子的基础上在div外层添加一层div并将其font-size设置为2em，所以外层div的字体大小就被解析为32px，而内层div不再继承html字体的大小，而是继承外层div字体大小32px，此时内层div的padding值变为32 * 2 = 64px。
-<p data-height="268" data-theme-id="0" data-slug-hash="KdbPpQ" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/KdbPpQ/" target="_blank" rel="external">KdbPpQ</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-再进一步，给内层div设置font-size为1.5em,此时内层div由于设置了font-size，则该div自身的字体大小会变为1.5 * 32 = 48px，而padding则会根据该div自身的font-size被解析为48 * 2 = 96px。
-<p data-height="268" data-theme-id="0" data-slug-hash="MaZgaB" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/MaZgaB/" target="_blank" rel="external">MaZgaB</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<blockquote>
-<blockquote>
-<p>从上边的例子可以看出只要某个元素自身设置了font-size的值就不会再继承父级的font-size大小了，其自身各个属性的值如果单位为em的话，它们的参考值均为font-size的大小。</p>
-</blockquote>
-</blockquote>
+        <span itemprop="articleBody"><p>test</p>
 </span>
       
     </div>
@@ -275,11 +245,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css/" rel="tag">#css</a>
+            <a href="/tags/变量声明/" rel="tag">#变量声明</a>
           
-            <a href="/tags/em/" rel="tag">#em</a>
-          
-            <a href="/tags/rem/" rel="tag">#rem</a>
+            <a href="/tags/变量提升/" rel="tag">#变量提升</a>
           
         </div>
       
@@ -288,16 +256,12 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/jquery中data-和attr-的区别.html" rel="prev">
-                <i class="fa fa-chevron-left"></i> jquery中data()和attr()的区别
-              </a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/CSS3属性之box-sizing.html" rel="next">
-                CSS3属性之box-sizing <i class="fa fa-chevron-right"></i>
+              <a href="/jquery中data-和attr-的区别.html" rel="next">
+                jquery中data()和attr()的区别 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -323,8 +287,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="em和rem简介.html"
-                   data-title="em和rem简介" data-url="http://chenzimu.com/em和rem简介.html">
+              <div class="ds-thread" data-thread-key="javascript变量声明和提升.html"
+                   data-title="javascript变量声明和提升" data-url="http://chenzimu.com/javascript变量声明和提升.html">
               </div>
             
           </div>
@@ -407,7 +371,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rem"><span class="nav-number">1.</span> <span class="nav-text">rem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#em"><span class="nav-number">2.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承对于em的影响"><span class="nav-number">3.</span> <span class="nav-text">继承对于em的影响</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例子"><span class="nav-number">3.1.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
