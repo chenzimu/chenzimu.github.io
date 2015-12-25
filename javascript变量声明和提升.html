@@ -45,28 +45,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。1234567var chenzimu1 = 1024;alert(chenzimu1);var chenzimu2 = 1024;(function() &amp;#123;    alert(chenzimu2);&amp;#125;)();
-
-两段代码都如我们所想，都弹出1024
-
-下边这个例子就有点诡异了，对于不熟悉js的人来说可能结果与自己料想">
+<meta name="description" content="要明确变量声明、初始化、变量声明提升的概念及区别。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript变量声明和提升">
 <meta property="og:url" content="http://chenzimu.com/javascript变量声明和提升.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。1234567var chenzimu1 = 1024;alert(chenzimu1);var chenzimu2 = 1024;(function() &amp;#123;    alert(chenzimu2);&amp;#125;)();
-
-两段代码都如我们所想，都弹出1024
-
-下边这个例子就有点诡异了，对于不熟悉js的人来说可能结果与自己料想">
-<meta property="og:updated_time" content="2015-12-25T04:33:09.556Z">
+<meta property="og:description" content="要明确变量声明、初始化、变量声明提升的概念及区别。">
+<meta property="og:updated_time" content="2015-12-25T04:34:48.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript变量声明和提升">
-<meta name="twitter:description" content="先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。1234567var chenzimu1 = 1024;alert(chenzimu1);var chenzimu2 = 1024;(function() &amp;#123;    alert(chenzimu2);&amp;#125;)();
-
-两段代码都如我们所想，都弹出1024
-
-下边这个例子就有点诡异了，对于不熟悉js的人来说可能结果与自己料想">
+<meta name="twitter:description" content="要明确变量声明、初始化、变量声明提升的概念及区别。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -248,7 +236,7 @@
       
 
       
-        <span itemprop="articleBody"><p>先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var chenzimu1 = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line">alert<span class="list">(<span class="keyword">chenzimu1</span>)</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">var chenzimu2 = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">()</span> &#123;</span><br><span class="line">    alert<span class="list">(<span class="keyword">chenzimu2</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="list">()</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
+        <span itemprop="articleBody"><p>要明确变量声明、初始化、变量声明提升的概念及区别。<br><a id="more"></a><br>先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var chenzimu1 = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line">alert<span class="list">(<span class="keyword">chenzimu1</span>)</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">var chenzimu2 = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">()</span> &#123;</span><br><span class="line">    alert<span class="list">(<span class="keyword">chenzimu2</span>)</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="list">()</span><span class="comment">;</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>两段代码都如我们所想，都弹出1024</p>
 </blockquote>
