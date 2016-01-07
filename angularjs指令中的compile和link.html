@@ -36,7 +36,7 @@
 
 
 
-  <meta name="keywords" content="javascript,touch," />
+  <meta name="keywords" content="angularjs,javascript," />
 
 
 
@@ -45,16 +45,16 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。">
+<meta name="description" content="指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在每一个阶段监听touch事件">
-<meta property="og:url" content="http://chenzimu.com/在每一个阶段监听touch事件.html">
+<meta property="og:title" content="angularjs指令中的compile和link">
+<meta property="og:url" content="http://chenzimu.com/angularjs指令中的compile和link.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。">
-<meta property="og:updated_time" content="2015-10-28T02:46:18.026Z">
+<meta property="og:description" content="指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link">
+<meta property="og:updated_time" content="2016-01-07T08:31:51.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在每一个阶段监听touch事件">
-<meta name="twitter:description" content="之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。">
+<meta name="twitter:title" content="angularjs指令中的compile和link">
+<meta name="twitter:description" content="指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +66,7 @@
 
 
 
-  <title> 在每一个阶段监听touch事件 | 臣子木 </title>
+  <title> angularjs指令中的compile和link | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -181,7 +181,7 @@
             
             
               
-                在每一个阶段监听touch事件
+                angularjs指令中的compile和link
               
             
           </h1>
@@ -190,8 +190,8 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-10-28T09:47:53+08:00" content="2015-10-28">
-              2015-10-28
+            <time itemprop="dateCreated" datetime="2016-01-07T16:18:23+08:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -200,8 +200,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/" itemprop="url" rel="index">
-                    <span itemprop="name">web前端</span>
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -212,8 +212,20 @@
 
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/web前端/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/categories/javascript/angularjs/" itemprop="url" rel="index">
+                    <span itemprop="name">angularjs</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/angularjs/web前端/" itemprop="url" rel="index">
+                    <span itemprop="name">web前端</span>
                   </a>
                 </span>
 
@@ -228,8 +240,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/在每一个阶段监听touch事件.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="在每一个阶段监听touch事件.html" itemprop="commentsCount"></span>
+                <a href="/angularjs指令中的compile和link.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="angularjs指令中的compile和link.html" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -248,18 +260,7 @@
       
 
       
-        <span itemprop="articleBody"><p>之前的swipeDetect函数有一个缺点，即该函数只能在整个手指滑动过程结束之后才能判断出滑动的方向，之后再调用回调函数。在此将其改进一下，当手指在start、move以及end使都可以触发回调函数，这样利用起来将更加灵活。</p>
-<a id="more"></a>
-<h2 id="改进的ontouch函数">改进的ontouch函数</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="eprvZY" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/eprvZY/" target="_blank" rel="external">eprvZY</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<blockquote>
-<p>在touch事件的每一个阶段–’touchstart’、’touchmove’和’touchend’，均获取“触摸点”的方向以及移动距离，在’touchend’阶段遵循与swipeDetect函数相同的规则来判断手指的触摸方向。</p>
-</blockquote>
-<h2 id="图片滑动例子">图片滑动例子</h2><p></p><p data-height="268" data-theme-id="0" data-slug-hash="KdRWXO" data-default-tab="html" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/KdRWXO/" target="_blank" rel="external">KdRWXO</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>参考自:<a href="http://www.javascriptkit.com/javatutors/touchevents.shtml" target="_blank" rel="external">http://www.javascriptkit.com/javatutors/touchevents.shtml</a></p>
+        <span itemprop="articleBody"><p>指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link<br><a id="more"></a><br>angularjs中内置了一个HTML编译器，也就是$compile服务，它的作用就是遍历DOM，并将遍历过程中匹配到的指令收集起来并根据优先级对这些指令进行排序，之后对应每一个指令的compile函数开始执行，在compile函数执行过程中并没有对指令对应的html元素添加事件监听等，所以可以任意的对html元素进行修改。compile的返回值有两种写法，第一种是:compile函数的返回值是link函数(pre and post)。pre和post函数的执行顺序是不一样的，pre函数是从根标签逐层向下级标签，以及从高优先级到低优先级，post则相反，之后Compiler服务便通过link函数将template与scope结合在一起（就是所谓的view和scope之间的绑定）这样在link函数中便可以对元素进行事件绑定等操作了。<br>            //controller在link之前执行，然后controller作为依赖注入到link函数中</p>
 </span>
       
     </div>
@@ -268,9 +269,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag">#javascript</a>
+            <a href="/tags/angularjs/" rel="tag">#angularjs</a>
           
-            <a href="/tags/touch/" rel="tag">#touch</a>
+            <a href="/tags/javascript/" rel="tag">#javascript</a>
           
         </div>
       
@@ -279,16 +280,12 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/CSS3属性之box-sizing.html" rel="prev">
-                <i class="fa fa-chevron-left"></i> CSS3属性之box-sizing
-              </a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/HTML5-canvas-颜色拾取器.html" rel="next">
-                HTML5 canvas 颜色拾取器 <i class="fa fa-chevron-right"></i>
+              <a href="/javascript变量声明和提升.html" rel="next">
+                javascript变量声明和提升 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -314,8 +311,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="在每一个阶段监听touch事件.html"
-                   data-title="在每一个阶段监听touch事件" data-url="http://chenzimu.com/在每一个阶段监听touch事件.html">
+              <div class="ds-thread" data-thread-key="angularjs指令中的compile和link.html"
+                   data-title="angularjs指令中的compile和link" data-url="http://chenzimu.com/angularjs指令中的compile和link.html">
               </div>
             
           </div>
@@ -398,7 +395,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#改进的ontouch函数"><span class="nav-number">1.</span> <span class="nav-text">改进的ontouch函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片滑动例子"><span class="nav-number">2.</span> <span class="nav-text">图片滑动例子</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
