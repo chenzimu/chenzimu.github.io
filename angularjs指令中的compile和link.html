@@ -45,16 +45,18 @@
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link">
+<meta name="description" content="指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularjs指令中的compile和link">
+<meta property="og:title" content="angularjs指令中的compile函数和link函数">
 <meta property="og:url" content="http://chenzimu.com/angularjs指令中的compile和link.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link">
-<meta property="og:updated_time" content="2016-01-07T08:31:51.927Z">
+<meta property="og:description" content="指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。">
+<meta property="og:image" content="http://7xnniz.com1.z0.glb.clouddn.com/link-function.png">
+<meta property="og:image" content="http://7xnniz.com1.z0.glb.clouddn.com/pre-post.png">
+<meta property="og:updated_time" content="2016-01-08T05:48:33.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularjs指令中的compile和link">
-<meta name="twitter:description" content="指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link">
+<meta name="twitter:title" content="angularjs指令中的compile函数和link函数">
+<meta name="twitter:description" content="指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -66,7 +68,7 @@
 
 
 
-  <title> angularjs指令中的compile和link | 臣子木 </title>
+  <title> angularjs指令中的compile函数和link函数 | 臣子木 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -181,7 +183,7 @@
             
             
               
-                angularjs指令中的compile和link
+                angularjs指令中的compile函数和link函数
               
             
           </h1>
@@ -260,7 +262,19 @@
       
 
       
-        <span itemprop="articleBody"><p>指令是angularjs中很强大的一个东西，在angularjs中有一个$compile服务，它可以根据指令将我们需要的一些数据绑定、事件绑定等添加到网页的DOM元素上。在这里不详细介绍指令到底怎么运用，只是记录一下指令中两个很重要的概念compile和link<br><a id="more"></a><br>angularjs中内置了一个HTML编译器，也就是$compile服务，它的作用就是遍历DOM，并将遍历过程中匹配到的指令收集起来并根据优先级对这些指令进行排序，之后对应每一个指令的compile函数开始执行，在compile函数执行过程中并没有对指令对应的html元素添加事件监听等，所以可以任意的对html元素进行修改。compile的返回值有两种写法，第一种是:compile函数的返回值是link函数(pre and post)。pre和post函数的执行顺序是不一样的，pre函数是从根标签逐层向下级标签，以及从高优先级到低优先级，post则相反，之后Compiler服务便通过link函数将template与scope结合在一起（就是所谓的view和scope之间的绑定）这样在link函数中便可以对元素进行事件绑定等操作了。<br>            //controller在link之前执行，然后controller作为依赖注入到link函数中</p>
+        <span itemprop="articleBody"><p>指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。<br><a id="more"></a><br>我们可以将指令看做是一些我们自定义的新的html标签，但是这些标签对于浏览器来说是陌生的，浏览器无法解析这些标签，所以angularjs中便内置了一个html的解析器，也就是一个$compile服务，这个服务可以对我们自定义的指令解析成浏览器可以解析的标签并进行渲染。与这一过程相关的就是在指令对象中所定义的compile函数的link函数。</p>
+<h2 id="compile">compile</h2><p>当angularjs监测到DOM加载完毕之后，$compile就开始遍历DOM寻找匹配的指令，之后angularjs会将指令对应的DOM元素作为一个参数传入compile函数，【传入compile函数的参数有两个，一个是模板元素，另一个是指令的属性】，这里所指的DOM元素指代的就是template或templateUrl对应的内容。所以模板中的html什么样，传入compile函数的元素就什么样，angularjs并没有对html进行任何的修改，所以在这个阶段是最适合对html元素进行修改的。因为此时并没有在元素上添加事件监听等。如果有指令嵌套的话angularjs就会以递归的方式由根元素到内部元素逐级执行compile函数。如下所示：</p>
+<p></p><p data-height="268" data-theme-id="0" data-slug-hash="xZdOgV" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/xZdOgV/" target="_blank" rel="external">xZdOgV</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
+<h2 id="post-link">post-link</h2><p>如果在创建指令的时候，返回的指令对象中只有影link函数，这个link函数就默认为post-link函数。当指令对应的所有compile函数都执行完毕之后，angularjs就会以相反的方向遍历DOM并执行post-link函数，这样做的好处是当一个指令的根元素执行完post-link函数之后，可以100%的保证这个元素的子元素都成功执行了post-link函数，所以在post-link函数中操作DOM元素是被视为最安全的方式。这一阶段传如link函数的元素参数与compile函数不同的地方在于，link函数的元素参数是compile阶段元素的一个实例，这个实例在compile函数内赋予了一个scope属性，这个scope属性的值由指令中的scope所决定。<br>查看如下代码：</p>
+<p></p><p data-height="268" data-theme-id="0" data-slug-hash="yebaPV" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/yebaPV/" target="_blank" rel="external">yebaPV</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br><img src="http://7xnniz.com1.z0.glb.clouddn.com/link-function.png" alt=""></p>
+<h2 id="pre-link">pre-link</h2><p>pre-link函数在post-link函数之前执行，它与post-link函数的不同之处在于，post-link函数的执行顺序与pre-link函数的执行顺序相反，pre-link函数是从根元素到子元素的顺序执行。</p>
+<p></p><p data-height="268" data-theme-id="0" data-slug-hash="yebaPV" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/yebaPV/" target="_blank" rel="external">yebaPV</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br><img src="http://7xnniz.com1.z0.glb.clouddn.com/pre-post.png" alt=""></p>
+<blockquote>
+<p>两个link函数都是传入三个参数，分别是scope,iEle,iAttrs。</p>
+</blockquote>
 </span>
       
     </div>
@@ -312,7 +326,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="angularjs指令中的compile和link.html"
-                   data-title="angularjs指令中的compile和link" data-url="http://chenzimu.com/angularjs指令中的compile和link.html">
+                   data-title="angularjs指令中的compile函数和link函数" data-url="http://chenzimu.com/angularjs指令中的compile和link.html">
               </div>
             
           </div>
@@ -395,7 +409,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#compile"><span class="nav-number">1.</span> <span class="nav-text">compile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#post-link"><span class="nav-number">2.</span> <span class="nav-text">post-link</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pre-link"><span class="nav-number">3.</span> <span class="nav-text">pre-link</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
