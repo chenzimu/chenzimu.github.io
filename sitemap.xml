@@ -2,13 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://chenzimu.com/about/index.html</loc>
+    <loc>http://chenzimu.com/resume/index.html</loc>
     <lastmod>2016-01-27T06:51:11.842Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/css/style.css</loc>
+    <lastmod>2016-01-27T06:50:08.755Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/js/main.js</loc>
+    <lastmod>2016-01-27T06:49:11.573Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/js/jquery.js</loc>
+    <lastmod>2016-01-27T06:44:21.683Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/README.html</loc>
+    <lastmod>2016-01-27T06:20:23.177Z</lastmod>
   </url>
   
   <url>
     <loc>http://chenzimu.com/CSS3%E5%B1%9E%E6%80%A7%E4%B9%8Bbox-sizing.html</loc>
     <lastmod>2016-01-25T06:24:59.137Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/css/reset.css</loc>
+    <lastmod>2016-01-21T06:07:02.155Z</lastmod>
   </url>
   
   <url>
