@@ -29,13 +29,8 @@
                 var $navBtn = $(id + ' ul li');
                 $navBtn.on('click',function(e){
                     var oLi = $(this),
-                        target = oLi.find('a'),
-                        index = oLi.index();
-                    $(document).off('scroll');
-                    oLi.siblings().removeClass('active');
-                    oLi.addClass('active');
+                        target = oLi.find('a');
                     self.pageScroll(target);
-                    self.initClass(oLi.index());
                     e.preventDefault();
                 });
             };

@@ -1,392 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    
-    
-    
-    
-    
+  
+  <url>
+    <loc>http://chenzimu.com/resume/css/style.css</loc>
+    <lastmod>2016-01-29T03:19:44.978Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/js/main.js</loc>
+    <lastmod>2016-01-29T03:10:39.478Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/index.html</loc>
+    <lastmod>2016-01-29T02:22:40.273Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/js/jquery.js</loc>
+    <lastmod>2016-01-27T06:44:21.683Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/README.html</loc>
+    <lastmod>2016-01-27T06:20:23.177Z</lastmod>
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/CSS3%E5%B1%9E%E6%80%A7%E4%B9%8Bbox-sizing.html</loc>
     <lastmod>2016-01-25T06:24:59.137Z</lastmod>
-    <data>
-        <display>
-        <title>CSS3属性之box-sizing</title>
-        <pubTime>2015-10-30T05:05:07.000Z</pubTime>
-        
-        <tag>box-sizing </tag>
-         
-        <tag>css3 </tag>
-         
-         
-           
-             
-              <breadCrumb title="css3" url="http://chenzimu.com/categories/css3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/resume/css/reset.css</loc>
+    <lastmod>2016-01-21T06:07:02.155Z</lastmod>
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/angularjs%E6%8C%87%E4%BB%A4%E4%B8%AD%E7%9A%84compile%E5%92%8Clink.html</loc>
     <lastmod>2016-01-08T06:59:52.878Z</lastmod>
-    <data>
-        <display>
-        <title>angularjs指令中的compile函数和link函数</title>
-        <pubTime>2016-01-07T08:18:23.000Z</pubTime>
-        
-        <tag>angularjs </tag>
-         
-        <tag>javascript </tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
-          
-             
-              <breadCrumb title="angularjs" url="http://chenzimu.com/categories/javascript/angularjs/"/>
-          
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/javascript/angularjs/web%E5%89%8D%E7%AB%AF/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/javascript%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E6%8F%90%E5%8D%87.html</loc>
     <lastmod>2015-12-25T04:35:06.987Z</lastmod>
-    <data>
-        <display>
-        <title>javascript变量声明和提升</title>
-        <pubTime>2015-12-25T03:27:35.000Z</pubTime>
-        
-        <tag>变量声明 </tag>
-         
-        <tag>变量声明提升 </tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/HTML5-canvas-%E9%A2%9C%E8%89%B2%E6%8B%BE%E5%8F%96%E5%99%A8.html</loc>
     <lastmod>2015-12-25T03:38:58.517Z</lastmod>
-    <data>
-        <display>
-        <title>HTML5 canvas 颜色拾取器</title>
-        <pubTime>2015-10-27T08:05:04.000Z</pubTime>
-        
-        <tag>canvas </tag>
-         
-        <tag>html5 </tag>
-         
-         
-           
-             
-              <breadCrumb title="HTML5" url="http://chenzimu.com/categories/HTML5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/jquery%E4%B8%ADdata-%E5%92%8Cattr-%E7%9A%84%E5%8C%BA%E5%88%AB.html</loc>
     <lastmod>2015-12-14T04:28:30.312Z</lastmod>
-    <data>
-        <display>
-        <title>jquery中data()和attr()的区别</title>
-        <pubTime>2015-11-24T08:16:18.000Z</pubTime>
-        
-        <tag>javascript </tag>
-         
-        <tag>jquery </tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
-          
-             
-              <breadCrumb title="jquery" url="http://chenzimu.com/categories/javascript/jquery/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/em%E5%92%8Crem%E7%AE%80%E4%BB%8B.html</loc>
     <lastmod>2015-11-12T07:42:31.746Z</lastmod>
-    <data>
-        <display>
-        <title>em和rem简介</title>
-        <pubTime>2015-11-12T04:38:44.000Z</pubTime>
-        
-        <tag>css </tag>
-         
-        <tag>em </tag>
-         
-        <tag>rem </tag>
-         
-         
-           
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="css" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/css/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/javascript%E9%97%AD%E5%8C%85.html</loc>
     <lastmod>2015-11-05T01:30:21.416Z</lastmod>
-    <data>
-        <display>
-        <title>javascript闭包</title>
-        <pubTime>2014-12-30T02:42:45.000Z</pubTime>
-        
-        <tag>javascript </tag>
-         
-        <tag>闭包 </tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/flexbox%E5%B1%9E%E6%80%A7%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E3%80%90%E8%AF%91%E3%80%91.html</loc>
     <lastmod>2015-10-30T08:19:47.527Z</lastmod>
-    <data>
-        <display>
-        <title>flexbox属性详细介绍【译】</title>
-        <pubTime>2015-10-20T01:59:15.000Z</pubTime>
-        
-        <tag>css3 </tag>
-         
-        <tag>flexbox </tag>
-         
-         
-           
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="css3" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/css3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AC%94%E8%AE%B0.html</loc>
     <lastmod>2015-10-30T06:11:48.161Z</lastmod>
-    <data>
-        <display>
-        <title>javascript设计模式笔记</title>
-        <pubTime>2015-02-14T09:17:46.000Z</pubTime>
-        
-        <tag>javascript </tag>
-         
-        <tag>笔记 </tag>
-         
-        <tag>设计模式 </tag>
-         
-         
-           
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
-          
-             
-              <breadCrumb title="设计模式" url="http://chenzimu.com/categories/javascript/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/HTML5%E7%AC%94%E8%AE%B0.html</loc>
     <lastmod>2015-10-28T08:52:34.754Z</lastmod>
-    <data>
-        <display>
-        <title>HTML5笔记【未完成】</title>
-        <pubTime>2015-10-21T06:31:12.000Z</pubTime>
-        
-        <tag>HTML5 </tag>
-         
-        <tag>web前端 </tag>
-         
-         
-           
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="HTML5" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/HTML5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/%E5%9C%A8%E6%AF%8F%E4%B8%80%E4%B8%AA%E9%98%B6%E6%AE%B5%E7%9B%91%E5%90%ACtouch%E4%BA%8B%E4%BB%B6.html</loc>
     <lastmod>2015-10-28T02:46:18.026Z</lastmod>
-    <data>
-        <display>
-        <title>在每一个阶段监听touch事件</title>
-        <pubTime>2015-10-28T01:47:53.000Z</pubTime>
-        
-        <tag>javascript </tag>
-         
-        <tag>touch </tag>
-         
-         
-           
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/%E7%BA%AFcss%E5%BD%A2%E7%8A%B6.html</loc>
     <lastmod>2015-10-28T02:43:41.856Z</lastmod>
-    <data>
-        <display>
-        <title>纯css形状</title>
-        <pubTime>2015-10-27T06:13:30.000Z</pubTime>
-        
-        <tag>css </tag>
-         
-        <tag>css3 </tag>
-         
-         
-           
-             
-              <breadCrumb title="css" url="http://chenzimu.com/categories/css/"/>
-          
-             
-              <breadCrumb title="css3" url="http://chenzimu.com/categories/css/css3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/%E7%94%A8javascript%E7%9A%84touch%E4%BA%8B%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8.html</loc>
     <lastmod>2015-10-28T02:43:31.626Z</lastmod>
-    <data>
-        <display>
-        <title>用javascript的touch事件实现滑动</title>
-        <pubTime>2015-10-27T01:14:30.000Z</pubTime>
-        
-        <tag>javascript </tag>
-         
-        <tag>touch </tag>
-         
-         
-           
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/javascript%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E7%AE%80%E4%BB%8B.html</loc>
     <lastmod>2015-10-28T02:43:17.343Z</lastmod>
-    <data>
-        <display>
-        <title>javascript触摸事件简介</title>
-        <pubTime>2015-10-26T02:59:48.000Z</pubTime>
-        
-        <tag>javascript </tag>
-         
-        <tag>touch </tag>
-         
-         
-           
-             
-              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
-          
-             
-              <breadCrumb title="javascript" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/360%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F.html</loc>
     <lastmod>2015-10-26T02:02:47.178Z</lastmod>
-    <data>
-        <display>
-        <title>360浏览器的两种渲染模式</title>
-        <pubTime>2015-10-19T05:32:27.000Z</pubTime>
-        
-        <tag>360 </tag>
-         
-         
-           
-             
-              <breadCrumb title="记录" url="http://chenzimu.com/categories/%E8%AE%B0%E5%BD%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://chenzimu.com/test.html</loc>
     <lastmod>2015-10-21T01:18:39.335Z</lastmod>
-    <data>
-        <display>
-        <title>测试文章</title>
-        <pubTime>2015-10-19T02:06:57.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/404.html</loc>
+    <lastmod>2015-10-21T01:18:01.046Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://chenzimu.com/about/index.html</loc>
+    <lastmod>2015-10-20T05:20:09.241Z</lastmod>
+  </url>
+  
 </urlset>
