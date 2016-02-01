@@ -1404,7 +1404,7 @@ svg path{
     }
 }
 /*媒体查询*/
-@media (min-width: 780px) and (max-width: 980px) {
+@media screen and (min-width: 780px) and (max-width: 980px) {
     #home h1 {
         font-size: 65px;
     }
@@ -1416,9 +1416,12 @@ svg path{
         font-size: 70px;
     }
 }
-@media (min-width: 420px) and (max-width: 780px) {
+@media screen and (min-width: 420px) and (max-width: 780px) {
+    body{
+        overflow: hidden;
+    }
     #home h1 {
-        font-size: 50px;
+        font-size: 40px;
     }
     #social .social_icons a{
         width: 100px;
@@ -1446,9 +1449,12 @@ svg path{
         width: 80%;
     }
 }
-@media (max-width: 420px) {
+@media screen and (max-width: 420px) {
+    html{
+        overflow: hidden;
+    }
     #home h1 {
-        font-size: 25px;
+        font-size: 20px;
     }
     #home{
         background: url('../images/bg_mobile.png');
