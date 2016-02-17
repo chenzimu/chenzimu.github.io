@@ -17,13 +17,13 @@
                 <li><a href="#about" title="">ABOUT</a></li>
                 <li><a href="#skill" title="">SKILL</a></li>
                 <li><a href="#social" title="">SOCIAL</a></li>
-                <li><a href="#location" title="">LOCATION</a></li>
+                <!-- <li><a href="#location" title="">LOCATION</a></li> -->
             </ul>
         </nav>
     </header>
     <section id="home">
         <div class="home_inner">
-            <h1>hello world</h1>
+            <h1>Hello World!</h1>
         </div>
         <a href="#about" class="scroll_down"></a>
     </section>
@@ -40,33 +40,29 @@
            </div>
            <div class="profile_content">
                <p>
-                   测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
-                   测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
-                   测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
-                   测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
-                   测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测
+                   
                </p>
            </div>
         </div>
     </section>
     <section id="skill">
         <div class="skill_inner">
-            <div class="skill_bar" data-percent="65%">
+            <div class="skill_bar" data-percent="75%">
                 <div class="skill_bar_title">
                     <span>javascript</span>
                 </div>
                 <div class="skill_bar_bar"></div>
                 <div class="skill_bar_percent">
-                    65%
+                    75%
                 </div>
             </div>
-            <div class="skill_bar" data-percent="75%">
+            <div class="skill_bar" data-percent="80%">
                 <div class="skill_bar_title">
                     <span>css</span>
                 </div>
                 <div class="skill_bar_bar"></div>
                 <div class="skill_bar_percent">
-                    75%
+                    80%
                 </div>
             </div>
             <div class="skill_bar" data-percent="75%">
@@ -78,13 +74,40 @@
                     75%
                 </div>
             </div>
-            <div class="skill_bar" data-percent="50%">
+            <div class="skill_bar" data-percent="65%">
                 <div class="skill_bar_title">
                     <span>html5</span>
                 </div>
                 <div class="skill_bar_bar"></div>
                 <div class="skill_bar_percent">
-                    50%
+                    65%
+                </div>
+            </div>
+            <div class="skill_bar" data-percent="70%">
+                <div class="skill_bar_title">
+                    <span>angularjs</span>
+                </div>
+                <div class="skill_bar_bar"></div>
+                <div class="skill_bar_percent">
+                    70%
+                </div>
+            </div>
+            <div class="skill_bar" data-percent="60%">
+                <div class="skill_bar_title">
+                    <span>nodejs</span>
+                </div>
+                <div class="skill_bar_bar"></div>
+                <div class="skill_bar_percent">
+                    60%
+                </div>
+            </div>
+            <div class="skill_bar" data-percent="65%">
+                <div class="skill_bar_title">
+                    <span>photoshop</span>
+                </div>
+                <div class="skill_bar_bar"></div>
+                <div class="skill_bar_percent">
+                    65%
                 </div>
             </div>
         </div>
@@ -149,14 +172,22 @@
                     $('.skill_bar').each(function(){
                         var _this = $(this),
                             percent = parseInt(_this.attr('data-percent')) / 100;
-                        if(percent <= 0.5) {
+                        if(percent > 0 && percent <= 0.25) {
                             _this
                                 .find('.skill_bar_bar')
-                                .css('background','rgb(252,47,115)');
+                                .css('background','rgb(255, 171, 44)');
+                        } else if(percent > 0.25 && percent <= 0.5) {
+                            _this
+                                .find('.skill_bar_bar')
+                                .css('background','rgb(46, 204, 113)');
+                        } else if(percent > 0.5 && percent <= 0.75) {
+                            _this
+                                .find('.skill_bar_bar')
+                                .css('background','rgb(150, 244, 0)');
                         } else {
                             _this
                                 .find('.skill_bar_bar')
-                                .css('background','rgb(70,34,255)');
+                                .css('background','rgb(255, 171, 44)');
                         }
                     });
             });
