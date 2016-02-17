@@ -3,20 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>angularjs指令中的compile函数和link函数 | 臣子木</title>
+  <title>正则表达式基础知识总结 | 臣子木</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。">
+  <meta name="description" content="对正则表达式一些基础知识的记录和总结。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="angularjs指令中的compile函数和link函数">
-<meta property="og:url" content="http://chenzimu.com/angularjs指令中的compile和link.html">
+<meta property="og:title" content="正则表达式基础知识总结">
+<meta property="og:url" content="http://chenzimu.com/正则表达式基础知识总结.html">
 <meta property="og:site_name" content="臣子木">
-<meta property="og:description" content="指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。">
-<meta property="og:image" content="http://7xnniz.com1.z0.glb.clouddn.com/link-function.png">
-<meta property="og:image" content="http://7xnniz.com1.z0.glb.clouddn.com/pre-post.png">
-<meta property="og:updated_time" content="2016-01-08T06:59:52.878Z">
+<meta property="og:description" content="对正则表达式一些基础知识的记录和总结。">
+<meta property="og:updated_time" content="2016-02-17T02:37:14.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="angularjs指令中的compile函数和link函数">
-<meta name="twitter:description" content="指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。">
+<meta name="twitter:title" content="正则表达式基础知识总结">
+<meta name="twitter:description" content="对正则表达式一些基础知识的记录和总结。">
   
     <link rel="alternative" href="/atom.xml" title="臣子木" type="application/atom+xml">
   
@@ -227,11 +225,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-angularjs指令中的compile和link" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-正则表达式基础知识总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/angularjs指令中的compile和link.html" class="article-date">
-      <time datetime="2016-01-07T08:18:23.000Z" itemprop="datePublished">2016-01-07</time>
+      <a href="/正则表达式基础知识总结.html" class="article-date">
+      <time datetime="2016-02-17T02:35:00.000Z" itemprop="datePublished">2016-02-17</time>
 </a>
     </div>
   
@@ -244,7 +242,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      angularjs指令中的compile函数和link函数
+      正则表达式基础知识总结
     </h1>
   
 
@@ -253,13 +251,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a><a class="article-category-link" href="/categories/javascript/angularjs/">angularjs</a><a class="article-category-link" href="/categories/javascript/angularjs/web前端/">web前端</a>
+    <a class="article-category-link" href="/categories/正则表达式/">正则表达式</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -269,20 +267,53 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>指令是angularjs中很强大的一个东西，我们在定义指令时一般是在执行的回调函数中返回一个指令对象，然后在对象中定义需要的变量和方法，其中有一个compile和一个link，了解这两个函数的不同对于熟悉angularjs指令的机制挺重要的。<br><a id="more"></a><br>我们可以将指令看做是一些我们自定义的新的html标签，但是这些标签对于浏览器来说是陌生的，浏览器无法解析这些标签，所以angularjs中便内置了一个html的解析器，也就是一个$compile服务，这个服务可以对我们自定义的指令解析成浏览器可以解析的标签并进行渲染。与这一过程相关的就是在指令对象中所定义的compile函数的link函数。</p>
-<h2 id="compile">compile</h2><p>当angularjs监测到DOM加载完毕之后，$compile就开始遍历DOM寻找匹配的指令，之后angularjs会将指令对应的DOM元素作为一个参数传入compile函数，【传入compile函数的参数有两个，一个是模板元素，另一个是指令的属性】，这里所指的DOM元素指代的就是template或templateUrl对应的内容。所以模板中的html什么样，传入compile函数的元素就什么样，angularjs并没有对html进行任何的修改，所以在这个阶段是最适合对html元素进行修改的。因为此时并没有在元素上添加事件监听等。如果有指令嵌套的话angularjs就会以递归的方式由根元素到内部元素逐级执行compile函数。如下所示：</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="xZdOgV" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/xZdOgV/" target="_blank" rel="external">xZdOgV</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script></p>
-<h2 id="post-link">post-link</h2><p>如果在创建指令的时候，返回的指令对象中只有影link函数，这个link函数就默认为post-link函数。当指令对应的所有compile函数都执行完毕之后，angularjs就会以相反的方向遍历DOM并执行post-link函数，这样做的好处是当一个指令的根元素执行完post-link函数之后，可以100%的保证这个元素的子元素都成功执行了post-link函数，所以在post-link函数中操作DOM元素是被视为最安全的方式。这一阶段传如link函数的元素参数与compile函数不同的地方在于，link函数的元素参数是compile阶段元素的一个实例，这个实例在compile函数内赋予了一个scope属性，这个scope属性的值由指令中的scope所决定。<br>查看如下代码：</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="yebaPV" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/yebaPV/" target="_blank" rel="external">yebaPV</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br><img src="http://7xnniz.com1.z0.glb.clouddn.com/link-function.png" alt=""></p>
-<h2 id="pre-link">pre-link</h2><p>pre-link函数在post-link函数之前执行，它与post-link函数的不同之处在于，post-link函数的执行顺序与pre-link函数的执行顺序相反，pre-link函数是从根元素到子元素的顺序执行。</p>
-<p></p><p data-height="268" data-theme-id="0" data-slug-hash="yebaPV" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/yebaPV/" target="_blank" rel="external">yebaPV</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br><img src="http://7xnniz.com1.z0.glb.clouddn.com/pre-post.png" alt=""></p>
+        <p>对正则表达式一些基础知识的记录和总结。<br><a id="more"></a></p>
+<h3 id="-">.</h3><p>.是一个通配符，可以代表字母、数字以及空格等任意符号，但是在使用时需要对其进行转义。</p>
+<h3 id="匹配特定的字符">匹配特定的字符</h3><p>[]可以用来匹配特定的字符，比如[abc]可以用来匹配单个的a、b、c或者空字符。</p>
+<h3 id="排除特定的字符">排除特定的字符</h3><p>[^]可以用来排除特定的字符，比如[^abc]可以用来匹配除abc之外的任意字符。</p>
+<h3 id="字符范围">字符范围</h3><p>在中括号中用加破折号也可匹配一定范围内的字符，如[0-6]可以匹配数字0,1,2,3，4,5,6。如果要匹配多个范围的字符的话，可以在同一个中括号中写多个范围的字符。正则表达式中的\w与[A-Za-z0-9_]的作用是相同的。</p>
+<h3 id="匹配多个重复字符如zzz">匹配多个重复字符如zzz</h3><p>最简单的匹配重复字符的方法是根据匹配的次数，如\d\d\d用于匹配三个数字。还有一种较简单的方法是用{},{}中的数字表示需要匹配的重复次数。如a{3}用于匹配aaa,a{1,3}用于匹配a,aa或aaa。</p>
+<h3 id="*和+">*和+</h3><p>*号代表匹配0次或多次<br>+号代表匹配至少一次或多次<br>如a+可以匹配一个a或多个a，[abc]+,用于匹配一个a、b、c或多个a、b、c。</p>
+<h3 id="?">?</h3><p>?代表可以匹配0次或1次，和.一样，如果要匹配?的话则需要对其进行转义/?。</p>
+<h3 id="空白符">空白符</h3><p>最常见的几种空白符有:</p>
+<ul>
+<li>空格 ( )</li>
+<li>tab (\t)</li>
+<li>换行符 (\n)</li>
+<li>回车 (\r)<blockquote>
+<p>\s用来匹配以上所有的任意空白符</p>
+<h3 id="字符的开始和结束">字符的开始和结束</h3></blockquote>
+</li>
+</ul>
+<p>假如要匹配success，但不想匹配到unsuccess中的success改怎么做呢？这时就需要将匹配success的表达式写的严谨一些，^success会匹配以success为开始字符的字符，如果只匹配success则需要写为^success\$。其中^表示将字符作为开始，$表示将字符作为结束。</p>
 <blockquote>
-<p>两个link函数都是传入三个参数，分别是scope,iEle,iAttrs。</p>
+<p>此处的^与[]中的^作用是不同的。</p>
+<h3 id="匹配组">匹配组</h3></blockquote>
+<p>()用于匹配一组字符，在()中的表达式匹配成功后会看做一个组。例如^(IMG\d+.png)$可以用来匹配所有包括扩展名的图片，如果只想匹配图片名不想匹配扩展名的话就需要写成 ^(IMG\d+).png\$。</p>
+<h3 id="嵌套组">嵌套组</h3><p>匹配组的匹配顺序是根据它们定义的顺序决定的，即由表达式中()的顺序所决定的。还是匹配组中匹配文件名的例子，如果不仅要匹配文件名还要匹配文件名中的序号的话就需要用到嵌套组，所以表达式需要写为^(IMG(\d+)).png$</p>
+<h3 id="条件判断">条件判断</h3><p>在匹配组中可以用|符来表示OR。</p>
+<h3 id="其它特殊字符">其它特殊字符</h3><p>之前已经接触可几个有特殊意义的字符即元字符如:</p>
+<ul>
+<li>\d 代表数字</li>
+<li>\w 代表字母数字和_</li>
+<li>\s 代表空白符</li>
+</ul>
+<blockquote>
+<p>在正则表达式中上述几个特殊字符的大写形式所代表的匹配字符与其是相反的。如\D代表的是非数字，等等。</p>
 </blockquote>
-<p>参考:<br>(<a href="http://jvandemo.com/the-nitty-gritty-of-compile-and-link-functions-inside-angularjs-directives/" target="_blank" rel="external">http://jvandemo.com/the-nitty-gritty-of-compile-and-link-functions-inside-angularjs-directives/</a>)<br>(<a href="https://docs.angularjs.org/guide/compiler" target="_blank" rel="external">https://docs.angularjs.org/guide/compiler</a>)</p>
+<p>还有一个特殊的元字符是\b。它是一个类似于^和$的匹配字符，用户匹配字符边界，<strong>它是0宽度的</strong>。</p>
+<blockquote>
+<p>0宽度的意思是它并不会匹配字符串之前的任何符号，而是匹配边界占用一个位置而已。</p>
+</blockquote>
+<p><strong>可以看做字符边界的位置</strong></p>
+<ul>
+<li>字符串第一个字符之前，第一个字符必须是一个word符</li>
+<li>字符串第一个字符之后，最后一个字符必须是word符</li>
+<li>字符串中两个字符之间，这两个字符必须满足一个是word符另一个不是word符<blockquote>
+<p>什么是word符？不同的编程语言有不同的定义，一般指的是\w所匹配的字符。</p>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -291,13 +322,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/angularjs指令中的compile和link.html">angularjs指令中的compile函数和link函数</a></p>
+        <p><span>本文标题:</span><a href="/正则表达式基础知识总结.html">正则表达式基础知识总结</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenzimu 的个人博客">chenzimu</a></p>
-        <p><span>发布时间:</span>2016年01月07日 - 16时18分</p>
-        <p><span>最后更新:</span>2016年01月08日 - 14时59分</p>
+        <p><span>发布时间:</span>2016年02月17日 - 10时35分</p>
+        <p><span>最后更新:</span>2016年02月17日 - 10时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/angularjs指令中的compile和link.html" title="angularjs指令中的compile函数和link函数">http://chenzimu.com/angularjs指令中的compile和link.html</a>
-            <span class="copy-path" data-clipboard-text="原文: http://chenzimu.com/angularjs指令中的compile和link.html　　作者: chenzimu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/正则表达式基础知识总结.html" title="正则表达式基础知识总结">http://chenzimu.com/正则表达式基础知识总结.html</a>
+            <span class="copy-path" data-clipboard-text="原文: http://chenzimu.com/正则表达式基础知识总结.html　　作者: chenzimu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -310,18 +341,9 @@
 
 <nav id="article-nav">
   
-    <a href="/正则表达式基础知识总结.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          正则表达式基础知识总结
-        
-      </div>
-    </a>
   
-  
-    <a href="/javascript变量声明和提升.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javascript变量声明和提升</div>
+    <a href="/angularjs指令中的compile和link.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularjs指令中的compile函数和link函数</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -332,7 +354,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#compile"><span class="toc-number">1.</span> <span class="toc-text">compile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#post-link"><span class="toc-number">2.</span> <span class="toc-text">post-link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pre-link"><span class="toc-number">3.</span> <span class="toc-text">pre-link</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#-"><span class="toc-number">1.</span> <span class="toc-text">.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配特定的字符"><span class="toc-number">2.</span> <span class="toc-text">匹配特定的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排除特定的字符"><span class="toc-number">3.</span> <span class="toc-text">排除特定的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符范围"><span class="toc-number">4.</span> <span class="toc-text">字符范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配多个重复字符如zzz"><span class="toc-number">5.</span> <span class="toc-text">匹配多个重复字符如zzz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#*和+"><span class="toc-number">6.</span> <span class="toc-text">*和+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#?"><span class="toc-number">7.</span> <span class="toc-text">?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空白符"><span class="toc-number">8.</span> <span class="toc-text">空白符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符的开始和结束"><span class="toc-number">9.</span> <span class="toc-text">字符的开始和结束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配组"><span class="toc-number">10.</span> <span class="toc-text">匹配组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套组"><span class="toc-number">11.</span> <span class="toc-text">嵌套组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件判断"><span class="toc-number">12.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它特殊字符"><span class="toc-number">13.</span> <span class="toc-text">其它特殊字符</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -394,7 +416,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="angularjs指令中的compile和link.html" data-title="angularjs指令中的compile函数和link函数" data-url="http://chenzimu.com/angularjs指令中的compile和link.html"></div>
+    <div class="ds-thread" data-thread-key="正则表达式基础知识总结.html" data-title="正则表达式基础知识总结" data-url="http://chenzimu.com/正则表达式基础知识总结.html"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -417,13 +439,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/正则表达式基础知识总结.html" title="上一篇: 正则表达式基础知识总结">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/javascript变量声明和提升.html" title="下一篇: javascript变量声明和提升">
+            <a href="/angularjs指令中的compile和link.html" title="下一篇: angularjs指令中的compile函数和link函数">
                 <i class="fa fa-angle-right"></i>
             </a>
         
