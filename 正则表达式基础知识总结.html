@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://chenzimu.com/正则表达式基础知识总结.html">
 <meta property="og:site_name" content="臣子木">
 <meta property="og:description" content="对正则表达式一些基础知识的记录和总结。">
-<meta property="og:updated_time" content="2016-02-17T02:37:14.038Z">
+<meta property="og:updated_time" content="2016-02-17T02:40:02.302Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式基础知识总结">
 <meta name="twitter:description" content="对正则表达式一些基础知识的记录和总结。">
@@ -282,14 +282,14 @@
 <li>换行符 (\n)</li>
 <li>回车 (\r)<blockquote>
 <p>\s用来匹配以上所有的任意空白符</p>
-<h3 id="字符的开始和结束">字符的开始和结束</h3></blockquote>
+</blockquote>
 </li>
 </ul>
-<p>假如要匹配success，但不想匹配到unsuccess中的success改怎么做呢？这时就需要将匹配success的表达式写的严谨一些，^success会匹配以success为开始字符的字符，如果只匹配success则需要写为^success\$。其中^表示将字符作为开始，$表示将字符作为结束。</p>
+<h3 id="字符的开始和结束">字符的开始和结束</h3><p>假如要匹配success，但不想匹配到unsuccess中的success改怎么做呢？这时就需要将匹配success的表达式写的严谨一些，^success会匹配以success为开始字符的字符，如果只匹配success则需要写为^success\$。其中^表示将字符作为开始，$表示将字符作为结束。</p>
 <blockquote>
 <p>此处的^与[]中的^作用是不同的。</p>
-<h3 id="匹配组">匹配组</h3></blockquote>
-<p>()用于匹配一组字符，在()中的表达式匹配成功后会看做一个组。例如^(IMG\d+.png)$可以用来匹配所有包括扩展名的图片，如果只想匹配图片名不想匹配扩展名的话就需要写成 ^(IMG\d+).png\$。</p>
+</blockquote>
+<h3 id="匹配组">匹配组</h3><p>()用于匹配一组字符，在()中的表达式匹配成功后会看做一个组。例如^(IMG\d+.png)$可以用来匹配所有包括扩展名的图片，如果只想匹配图片名不想匹配扩展名的话就需要写成 ^(IMG\d+).png\$。</p>
 <h3 id="嵌套组">嵌套组</h3><p>匹配组的匹配顺序是根据它们定义的顺序决定的，即由表达式中()的顺序所决定的。还是匹配组中匹配文件名的例子，如果不仅要匹配文件名还要匹配文件名中的序号的话就需要用到嵌套组，所以表达式需要写为^(IMG(\d+)).png$</p>
 <h3 id="条件判断">条件判断</h3><p>在匹配组中可以用|符来表示OR。</p>
 <h3 id="其它特殊字符">其它特殊字符</h3><p>之前已经接触可几个有特殊意义的字符即元字符如:</p>
@@ -325,7 +325,7 @@
         <p><span>本文标题:</span><a href="/正则表达式基础知识总结.html">正则表达式基础知识总结</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenzimu 的个人博客">chenzimu</a></p>
         <p><span>发布时间:</span>2016年02月17日 - 10时35分</p>
-        <p><span>最后更新:</span>2016年02月17日 - 10时37分</p>
+        <p><span>最后更新:</span>2016年02月17日 - 10时40分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/正则表达式基础知识总结.html" title="正则表达式基础知识总结">http://chenzimu.com/正则表达式基础知识总结.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://chenzimu.com/正则表达式基础知识总结.html　　作者: chenzimu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
