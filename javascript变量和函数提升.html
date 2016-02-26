@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://chenzimu.com/javascript变量和函数提升.html">
 <meta property="og:site_name" content="臣子木">
 <meta property="og:description" content="要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。">
-<meta property="og:updated_time" content="2016-02-26T07:50:02.293Z">
+<meta property="og:updated_time" content="2016-02-26T07:54:09.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript变量和函数提升">
 <meta name="twitter:description" content="要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。">
@@ -286,13 +286,9 @@
 <p>上边代码中，对于var chenzimu = 2015;由于变量提升会变成:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></span><br><span class="line"><span class="list">(<span class="keyword">function</span><span class="list">()</span> &#123;</span><br><span class="line">    var chenzimu<span class="comment">;</span></span><br><span class="line">    alert<span class="list">(<span class="keyword">chenzimu</span>)</span><span class="comment">;</span></span><br><span class="line">    chenzimu = <span class="number">2015</span><span class="comment">;</span></span><br><span class="line">&#125;)</span><span class="list">()</span><span class="comment">;</span></span><br></pre></td></tr></table></figure><br>所以，浏览器弹出的值是undefined</p>
 </blockquote>
 <h2 id="函数提升">函数提升</h2><h3 id="js中创建函数的方法">js中创建函数的方法</h3><p>js中两种最常用的创建函数的方法是函数声明和创建匿名函数表达式。</p>
-<ol>
-<li>函数声明</li>
-</ol>
+<p><strong>1. 函数声明</strong></p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>函数表达式</li>
-</ol>
+<p><strong>2. 函数表达式</strong></p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
 <p>在js中函数声明的提升与变量是相同的，即函数的声明被提升到了函数所在作用域的最上方。如下边这个例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sayHello();<span class="comment">//调用成功</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -314,7 +310,7 @@
         <p><span>本文标题:</span><a href="/javascript变量和函数提升.html">javascript变量和函数提升</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 chenzimu 的个人博客">chenzimu</a></p>
         <p><span>发布时间:</span>2015年12月25日 - 11时27分</p>
-        <p><span>最后更新:</span>2016年02月26日 - 15时50分</p>
+        <p><span>最后更新:</span>2016年02月26日 - 15时54分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/javascript变量和函数提升.html" title="javascript变量和函数提升">http://chenzimu.com/javascript变量和函数提升.html</a>
             <span class="copy-path" data-clipboard-text="原文: http://chenzimu.com/javascript变量和函数提升.html　　作者: chenzimu" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
