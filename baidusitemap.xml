@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+    
+  <url>
+    <loc>http://chenzimu.com/flexbox%E5%B1%9E%E6%80%A7%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E3%80%90%E8%AF%91%E3%80%91.html</loc>
+    <lastmod>2016-03-09T08:51:35.720Z</lastmod>
+    <data>
+        <display>
+        <title>flexbox属性详细介绍【译】</title>
+        <pubTime>2015-10-20T01:59:15.000Z</pubTime>
+        
+        <tag>css3</tag>
+         
+        <tag>flexbox</tag>
+         
+         
+           
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="css3" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/css3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/javascript%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87.html</loc>
+    <lastmod>2016-02-26T07:54:09.874Z</lastmod>
+    <data>
+        <display>
+        <title>javascript变量和函数提升</title>
+        <pubTime>2015-12-25T03:27:35.000Z</pubTime>
+        
+        <tag>变量声明</tag>
+         
+        <tag>变量提升</tag>
+         
+        <tag>函数提升</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/javascript%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html</loc>
+    <lastmod>2016-02-26T03:18:19.260Z</lastmod>
+    <data>
+        <display>
+        <title>javascript事件代理简单介绍</title>
+        <pubTime>2016-02-26T03:14:15.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>事件</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/javascript/web%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/rubygems%E8%A2%AB%E5%A2%99%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</loc>
+    <lastmod>2016-02-22T06:19:48.227Z</lastmod>
+    <data>
+        <display>
+        <title>rubygems被墙的解决方法</title>
+        <pubTime>2016-02-22T06:10:17.000Z</pubTime>
+        
+        <tag>ruby</tag>
+         
+        <tag>sass</tag>
+         
+         
+           
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93.html</loc>
+    <lastmod>2016-02-17T02:40:02.302Z</lastmod>
+    <data>
+        <display>
+        <title>正则表达式基础知识总结</title>
+        <pubTime>2016-02-17T02:35:00.000Z</pubTime>
+        
+        <tag>正则表达式</tag>
+         
+         
+           
+             
+              <breadCrumb title="正则表达式" url="http://chenzimu.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/jquery%E4%B8%ADdata-%E5%92%8Cattr-%E7%9A%84%E5%8C%BA%E5%88%AB.html</loc>
+    <lastmod>2015-12-14T04:28:30.312Z</lastmod>
+    <data>
+        <display>
+        <title>jquery中data()和attr()的区别</title>
+        <pubTime>2015-11-24T08:16:18.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>jquery</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
+          
+             
+              <breadCrumb title="jquery" url="http://chenzimu.com/categories/javascript/jquery/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/em%E5%92%8Crem%E7%AE%80%E4%BB%8B.html</loc>
+    <lastmod>2015-11-12T07:42:31.746Z</lastmod>
+    <data>
+        <display>
+        <title>em和rem简介</title>
+        <pubTime>2015-11-12T04:38:44.000Z</pubTime>
+        
+        <tag>css</tag>
+         
+        <tag>em</tag>
+         
+        <tag>rem</tag>
+         
+         
+           
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="css" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/css/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/javascript%E9%97%AD%E5%8C%85.html</loc>
+    <lastmod>2015-11-05T01:30:21.416Z</lastmod>
+    <data>
+        <display>
+        <title>javascript闭包</title>
+        <pubTime>2014-12-30T02:42:45.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>闭包</tag>
+         
+         
+           
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/%E5%9C%A8%E6%AF%8F%E4%B8%80%E4%B8%AA%E9%98%B6%E6%AE%B5%E7%9B%91%E5%90%ACtouch%E4%BA%8B%E4%BB%B6.html</loc>
+    <lastmod>2015-10-28T02:46:18.026Z</lastmod>
+    <data>
+        <display>
+        <title>在每一个阶段监听touch事件</title>
+        <pubTime>2015-10-28T01:47:53.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>touch</tag>
+         
+         
+           
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/%E7%94%A8javascript%E7%9A%84touch%E4%BA%8B%E4%BB%B6%E5%AE%9E%E7%8E%B0%E6%BB%91%E5%8A%A8.html</loc>
+    <lastmod>2015-10-28T02:43:31.626Z</lastmod>
+    <data>
+        <display>
+        <title>用javascript的touch事件实现滑动</title>
+        <pubTime>2015-10-27T01:14:30.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>touch</tag>
+         
+         
+           
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/javascript%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E7%AE%80%E4%BB%8B.html</loc>
+    <lastmod>2015-10-28T02:43:17.343Z</lastmod>
+    <data>
+        <display>
+        <title>javascript触摸事件简介</title>
+        <pubTime>2015-10-26T02:59:48.000Z</pubTime>
+        
+        <tag>javascript</tag>
+         
+        <tag>touch</tag>
+         
+         
+           
+             
+              <breadCrumb title="web前端" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+          
+             
+              <breadCrumb title="javascript" url="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/javascript/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/360%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F.html</loc>
+    <lastmod>2015-10-26T02:02:47.178Z</lastmod>
+    <data>
+        <display>
+        <title>360浏览器的两种渲染模式</title>
+        <pubTime>2015-10-19T05:32:27.000Z</pubTime>
+        
+        <tag>360</tag>
+         
+         
+           
+             
+              <breadCrumb title="记录" url="http://chenzimu.com/categories/%E8%AE%B0%E5%BD%95/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenzimu.com/test.html</loc>
+    <lastmod>2015-10-21T01:18:39.335Z</lastmod>
+    <data>
+        <display>
+        <title>测试文章</title>
+        <pubTime>2015-10-19T02:06:57.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+    
+</urlset>
