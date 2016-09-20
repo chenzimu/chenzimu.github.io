@@ -3621,7 +3621,7 @@ figure.highlight,
     width: 100%; }
     figure.highlight .code pre,
     .codeblock .code pre {
-      max-width: calc(800px - 50px);
+      max-width: calc(100% - 50px);
       overflow-x: auto;
       overflow-y: hidden; }
   figure.highlight .line,
@@ -3837,10 +3837,10 @@ a.fancybox {
 
 .main-content-wrap {
   display: block;
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px; }
+  padding-right: 250px;
+  padding-left: 250px; }
 
 @media only screen and (min-width: 1024px) {
   .markdown h1 {
@@ -3916,7 +3916,7 @@ a.fancybox {
 .modal {
   width: 100%;
   height: 100%;
-  max-width: 800px;
+  max-width: 100%;
   box-sizing: border-box;
   position: relative;
   margin: 0 auto;
@@ -3988,16 +3988,18 @@ a.fancybox {
   width: 100%;
   display: inline-block;
   vertical-align: top; }
-  .post .post-header .post-title {
-    margin: 0;
-    word-break: initial;
-    overflow: hidden; }
-    .post .post-header .post-title:hover {
-      text-decoration: none; }
+  .post .post-header {
+    text-align: center; }
+    .post .post-header .post-title {
+      margin: 0;
+      word-break: initial;
+      overflow: hidden; }
+      .post .post-header .post-title:hover {
+        text-decoration: none; }
   .post .post-meta {
     line-height: 1.5em;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #9eabb3; }
     .post .post-meta a {
@@ -4032,7 +4034,7 @@ a.fancybox {
 
 @media only screen and (min-width: 1024px) {
   .post .post-header .post-title {
-    font-size: 3.7rem; } }
+    font-size: 5rem; } }
 
 @media only screen and (min-width: 768px) {
   .post-content {
@@ -4121,7 +4123,7 @@ a.fancybox {
     display: table-cell;
     vertical-align: middle; }
     .post-header-cover .post-header .post-title {
-      max-width: 800px;
+      max-width: 100%;
       margin: 0 auto;
       color: white;
       text-shadow: 0 2px 0 rgba(0, 0, 0, 0.9);
@@ -4129,7 +4131,7 @@ a.fancybox {
       .post-header-cover .post-header .post-title:hover {
         text-decoration: none; }
     .post-header-cover .post-header .post-meta {
-      max-width: 800px;
+      max-width: 100%;
       font-family: "Open Sans", sans-serif;
       font-size: 1.6rem;
       color: white !important;
