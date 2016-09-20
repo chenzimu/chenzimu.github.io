@@ -3989,7 +3989,7 @@ a.fancybox {
   display: inline-block;
   vertical-align: top; }
   .post .post-header {
-    text-align: center; }
+    text-align: center !important; }
     .post .post-header .post-title {
       margin: 0;
       word-break: initial;
