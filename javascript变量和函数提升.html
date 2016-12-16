@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript变量和函数提升">
+<meta property="og:url" content="http://chenzimu.com/javascript变量和函数提升.html">
+<meta property="og:site_name" content="臣子木">
+<meta property="og:description" content="要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。">
+<meta property="og:updated_time" content="2016-12-16T12:30:53.786Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript变量和函数提升">
+<meta name="twitter:description" content="要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。">
+    
+    
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+    
+    <!-- title -->
+    <title>javascript变量和函数提升</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/muzichen">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/正则表达式基础知识总结.html"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/jquery中data-和attr-的区别.html"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chenzimu.com/javascript变量和函数提升.html"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chenzimu.com/javascript变量和函数提升.html&text=javascript变量和函数提升"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chenzimu.com/javascript变量和函数提升.html&is_video=false&description=javascript变量和函数提升"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=javascript变量和函数提升&body=Check out this article: http://chenzimu.com/javascript变量和函数提升.html"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chenzimu.com/javascript变量和函数提升.html&name=javascript变量和函数提升&description=&lt;p&gt;要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。&lt;br&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量声明和提升"><span class="toc-number">1.</span> <span class="toc-text">变量声明和提升</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的声明被提升了"><span class="toc-number">1.1.</span> <span class="toc-text">变量的声明被提升了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#变量声明、初始化及变量声明提升"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量声明、初始化及变量声明提升</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数提升"><span class="toc-number">2.</span> <span class="toc-text">函数提升</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js中创建函数的方法"><span class="toc-number">2.1.</span> <span class="toc-text">js中创建函数的方法</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        javascript变量和函数提升
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">臣子木</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2015-12-25T03:27:35.000Z" itemprop="datePublished">2015-12-25</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/函数提升/">函数提升</a>, <a class="tag-link" href="/tags/变量声明/">变量声明</a>, <a class="tag-link" href="/tags/变量提升/">变量提升</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。<br><a id="more"></a></p>
+<h2 id="变量声明和提升"><a href="#变量声明和提升" class="headerlink" title="变量声明和提升"></a>变量声明和提升</h2><p>先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var chenzimu1 = <span class="number">1024</span><span class="comment">;</span></div><div class="line">alert(<span class="name">chenzimu1</span>)<span class="comment">;</span></div><div class="line"></div><div class="line">var chenzimu2 = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    alert(<span class="name">chenzimu2</span>)<span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>两段代码都如我们所想，都弹出1024</p>
+</blockquote>
+<p>下边这个例子就有点诡异了，对于不熟悉js的人来说可能结果与自己料想的并不一样。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    alert(<span class="name">chenzimu</span>)<span class="comment">;</span></div><div class="line">    var chenzimu = <span class="number">2015</span><span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这段代码或许和你想的不一样，它弹出的是undefined,why?</p>
+</blockquote>
+<h3 id="变量的声明被提升了"><a href="#变量的声明被提升了" class="headerlink" title="变量的声明被提升了"></a>变量的声明被提升了</h3><p>在当前作用域中，无论变量在作用域的什么位置声明，变量声明都会被提升到作用域的最顶层。</p>
+<blockquote>
+<p>这里有一个需要注意的地方，只有变量的声明被提升了，如果变量同时初始化了值的话，变量的初始化是不会被提升的。</p>
+</blockquote>
+<h4 id="变量声明、初始化及变量声明提升"><a href="#变量声明、初始化及变量声明提升" class="headerlink" title="变量声明、初始化及变量声明提升"></a>变量声明、初始化及变量声明提升</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> chenzimu;<span class="comment">//变量声明</span></div><div class="line"><span class="keyword">var</span> chenzimu = <span class="number">1024</span>;<span class="comment">//变量初始化</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//变量声明提升，但初始化不提升，则上边函数等同于</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> a;</div><div class="line">    <span class="keyword">var</span> b;</div><div class="line">    a = <span class="number">1</span>;</div><div class="line">    b = <span class="number">2</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>所以回到前边的例子:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    alert(<span class="name">chenzimu</span>)<span class="comment">;</span></div><div class="line">    var chenzimu = <span class="number">2015</span><span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上边代码中，对于var chenzimu = 2015;由于变量提升会变成:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    var chenzimu<span class="comment">;</span></div><div class="line">    alert(<span class="name">chenzimu</span>)<span class="comment">;</span></div><div class="line">    chenzimu = <span class="number">2015</span><span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure><br>所以，浏览器弹出的值是undefined</p>
+</blockquote>
+<h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><h3 id="js中创建函数的方法"><a href="#js中创建函数的方法" class="headerlink" title="js中创建函数的方法"></a>js中创建函数的方法</h3><p>js中两种最常用的创建函数的方法是函数声明和创建匿名函数表达式。</p>
+<p><strong>1. 函数声明</strong></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p><strong>2. 函数表达式</strong></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;;</div></pre></td></tr></table></figure>
+<p>在js中函数声明的提升与变量是相同的，即函数的声明被提升到了函数所在作用域的最上方。如下边这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sayHello();<span class="comment">//调用成功</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再看下边一个例子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>);</div><div class="line">&#125;</div><div class="line">a();</div></pre></td></tr></table></figure>
+<p>可能有人会认为上边的代码会输出a1,但是它输出的却是a。因为由于变量声明和函数声明的提升，上边的代码变成了这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;<span class="comment">//变量声明提升</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;<span class="comment">//函数声明提升</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>);</div><div class="line">&#125;</div><div class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</div><div class="line">&#125;;</div><div class="line">a();<span class="comment">//输出a</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，函数声明的提升是将函数名和函数体一块儿进行提升的。</p>
+</blockquote>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/muzichen">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#变量声明和提升"><span class="toc-number">1.</span> <span class="toc-text">变量声明和提升</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#变量的声明被提升了"><span class="toc-number">1.1.</span> <span class="toc-text">变量的声明被提升了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#变量声明、初始化及变量声明提升"><span class="toc-number">1.1.1.</span> <span class="toc-text">变量声明、初始化及变量声明提升</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数提升"><span class="toc-number">2.</span> <span class="toc-text">函数提升</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#js中创建函数的方法"><span class="toc-number">2.1.</span> <span class="toc-text">js中创建函数的方法</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chenzimu.com/javascript变量和函数提升.html"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chenzimu.com/javascript变量和函数提升.html&text=javascript变量和函数提升"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chenzimu.com/javascript变量和函数提升.html&is_video=false&description=javascript变量和函数提升"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=javascript变量和函数提升&body=Check out this article: http://chenzimu.com/javascript变量和函数提升.html"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chenzimu.com/javascript变量和函数提升.html&title=javascript变量和函数提升"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chenzimu.com/javascript变量和函数提升.html&name=javascript变量和函数提升&description=&lt;p&gt;要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。&lt;br&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2016 臣子木
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/muzichen">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'chenzimu';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>臣子木</title>
+  <subtitle>臣子木的学习、生活</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://chenzimu.com/"/>
+  <updated>2016-12-16T12:30:53.786Z</updated>
+  <id>http://chenzimu.com/</id>
+  
+  <author>
+    <name>chenzimu</name>
+    <email>sdlichen@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript事件代理简单介绍</title>
+    <link href="http://chenzimu.com/javascript%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D.html"/>
+    <id>http://chenzimu.com/javascript事件代理简单介绍.html</id>
+    <published>2016-02-26T03:14:15.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>javascript事件是实现web页面交互的基础。<br><a id="more"></a></p>
+<h3 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h3><p>在JavaScript中事件代理包括两个：一个是事件冒泡，一个是事件捕捉，之所以出现这两种类型的事件代理是由于当年的浏览器大战。关于事件代理和事件冒泡的想起介绍请看这里<a href="http://chenzimu.com">Javascript中事件的发生顺序</a>。</p>
+<h3 id="事件代理的作用"><a href="#事件代理的作用" class="headerlink" title="事件代理的作用"></a>事件代理的作用</h3><p>假如有一个表格，表格中有几十个单元格，如果要给每个单元格绑定点击事件的话就会产生性能问题，这时候就可以事件代理中的事件冒泡，将点击事件绑定到table元素上，当点击某个单元格的时候，点击事件就会冒泡到table元素上从而触发table元素上的点击事件，然后再根据当前触发该点击事件的目标元素执行相应的操作。</p>
+<h3 id="兼容性问题"><a href="#兼容性问题" class="headerlink" title="兼容性问题"></a>兼容性问题</h3><p>上边的方法很简单，唯一一个需要注意的地方就是该如何确定当前触发事件的目标元素，因为IE和其他浏览器在这一问题上有不同，所以需要写一个确定目标元素的函数，如下：</p>
+<pre><code>function getEventTarget(e){
+    var e = e || window.event;
+    return e.target || e.srcElement;
+}
+function doSomething(e) {
+    var target = getEventTarget(e);
+    if(/判断当前目标元素是否正确/){
+        //dosomething
+    }
+}
+</code></pre><blockquote>
+<p>e代表的是传入到触发事件回调函数中的事件对象，函数的返回值是当前触发事件的目标元素。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;javascript事件是实现web页面交互的基础。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://chenzimu.com/categories/javascript/"/>
+    
+      <category term="web前端" scheme="http://chenzimu.com/categories/javascript/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://chenzimu.com/tags/javascript/"/>
+    
+      <category term="事件" scheme="http://chenzimu.com/tags/%E4%BA%8B%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式基础知识总结</title>
+    <link href="http://chenzimu.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93.html"/>
+    <id>http://chenzimu.com/正则表达式基础知识总结.html</id>
+    <published>2016-02-17T02:35:00.000Z</published>
+    <updated>2016-12-16T12:30:53.801Z</updated>
+    
+    <content type="html"><![CDATA[<p>对正则表达式一些基础知识的记录和总结。<br><a id="more"></a></p>
+<h3 id=""><a href="#" class="headerlink" title="."></a>.</h3><p>.是一个通配符，可以代表字母、数字以及空格等任意符号，但是在使用时需要对其进行转义。</p>
+<h3 id="匹配特定的字符"><a href="#匹配特定的字符" class="headerlink" title="匹配特定的字符"></a>匹配特定的字符</h3><p>[]可以用来匹配特定的字符，比如[abc]可以用来匹配单个的a、b、c或者空字符。</p>
+<h3 id="排除特定的字符"><a href="#排除特定的字符" class="headerlink" title="排除特定的字符"></a>排除特定的字符</h3><p>[^]可以用来排除特定的字符，比如[^abc]可以用来匹配除abc之外的任意字符。</p>
+<h3 id="字符范围"><a href="#字符范围" class="headerlink" title="字符范围"></a>字符范围</h3><p>在中括号中用加破折号也可匹配一定范围内的字符，如[0-6]可以匹配数字0,1,2,3，4,5,6。如果要匹配多个范围的字符的话，可以在同一个中括号中写多个范围的字符。正则表达式中的\w与[A-Za-z0-9_]的作用是相同的。</p>
+<h3 id="匹配多个重复字符如zzz"><a href="#匹配多个重复字符如zzz" class="headerlink" title="匹配多个重复字符如zzz"></a>匹配多个重复字符如zzz</h3><p>最简单的匹配重复字符的方法是根据匹配的次数，如\d\d\d用于匹配三个数字。还有一种较简单的方法是用{},{}中的数字表示需要匹配的重复次数。如a{3}用于匹配aaa,a{1,3}用于匹配a,aa或aaa。</p>
+<h3 id="和"><a href="#和" class="headerlink" title="*和+"></a>*和+</h3><p>*号代表匹配0次或多次<br>+号代表匹配至少一次或多次<br>如a+可以匹配一个a或多个a，[abc]+,用于匹配一个a、b、c或多个a、b、c。</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="?"></a>?</h3><p>?代表可以匹配0次或1次，和.一样，如果要匹配?的话则需要对其进行转义/?。</p>
+<h3 id="空白符"><a href="#空白符" class="headerlink" title="空白符"></a>空白符</h3><p>最常见的几种空白符有:</p>
+<ul>
+<li>空格 ( )</li>
+<li>tab (\t)</li>
+<li>换行符 (\n)</li>
+<li>回车 (\r)<blockquote>
+<p>\s用来匹配以上所有的任意空白符</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="字符的开始和结束"><a href="#字符的开始和结束" class="headerlink" title="字符的开始和结束"></a>字符的开始和结束</h3><p>假如要匹配success，但不想匹配到unsuccess中的success改怎么做呢？这时就需要将匹配success的表达式写的严谨一些，^success会匹配以success为开始字符的字符，如果只匹配success则需要写为^success\$。其中^表示将字符作为开始，$表示将字符作为结束。</p>
+<blockquote>
+<p>此处的^与[]中的^作用是不同的。</p>
+</blockquote>
+<h3 id="匹配组"><a href="#匹配组" class="headerlink" title="匹配组"></a>匹配组</h3><p>()用于匹配一组字符，在()中的表达式匹配成功后会看做一个组。例如^(IMG\d+.png)$可以用来匹配所有包括扩展名的图片，如果只想匹配图片名不想匹配扩展名的话就需要写成 ^(IMG\d+).png\$。</p>
+<h3 id="嵌套组"><a href="#嵌套组" class="headerlink" title="嵌套组"></a>嵌套组</h3><p>匹配组的匹配顺序是根据它们定义的顺序决定的，即由表达式中()的顺序所决定的。还是匹配组中匹配文件名的例子，如果不仅要匹配文件名还要匹配文件名中的序号的话就需要用到嵌套组，所以表达式需要写为^(IMG(\d+)).png$</p>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>在匹配组中可以用|符来表示OR。</p>
+<h3 id="其它特殊字符"><a href="#其它特殊字符" class="headerlink" title="其它特殊字符"></a>其它特殊字符</h3><p>之前已经接触可几个有特殊意义的字符即元字符如:</p>
+<ul>
+<li>\d 代表数字</li>
+<li>\w 代表字母数字和_</li>
+<li>\s 代表空白符</li>
+</ul>
+<blockquote>
+<p>在正则表达式中上述几个特殊字符的大写形式所代表的匹配字符与其是相反的。如\D代表的是非数字，等等。</p>
+</blockquote>
+<p>还有一个特殊的元字符是\b。它是一个类似于^和$的匹配字符，用户匹配字符边界，<strong>它是0宽度的</strong>。</p>
+<blockquote>
+<p>0宽度的意思是它并不会匹配字符串之前的任何符号，而是匹配边界占用一个位置而已。</p>
+</blockquote>
+<p><strong>可以看做字符边界的位置</strong></p>
+<ul>
+<li>字符串第一个字符之前，第一个字符必须是一个word符</li>
+<li>字符串第一个字符之后，最后一个字符必须是word符</li>
+<li>字符串中两个字符之间，这两个字符必须满足一个是word符另一个不是word符<blockquote>
+<p>什么是word符？不同的编程语言有不同的定义，一般指的是\w所匹配的字符。</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对正则表达式一些基础知识的记录和总结。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="正则表达式" scheme="http://chenzimu.com/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="正则表达式" scheme="http://chenzimu.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript变量和函数提升</title>
+    <link href="http://chenzimu.com/javascript%E5%8F%98%E9%87%8F%E5%92%8C%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87.html"/>
+    <id>http://chenzimu.com/javascript变量和函数提升.html</id>
+    <published>2015-12-25T03:27:35.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。<br><a id="more"></a></p>
+<h2 id="变量声明和提升"><a href="#变量声明和提升" class="headerlink" title="变量声明和提升"></a>变量声明和提升</h2><p>先看两个简单的例子，这两个例子是我们都比较熟悉的，也很简单。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var chenzimu1 = <span class="number">1024</span><span class="comment">;</span></div><div class="line">alert(<span class="name">chenzimu1</span>)<span class="comment">;</span></div><div class="line"></div><div class="line">var chenzimu2 = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    alert(<span class="name">chenzimu2</span>)<span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>两段代码都如我们所想，都弹出1024</p>
+</blockquote>
+<p>下边这个例子就有点诡异了，对于不熟悉js的人来说可能结果与自己料想的并不一样。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    alert(<span class="name">chenzimu</span>)<span class="comment">;</span></div><div class="line">    var chenzimu = <span class="number">2015</span><span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这段代码或许和你想的不一样，它弹出的是undefined,why?</p>
+</blockquote>
+<h3 id="变量的声明被提升了"><a href="#变量的声明被提升了" class="headerlink" title="变量的声明被提升了"></a>变量的声明被提升了</h3><p>在当前作用域中，无论变量在作用域的什么位置声明，变量声明都会被提升到作用域的最顶层。</p>
+<blockquote>
+<p>这里有一个需要注意的地方，只有变量的声明被提升了，如果变量同时初始化了值的话，变量的初始化是不会被提升的。</p>
+</blockquote>
+<h4 id="变量声明、初始化及变量声明提升"><a href="#变量声明、初始化及变量声明提升" class="headerlink" title="变量声明、初始化及变量声明提升"></a>变量声明、初始化及变量声明提升</h4><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> chenzimu;<span class="comment">//变量声明</span></div><div class="line"><span class="keyword">var</span> chenzimu = <span class="number">1024</span>;<span class="comment">//变量初始化</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line">    <span class="keyword">var</span> b = <span class="number">2</span>;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//变量声明提升，但初始化不提升，则上边函数等同于</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">chenzimu</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">var</span> a;</div><div class="line">    <span class="keyword">var</span> b;</div><div class="line">    a = <span class="number">1</span>;</div><div class="line">    b = <span class="number">2</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>所以回到前边的例子:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    alert(<span class="name">chenzimu</span>)<span class="comment">;</span></div><div class="line">    var chenzimu = <span class="number">2015</span><span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>上边代码中，对于var chenzimu = 2015;由于变量提升会变成:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var chenzimu = <span class="number">1024</span><span class="comment">;</span></div><div class="line">(<span class="name">function</span>() &#123;</div><div class="line">    var chenzimu<span class="comment">;</span></div><div class="line">    alert(<span class="name">chenzimu</span>)<span class="comment">;</span></div><div class="line">    chenzimu = <span class="number">2015</span><span class="comment">;</span></div><div class="line">&#125;)()<span class="comment">;</span></div></pre></td></tr></table></figure><br>所以，浏览器弹出的值是undefined</p>
+</blockquote>
+<h2 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h2><h3 id="js中创建函数的方法"><a href="#js中创建函数的方法" class="headerlink" title="js中创建函数的方法"></a>js中创建函数的方法</h3><p>js中两种最常用的创建函数的方法是函数声明和创建匿名函数表达式。</p>
+<p><strong>1. 函数声明</strong></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>&#123;&#125;</div></pre></td></tr></table></figure>
+<p><strong>2. 函数表达式</strong></p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;&#125;;</div></pre></td></tr></table></figure>
+<p>在js中函数声明的提升与变量是相同的，即函数的声明被提升到了函数所在作用域的最上方。如下边这个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sayHello();<span class="comment">//调用成功</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再看下边一个例子:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>);</div><div class="line">&#125;</div><div class="line">a();</div></pre></td></tr></table></figure>
+<p>可能有人会认为上边的代码会输出a1,但是它输出的却是a。因为由于变量声明和函数声明的提升，上边的代码变成了这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a;<span class="comment">//变量声明提升</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;<span class="comment">//函数声明提升</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a1'</span>);</div><div class="line">&#125;</div><div class="line">a = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'a'</span>);</div><div class="line">&#125;;</div><div class="line">a();<span class="comment">//输出a</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，函数声明的提升是将函数名和函数体一块儿进行提升的。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;要明确变量声明、初始化、变量声明提升以及函数声明和函数表达式的概念及区别。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://chenzimu.com/categories/javascript/"/>
+    
+    
+      <category term="变量声明" scheme="http://chenzimu.com/tags/%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E/"/>
+    
+      <category term="变量提升" scheme="http://chenzimu.com/tags/%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87/"/>
+    
+      <category term="函数提升" scheme="http://chenzimu.com/tags/%E5%87%BD%E6%95%B0%E6%8F%90%E5%8D%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery中data()和attr()的区别</title>
+    <link href="http://chenzimu.com/jquery%E4%B8%ADdata-%E5%92%8Cattr-%E7%9A%84%E5%8C%BA%E5%88%AB.html"/>
+    <id>http://chenzimu.com/jquery中data-和attr-的区别.html</id>
+    <published>2015-11-24T08:16:18.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前用过jquery中的data()和attr()方法，只知道它们之间一点区别在于如果属性中没有’data-‘前缀的话data是无法读取该属性的，对于它们两个的主要区别没有研究，正好看到这个地方在此记录一下：<br><a id="more"></a><br>jquery的文档中是这样描述这两个属性的：</p>
+<blockquote>
+<p>.data()<br>存储与目标元素相关的任意的数据，并返回所设定的数据的值。</p>
+<p>.attr()<br>获得匹配元素中第一个元素的属性值，或者设置一个或多个匹配元素的属性值。</p>
+</blockquote>
+<h2 id="两者究竟有什么不同"><a href="#两者究竟有什么不同" class="headerlink" title="两者究竟有什么不同"></a>两者究竟有什么不同</h2><p>说实话，文档中的句子读完还是不知道什么意思，实际上如果我们仔细观察会发现attr()会影响DOM，当我们为某个元素设置属性或修改属性时，查看源码会发现HTML元素上所对应的属性值要么更改了要么又新添加了一个属性。而data()方法取得的值是从jquery内部的cache中,这个cache是jquery中新建的一个空对象jQuery.cache，它就是用来存储用data设置的属性的，对于每个用data操作过的DOM元素，这个对象中会有一个唯一的ID作为key值与其相对应，如果修改值的话修改的也是cache中的值，对于DOM元素没有任何的影响。同时,attr()方法获取的属性值的类型全部为字符串，而data()则是根据引号中的数据格式确定值的类型。还有一个不同在于data()的属性名需要以’data-‘为前缀才可以获取和修改。所以两者之间有任意一方修改了属性值的话对另一方是没有影响的。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前用过jquery中的data()和attr()方法，只知道它们之间一点区别在于如果属性中没有’data-‘前缀的话data是无法读取该属性的，对于它们两个的主要区别没有研究，正好看到这个地方在此记录一下：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://chenzimu.com/categories/javascript/"/>
+    
+      <category term="jquery" scheme="http://chenzimu.com/categories/javascript/jquery/"/>
+    
+    
+      <category term="javascript" scheme="http://chenzimu.com/tags/javascript/"/>
+    
+      <category term="jquery" scheme="http://chenzimu.com/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>em和rem简介</title>
+    <link href="http://chenzimu.com/em%E5%92%8Crem%E7%AE%80%E4%BB%8B.html"/>
+    <id>http://chenzimu.com/em和rem简介.html</id>
+    <published>2015-11-12T04:38:44.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>em和rem两个单位都是根据页面中的字体大小来决定其他元素的属性大小，如padding、margin等，这两个单位给我们带来了很多的灵活性，但是它们也有一些不同的地方。<br><a id="more"></a></p>
+<h2 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h2><p>对于rem来说，元素各个属性的大小是根据根结点（通常指html元素）的字体大小来决定的。假如html字体的大小为16px，而一个div的字体大小设置为18px，该div的padding设置为10em,则浏览器就会将其padding解析为160px。</p>
+<h2 id="em"><a href="#em" class="headerlink" title="em"></a>em</h2><p>对于em来说，元素各个属性的大小是根据当前元素的字体大小来决定的。假如html字体大小为16px，一个div的字体大小设置为18px，该div的padding设置为10em，则浏览器会将其padding解析为180px。</p>
+<h2 id="继承对于em的影响"><a href="#继承对于em的影响" class="headerlink" title="继承对于em的影响"></a>继承对于em的影响</h2><p>对于一个元素如果没有设置font-size的话，它会继承父级元素的字体大小，所以这给em的运用带来了一些容易出错的地方。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>假如有一个页面html的默认字体大小为16px,在页面中添加一个div，给该div添加padding值为2em，由于该div没有设置font-size，那它会继承html元素的字体大小16px，相应的它的padding会被解析为32px—-2*16</p>
+<p></p><p data-height="268" data-theme-id="0" data-slug-hash="qOLWEz" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/qOLWEz/" target="_blank" rel="external">qOLWEz</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+如果在上个例子的基础上在div外层添加一层div并将其font-size设置为2em，所以外层div的字体大小就被解析为32px，而内层div不再继承html字体的大小，而是继承外层div字体大小32px，此时内层div的padding值变为32 * 2 = 64px。
+<p data-height="268" data-theme-id="0" data-slug-hash="KdbPpQ" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/KdbPpQ/" target="_blank" rel="external">KdbPpQ</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+再进一步，给内层div设置font-size为1.5em,此时内层div由于设置了font-size，则该div自身的字体大小会变为1.5 * 32 = 48px，而padding则会根据该div自身的font-size被解析为48 * 2 = 96px。
+<p data-height="268" data-theme-id="0" data-slug-hash="MaZgaB" data-default-tab="result" data-user="chenzimu" class="codepen">See the Pen <a href="http://codepen.io/chenzimu/pen/MaZgaB/" target="_blank" rel="external">MaZgaB</a> by chenzimu (<a href="http://codepen.io/chenzimu" target="_blank" rel="external">@chenzimu</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<blockquote>
+<blockquote>
+<p>从上边的例子可以看出只要某个元素自身设置了font-size的值就不会再继承父级的font-size大小了，其自身各个属性的值如果单位为em的话，它们的参考值均为font-size的大小。</p>
+</blockquote>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;em和rem两个单位都是根据页面中的字体大小来决定其他元素的属性大小，如padding、margin等，这两个单位给我们带来了很多的灵活性，但是它们也有一些不同的地方。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/css/"/>
+    
+    
+      <category term="css" scheme="http://chenzimu.com/tags/css/"/>
+    
+      <category term="em" scheme="http://chenzimu.com/tags/em/"/>
+    
+      <category term="rem" scheme="http://chenzimu.com/tags/rem/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>flexbox属性详细介绍【译】</title>
+    <link href="http://chenzimu.com/flexbox%E5%B1%9E%E6%80%A7%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%E3%80%90%E8%AF%91%E3%80%91.html"/>
+    <id>http://chenzimu.com/flexbox属性详细介绍【译】.html</id>
+    <published>2015-10-20T01:59:15.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。<br>许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的时候很容易，而且对于很复杂的布局可以用更少的代码即可完成。flexbox布局的算法是基于direction的，而之前我们常用的块布局和行内布局是基于水平方向和垂直方向的。flexbox布局应当被应用到小型应用中，因为新的CSS Grid布局模型将被应用到大型布局中。<br>这篇文章将会重点教给您flex属性是怎样影响布局的。<br><a id="more"></a></p>
+<h2 id="1、基础"><a href="#1、基础" class="headerlink" title="1、基础"></a>1、基础</h2><p>在我们深入讲解之前先让我介绍一下flexbox模型的一些基础知识。flex布局包含一个父级盒子叫做flex container，flex container的孩子元素都被称作flex items，如下图所示，<br>flexbox布局2009年开始经过了多次更新，所以为了避免麻烦，我们将使用2014年9月份的语法，如果你需要兼容一些老版本浏览器的话可以阅读这篇文章<a href="https://css-tricks.com/using-flexbox/" target="_blank" rel="external">https://css-tricks.com/using-flexbox/</a></p>
+<h3 id="支持最新的flexbox语法的浏览器有："><a href="#支持最新的flexbox语法的浏览器有：" class="headerlink" title="支持最新的flexbox语法的浏览器有："></a>支持最新的flexbox语法的浏览器有：</h3><blockquote>
+<p>Chrome 29+<br>Firefox 28+<br>Internet Explorer 11+<br>Opera 17+<br>Safari 6.1+ (prefixed with -webkit-)<br>Android 4.4+<br>iOS 7.1+ (prefixed with -webkit-)</p>
+</blockquote>
+<h2 id="2、应用"><a href="#2、应用" class="headerlink" title="2、应用"></a>2、应用</h2><p>应用flexbox布局很简单，你只需要在父级元素上添加display属性即可：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">display</span>: -webkit-flex; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">display</span>: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>如果你希望元素以行内显示，则应用下边的代码；<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">display</span>: -webkit-inline-flex; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">display</span>: inline-flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Note：这是唯一一个需要在父级元素上设置的属性，设置这个属性之后，它所有的孩子元素都自动变为flex items。</p>
+</blockquote>
+<p>目前有很多组织flexbox属性的方法，我所知的虽简单的并可以加快理解的方法是将其分成两部分，一部分为flex container，另一部分是flex items。下边我将依次介绍这些属性以及它们是如何影响布局的。</p>
+<h2 id="3、flexbox-container属性"><a href="#3、flexbox-container属性" class="headerlink" title="3、flexbox container属性"></a>3、flexbox container属性</h2><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>这个属性的作用是指定通过设置flex container的main轴的方向来指定flex items的布局方向（row：横向，column：竖向）。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-direction</span>: row; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-direction</span>:         row;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>通过设置row，flex items在ltr上下文中从左到右横向布局<br>如下图所示：<br>通过row-reverse，flex items在ltr上下文中从右向左横向布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-direction</span>: row-reverse; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-direction</span>:         row-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>如下图所示：<br>通过设置column，flex items从上到下纵向布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-direction</span>: column; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-direction</span>:         column;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>如下图所示：<br>通过row-reverse，flex items从下向上纵向布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-direction</span>: column-reverse; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-direction</span>:         column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>默认值：row</p>
+<h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>flexbox最原始的概念是将它的子级元素布局为单独的一行。而flex-wrap的作用则是控制flex container的子元素是在一行还是在多行中显示，以及新的一行的布局方向。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-wrap</span>: nowrap; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-wrap</span>:         nowrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码使子元素在一行中显示，元素宽度会随元素个数的增加逐渐减小，以适应container的宽度。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-wrap</span>: wrap; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-wrap</span>:         wrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码使子元素在多行显示，遵循从左向右从上到下的顺序。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-wrap</span>: wrap-reverse; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-wrap</span>:         wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码使子元素在多行显示，遵循从左向右从下到上的顺序。<br>默认值：nowrap</p>
+<h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>这个属性是flex-direction和flex-wrap的简写形式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-flow</span>: &lt;flex-direction&gt; || &lt;flex-wrap&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-flow</span>:         &lt;flex-direction&gt; || &lt;flex-wrap&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>默认值：row nowrap</p>
+<h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>justify-conten的作用是使子元素沿着container的主轴进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-justify-content</span>: flex-start; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">justify-content</span>:         flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素会以左边界为起点进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-justify-content</span>: flex-end; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">justify-content</span>:         flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素会以右边界为起点进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-justify-content</span>: center; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">justify-content</span>:         center;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素会以中间为起点分别向左右进行布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-justify-content</span>: space-between; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">justify-content</span>:         space-between;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素平均分配到container中，其中第一个元素和最后一个元素在container的边界上,然后中间的元素平均分配余下的空间。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-justify-content</span>: space-around; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">justify-content</span>:         space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素平均分配到container中，与上一个不同的地方在于，第一个元素和最后一个元素不再靠到container边界上，第一个和最后一个元素均与边界有相当于其他元素之间空间一半大小的空间。<br>默认值:flex-start</p>
+<h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>与justify-content的作用类似，只不过这一属性控制的是沿着穿越轴(cross axis)的元素的布局，在这里是垂直方向。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: stretch; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-items</span>:         stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>子元素会被拉伸直到填充满container的高或宽，方向为cross start–&gt;cross end<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: flex-start; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-items</span>:         flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>子元素会同时被布局到cross start，如果高度不够填充满container的话也不会被拉伸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: flex-end; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-items</span>:         flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>子元素会同时被布局到cross end，如果高度不够填充满container的话也不会被拉伸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: flex-center; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-items</span>:         flex-center;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>子元素会同时被布局到穿越轴(cross axis)，如果高度不够填充满container的话也不会被拉伸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-items</span>: baseline; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-items</span>:         baseline;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>子元素会同时根据自己的基线进行布局。对于基线的具体定义：<a href="http://www.w3.org/TR/css-flexbox/#flex-baselines" target="_blank" rel="external">http://www.w3.org/TR/css-flexbox/#flex-baselines</a><br>默认值:stretch</p>
+<h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>align-content会调整元素沿cross axis的布局方式，与justify-content沿max axis调整单独的元素的方式类似。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: stretch; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素的行与行之间分配相同的空间。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: flex-start; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         flex-start;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素的各行都向cross start进行靠拢。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: flex-end; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         flex-end;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素的各行都向cross end。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: center; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         center;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素的各行都向container中间靠拢。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: space-between; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         space-between;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素的各行分散开，其中第一行向cross start靠拢,最后一行向cross end靠拢,中间各行则根据空间大小平均分开。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-container</span> &#123;</div><div class="line">  <span class="attribute">-webkit-align-content</span>: space-around; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">align-content</span>:         space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>上边代码会使子元素的各行分散开，与space-between的不同指出在于第一行元素和第二行元素不会向两边靠拢，而是和其他元素一样根据空间大小进行平均分布。<br>默认值:stretch</p>
+<blockquote>
+<p>Note:这个属性只有在container中的元素有多行时才会起作用。</p>
+</blockquote>
+<h2 id="4、flexbox-item属性"><a href="#4、flexbox-item属性" class="headerlink" title="4、flexbox item属性"></a>4、flexbox item属性</h2><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>order属性的作用是决定container中元素的布局顺序。默认的顺序是根据元素添加到container中的顺序。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-order</span>: &lt;integer&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">order</span>:         &lt;integer&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>container的子元素会根据order的值重新排列，而无需我们手动修改html代码。<br>默认值:0</p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a>flex-grow</h3><p>这个属性可以改变container中某个元素的大小，如果所有子元素有相同的flex-grow值的话子元素会以相同大小分布在container中，如果其中一个元素的flex-grow值大于其他元素，相对其他元素来说这个元素会根据空间大小占据更大的空间，而其他元素也会根据空间大小相应的占据更小的空间。<br>默认值:0</p>
+<blockquote>
+<p>Note:flex-grow不允许使用负数</p>
+</blockquote>
+<h3 id="flex-shink"><a href="#flex-shink" class="headerlink" title="flex-shink"></a>flex-shink</h3><p>这个属性可以改变container中某个元素的大小，如果所有子元素有相同的flex-shink值的话子元素会以相同大小分布在container中，如果其中一个元素的flex-shink值小于其他元素，相对其他元素来说这个元素会根据空间大小占据更大的空间，而其他元素也会根据空间大小相应的占据更小的空间。值为0的话元素会以原始大小进行显示。<br>默认值:1</p>
+<blockquote>
+<p>Note:flex-shink不允许使用负数</p>
+</blockquote>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a>flex-basis</h3><p>flex-basis属性的作用是设置子元素宽度，如果所有元素宽度相加大于container宽度的话其他元素会根据空间相应的减小尺寸。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex-basis</span>: auto | &lt;width&gt;; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex-basis</span>:         auto | &lt;width&gt;;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>默认值:auto</p>
+<h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>flex是flex-grow, flex-shrink和flex-basis属性的简写。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.flex-item</span> &#123;</div><div class="line">  <span class="attribute">-webkit-flex</span>: none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ]; <span class="comment">/* Safari */</span></div><div class="line">  <span class="attribute">flex</span>:         none | auto | [ &lt;flex-grow&gt; &lt;flex-shrink&gt;? || &lt;flex-basis&gt; ];</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Note: W3C 鼓励使用简写形式。</p>
+</blockquote>
+<h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self属性可以设定单个元素的布局方式，同时它会覆盖掉之前align-items设定的布局方式。<br><figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.flex-item &#123;</div><div class="line">  -webkit-align-self: <span class="built_in">auto</span> | <span class="type">flex</span>-start | <span class="type">flex</span>-<span class="keyword">end</span> | <span class="type">center</span> | <span class="type">baseline</span> | <span class="type">stretch</span>; /* Safari */</div><div class="line">  align-self:         <span class="built_in">auto</span> | <span class="type">flex</span>-start | <span class="type">flex</span>-<span class="keyword">end</span> | <span class="type">center</span> | <span class="type">baseline</span> | <span class="type">stretch</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure><br>默认值:auto</p>
+<blockquote>
+<p>Note: auto值会先根据item的父级元素所设定的align-items的值进行设置，如果父级元素没有的话默认使用stretch。</p>
+</blockquote>
+<p><strong>Note: float、clear和vertical-align属性对flex item没有影响，它们不会使其脱离文档流。</strong></p>
+<p>翻译自:<a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="external">https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flexbox布局的全称为CSS Flexible box布局模块，它是css3中新增加的一种布局方式，这种布局方式可以可以在不知道元素的尺寸大小的时候依然可以调整元素的对齐方式等。flexible box最主要的特点是外层的盒子可以根据屏幕的不同尺寸自动调整盒子中元素的大小以填充元素之间由于屏幕尺寸变化出现的空间。&lt;br&gt;许多设计师和前端工程师发现flexbox布局用起来很方便，因为这种布局在定位元素的时候很容易，而且对于很复杂的布局可以用更少的代码即可完成。flexbox布局的算法是基于direction的，而之前我们常用的块布局和行内布局是基于水平方向和垂直方向的。flexbox布局应当被应用到小型应用中，因为新的CSS Grid布局模型将被应用到大型布局中。&lt;br&gt;这篇文章将会重点教给您flex属性是怎样影响布局的。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="web前端" scheme="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css3" scheme="http://chenzimu.com/categories/web%E5%89%8D%E7%AB%AF/css3/"/>
+    
+    
+      <category term="css3" scheme="http://chenzimu.com/tags/css3/"/>
+    
+      <category term="flexbox" scheme="http://chenzimu.com/tags/flexbox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>360浏览器的两种渲染模式</title>
+    <link href="http://chenzimu.com/360%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F.html"/>
+    <id>http://chenzimu.com/360浏览器的两种渲染模式.html</id>
+    <published>2015-10-19T05:32:27.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在做一个页面的时候出现了一个问题，页面在谷歌等浏览器中没有问题，但是打开360浏览器一看，尼玛，直接变样了，但是将浏览器模式调为极速模式就正常了，于是google了一下，果然问题出在SB360身上。在此记录一下。<br><a id="more"></a><br>在head标签中添加一行代码：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="built_in">name</span>=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>&gt;</div></pre></td></tr></table></figure><br><blockquote><p>content的取值为webkit,ie-comp,ie-stand之一，区分大小写，分别代表用webkit内核，IE兼容内核，IE标准内核。</p>
+</blockquote></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在做一个页面的时候出现了一个问题，页面在谷歌等浏览器中没有问题，但是打开360浏览器一看，尼玛，直接变样了，但是将浏览器模式调为极速模式就正常了，于是google了一下，果然问题出在SB360身上。在此记录一下。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="记录" scheme="http://chenzimu.com/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="360" scheme="http://chenzimu.com/tags/360/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript闭包</title>
+    <link href="http://chenzimu.com/javascript%E9%97%AD%E5%8C%85.html"/>
+    <id>http://chenzimu.com/javascript闭包.html</id>
+    <published>2014-12-30T02:42:45.000Z</published>
+    <updated>2016-12-16T12:30:53.786Z</updated>
+    
+    <content type="html"><![CDATA[<p>闭包的概念很难懂，这篇文章也只是我的一个学习笔记吧，其中尤其是闭包在循环中的运用尤其最难理解。<br>综合来说的:闭包是一个函数，在函数的上下文中有变量由于被引用，即使函数返回也不会销毁，这样的函数就是一个闭包。<br><a id="more"></a></p>
+<h2 id="语义范围"><a href="#语义范围" class="headerlink" title="语义范围"></a>语义范围</h2><p>语义范围通俗讲就是我们在定义一个函数时从function开始一直到这个函数结束的整个代码段的范围。如：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> y = <span class="string">'outer'</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">var</span> x = <span class="string">'inner'</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>inner函数被outer函数包围着，而outer函数又被全局上下文包围着，这样就形成了所谓的语义层级，如图所示：</p>
+<p><img src="http://7xnniz.com1.z0.glb.clouddn.com/closurelexical.png" alt=""></p>
+<blockquote>
+<p>这样outer函数的语义范围=outer自身的语义范围+inner的语义范围+global的语义范围，outer的语义范围=outer自身的语义范围+global的语义范围</p>
+</blockquote>
+<h2 id="变量环境-执行上下文"><a href="#变量环境-执行上下文" class="headerlink" title="变量环境(执行上下文)"></a>变量环境(执行上下文)</h2><p>对于全局来说有一个全局的执行上下文，每定义一个函数，该函数也会生成自己的新的执行上下文，这与语义范围是相对应的，每一个执行上下文就像一个仓库，用来存储在相应语义范围中所定义的变量。如下所示：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//执行上下文:x : undefined</span></div><div class="line"><span class="keyword">var</span> x = <span class="string">'global'</span>;</div><div class="line"><span class="comment">//执行上下文:x : 'global'</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="comment">//执行上下文: y : undefined</span></div><div class="line">    <span class="keyword">var</span> y = <span class="string">'outer'</span>;</div><div class="line">    <span class="comment">//执行上下文: y : 'outer'</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inner</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="comment">//执行上下文 : x : undefined</span></div><div class="line">        <span class="keyword">var</span> x = <span class="string">'inner'</span>;</div><div class="line">        <span class="comment">//执行上下文 : x : 'inner'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="scope-属性"><a href="#scope-属性" class="headerlink" title="[[scope]]属性"></a>[[scope]]属性</h2><p>当在一个执行上下文中定义新的函数的时候，就会创建新的函数对象，这个函数对象内部有一个名为[[scope]]的属性，这个属性指代的就是当前的执行上下文。而且该scope属性会对其外层的语义范围内的变量进行引用防止被javascript的垃圾回收机制所回收，这样该函数就会从全局开始继承每一层所包含的变量。</p>
+<blockquote>
+<p>这应该就是一些教程中所说的闭包就是函数中的函数的原因吧。</p>
+</blockquote>
+<p>如下所示:<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">//</span>执行上下文:x : undefined</div><div class="line">var x = <span class="string">'global'</span>;</div><div class="line"><span class="regexp">//</span>执行上下文:x : <span class="string">'global'</span></div><div class="line"><span class="keyword">function</span> outer()&#123;</div><div class="line">    <span class="regexp">//</span>执行上下文: y : undefined,[外层语义范围]x : <span class="string">'global'</span></div><div class="line">    var y = <span class="string">'outer'</span>;</div><div class="line">    <span class="regexp">//</span>执行上下文: y : <span class="string">'outer'</span>,[外层语义范围]x : <span class="string">'global'</span></div><div class="line"></div><div class="line">    <span class="keyword">function</span> inner()&#123;</div><div class="line">        <span class="regexp">//</span>执行上下文 : x : undefined,[外层语义范围]y : <span class="string">'outer'</span>,[外层语义范围]x : <span class="string">'global'</span></div><div class="line">        var x = <span class="string">'inner'</span>;</div><div class="line">        <span class="regexp">//</span>执行上下文 : x : <span class="string">'inner'</span>,[外层语义范围]y :<span class="string">'outer'</span>,[外层语义范围]x : <span class="string">'global'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="一个闭包的基础例子"><a href="#一个闭包的基础例子" class="headerlink" title="一个闭包的基础例子"></a>一个闭包的基础例子</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHello</span><span class="params">(name)</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> text = <span class="string">'Hello '</span> + name;</div><div class="line">    <span class="keyword">var</span> helloAlert = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">        alert(text);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> helloAlert;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> hello = sayHello(<span class="string">'Chenzimu'</span>);</div><div class="line">hello();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在javascript中，可以将一个函数引用变量看作是对一个函数的引用以及对一个闭包的隐式引用。代码中匿名函数定义在函数sayHello中形成了一个闭包。</p>
+</blockquote>
+<h2 id="更多闭包的例子"><a href="#更多闭包的例子" class="headerlink" title="更多闭包的例子"></a>更多闭包的例子</h2><h3 id="例一"><a href="#例一" class="headerlink" title="例一"></a>例一</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">say2015</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> num = <span class="number">2014</span>;</div><div class="line">    <span class="keyword">var</span> sayAlert = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">        alert(num);</div><div class="line">    &#125;;</div><div class="line">    num++;</div><div class="line">    <span class="keyword">return</span> sayAlert;</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> say = say2015();</div><div class="line">say();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这个例子展示了闭包中本地变量是通过引用而不是复制获取的。</p>
+</blockquote>
+<h3 id="例二"><a href="#例二" class="headerlink" title="例二"></a>例二</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function setupSomeGlobals()&#123;</div><div class="line">    var num = <span class="number">666</span><span class="comment">;</span></div><div class="line">    alertNum = function()&#123;</div><div class="line">        alert(num)<span class="comment">;</span></div><div class="line">    &#125;<span class="comment">;</span></div><div class="line">    incNum = function()&#123;</div><div class="line">        num++<span class="comment">;</span></div><div class="line">    &#125;<span class="comment">;</span></div><div class="line">    setNum = function(x)&#123;</div><div class="line">        num = x<span class="comment">;</span></div><div class="line">    &#125;<span class="comment">;</span></div><div class="line">&#125;<span class="comment">;</span></div><div class="line">setupSomeGlobals()<span class="comment">;</span></div><div class="line">alertNum()<span class="comment">;</span></div><div class="line">incNum()<span class="comment">;</span></div><div class="line">alertNum()<span class="comment">;</span></div><div class="line">setNum(<span class="number">888</span>)<span class="comment">;</span></div><div class="line">alertNum()<span class="comment">;</span></div><div class="line">setupSomeGlobals()<span class="comment">;</span></div><div class="line">alertNum()<span class="comment">;       </span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>例子中三个全局函数都引用了同一个闭包，因为三个函数都有对num的引用，即都对setupSomeGlobals()的引用(因为num是setupSomeGlobals作用域中的变量)。</p>
+<blockquote>
+<p>注意：当再次执行setupSomeGlobals函数时，就会创建一个新的闭包，则之前执行过的函数和得到的值都会被覆盖掉。（在javascript中，当在一个函数中定义另一个函数时，每次外部函数的执行都会导致内部函数的重新初始化创建。）</p>
+</blockquote>
+</blockquote>
+<h3 id="例三-较难理解"><a href="#例三-较难理解" class="headerlink" title="例三(较难理解)"></a>例三(较难理解)</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">buildList</span><span class="params">(list)</span></span>&#123;</div><div class="line"><span class="keyword">var</span> result = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="keyword">list</span>.length;i++)&#123;</div><div class="line">    <span class="keyword">var</span> item = <span class="string">'item'</span> + <span class="keyword">list</span>[i];</div><div class="line">    result.push(</div><div class="line">        <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</div><div class="line">            alert(item + <span class="string">' '</span> + <span class="keyword">list</span>[i]);</div><div class="line">        &#125;</div><div class="line">    );<span class="comment">//引用函数pointer</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">testList</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> fnlist = buildList([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</div><div class="line">    fnlist[<span class="number">0</span>]();</div><div class="line">    fnlist[<span class="number">1</span>]();</div><div class="line">    fnlist[<span class="number">2</span>]();</div><div class="line">&#125;</div><div class="line"></div><div class="line">testList();</div></pre></td></tr></table></figure>
+<blockquote>
+<p>在for循环中使用闭包得到的结果会和我们想象中的不一样，上边的例子中，当testList函数运行时，会先执行buildList([1,2,3])，在for循环中匿名函数并没有立即执行，而是先push进了result数组，当执行fnlist时，fnlist使用的是for循环执行结束之后的i的值，即3，而后边的list[3]自然是undefined(因为[1,23]的长度为3)</p>
+</blockquote>
+<h3 id="例四"><a href="#例四" class="headerlink" title="例四"></a>例四</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">newClosure</span><span class="params">(someNum,someRef)</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> num = someNum;</div><div class="line">    <span class="keyword">var</span> anArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</div><div class="line">    <span class="keyword">var</span> ref = someRef;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>&#123;</div><div class="line">        num += x;</div><div class="line">        anArray.push(num);</div><div class="line">        alert(<span class="string">'num: '</span> + num + <span class="string">'\nanArray '</span> + anArray.toString() + <span class="string">'\nref.someVar '</span> + ref.someVar);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> closure1 = newClosure(<span class="number">40</span>,&#123;someVar : <span class="string">'closure1'</span>&#125;);</div><div class="line">closure1(<span class="number">5</span>);</div><div class="line"><span class="keyword">var</span> closure2 = newClosure(<span class="number">1000</span>,&#123;someVar : <span class="string">'closure2'</span>&#125;);</div><div class="line">closure2(<span class="number">100</span>);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>上边的例子显示每次对newClosure函数的调用都生成一个闭包，两个闭包之间不会相互影响。</p>
+</blockquote>
+<p>参考自:<a href="http://www.javascriptkit.com/javatutors/closures.shtml" target="_blank" rel="external">http://www.javascriptkit.com/javatutors/closures.shtml</a><br>       <a href="https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures" target="_blank" rel="external">https://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;闭包的概念很难懂，这篇文章也只是我的一个学习笔记吧，其中尤其是闭包在循环中的运用尤其最难理解。&lt;br&gt;综合来说的:闭包是一个函数，在函数的上下文中有变量由于被引用，即使函数返回也不会销毁，这样的函数就是一个闭包。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://chenzimu.com/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="http://chenzimu.com/tags/javascript/"/>
+    
+      <category term="闭包" scheme="http://chenzimu.com/tags/%E9%97%AD%E5%8C%85/"/>
+    
+  </entry>
+  
+</feed>

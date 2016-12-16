@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="对正则表达式一些基础知识的记录和总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式基础知识总结">
+<meta property="og:url" content="http://chenzimu.com/正则表达式基础知识总结.html">
+<meta property="og:site_name" content="臣子木">
+<meta property="og:description" content="对正则表达式一些基础知识的记录和总结。">
+<meta property="og:updated_time" content="2016-12-16T12:30:53.801Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式基础知识总结">
+<meta name="twitter:description" content="对正则表达式一些基础知识的记录和总结。">
+    
+    
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+    
+    <!-- title -->
+    <title>正则表达式基础知识总结</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/muzichen">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/javascript事件代理简单介绍.html"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/javascript变量和函数提升.html"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chenzimu.com/正则表达式基础知识总结.html"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chenzimu.com/正则表达式基础知识总结.html&text=正则表达式基础知识总结"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chenzimu.com/正则表达式基础知识总结.html&is_video=false&description=正则表达式基础知识总结"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=正则表达式基础知识总结&body=Check out this article: http://chenzimu.com/正则表达式基础知识总结.html"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chenzimu.com/正则表达式基础知识总结.html&name=正则表达式基础知识总结&description=&lt;p&gt;对正则表达式一些基础知识的记录和总结。&lt;br&gt;"><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配特定的字符"><span class="toc-number">2.</span> <span class="toc-text">匹配特定的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排除特定的字符"><span class="toc-number">3.</span> <span class="toc-text">排除特定的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符范围"><span class="toc-number">4.</span> <span class="toc-text">字符范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配多个重复字符如zzz"><span class="toc-number">5.</span> <span class="toc-text">匹配多个重复字符如zzz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和"><span class="toc-number">6.</span> <span class="toc-text">*和+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">7.</span> <span class="toc-text">?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空白符"><span class="toc-number">8.</span> <span class="toc-text">空白符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符的开始和结束"><span class="toc-number">9.</span> <span class="toc-text">字符的开始和结束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配组"><span class="toc-number">10.</span> <span class="toc-text">匹配组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套组"><span class="toc-number">11.</span> <span class="toc-text">嵌套组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件判断"><span class="toc-number">12.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它特殊字符"><span class="toc-number">13.</span> <span class="toc-text">其它特殊字符</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        正则表达式基础知识总结
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">臣子木</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2016-02-17T02:35:00.000Z" itemprop="datePublished">2016-02-17</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/正则表达式/">正则表达式</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>对正则表达式一些基础知识的记录和总结。<br><a id="more"></a></p>
+<h3 id=""><a href="#" class="headerlink" title="."></a>.</h3><p>.是一个通配符，可以代表字母、数字以及空格等任意符号，但是在使用时需要对其进行转义。</p>
+<h3 id="匹配特定的字符"><a href="#匹配特定的字符" class="headerlink" title="匹配特定的字符"></a>匹配特定的字符</h3><p>[]可以用来匹配特定的字符，比如[abc]可以用来匹配单个的a、b、c或者空字符。</p>
+<h3 id="排除特定的字符"><a href="#排除特定的字符" class="headerlink" title="排除特定的字符"></a>排除特定的字符</h3><p>[^]可以用来排除特定的字符，比如[^abc]可以用来匹配除abc之外的任意字符。</p>
+<h3 id="字符范围"><a href="#字符范围" class="headerlink" title="字符范围"></a>字符范围</h3><p>在中括号中用加破折号也可匹配一定范围内的字符，如[0-6]可以匹配数字0,1,2,3，4,5,6。如果要匹配多个范围的字符的话，可以在同一个中括号中写多个范围的字符。正则表达式中的\w与[A-Za-z0-9_]的作用是相同的。</p>
+<h3 id="匹配多个重复字符如zzz"><a href="#匹配多个重复字符如zzz" class="headerlink" title="匹配多个重复字符如zzz"></a>匹配多个重复字符如zzz</h3><p>最简单的匹配重复字符的方法是根据匹配的次数，如\d\d\d用于匹配三个数字。还有一种较简单的方法是用{},{}中的数字表示需要匹配的重复次数。如a{3}用于匹配aaa,a{1,3}用于匹配a,aa或aaa。</p>
+<h3 id="和"><a href="#和" class="headerlink" title="*和+"></a>*和+</h3><p>*号代表匹配0次或多次<br>+号代表匹配至少一次或多次<br>如a+可以匹配一个a或多个a，[abc]+,用于匹配一个a、b、c或多个a、b、c。</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="?"></a>?</h3><p>?代表可以匹配0次或1次，和.一样，如果要匹配?的话则需要对其进行转义/?。</p>
+<h3 id="空白符"><a href="#空白符" class="headerlink" title="空白符"></a>空白符</h3><p>最常见的几种空白符有:</p>
+<ul>
+<li>空格 ( )</li>
+<li>tab (\t)</li>
+<li>换行符 (\n)</li>
+<li>回车 (\r)<blockquote>
+<p>\s用来匹配以上所有的任意空白符</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="字符的开始和结束"><a href="#字符的开始和结束" class="headerlink" title="字符的开始和结束"></a>字符的开始和结束</h3><p>假如要匹配success，但不想匹配到unsuccess中的success改怎么做呢？这时就需要将匹配success的表达式写的严谨一些，^success会匹配以success为开始字符的字符，如果只匹配success则需要写为^success\$。其中^表示将字符作为开始，$表示将字符作为结束。</p>
+<blockquote>
+<p>此处的^与[]中的^作用是不同的。</p>
+</blockquote>
+<h3 id="匹配组"><a href="#匹配组" class="headerlink" title="匹配组"></a>匹配组</h3><p>()用于匹配一组字符，在()中的表达式匹配成功后会看做一个组。例如^(IMG\d+.png)$可以用来匹配所有包括扩展名的图片，如果只想匹配图片名不想匹配扩展名的话就需要写成 ^(IMG\d+).png\$。</p>
+<h3 id="嵌套组"><a href="#嵌套组" class="headerlink" title="嵌套组"></a>嵌套组</h3><p>匹配组的匹配顺序是根据它们定义的顺序决定的，即由表达式中()的顺序所决定的。还是匹配组中匹配文件名的例子，如果不仅要匹配文件名还要匹配文件名中的序号的话就需要用到嵌套组，所以表达式需要写为^(IMG(\d+)).png$</p>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><p>在匹配组中可以用|符来表示OR。</p>
+<h3 id="其它特殊字符"><a href="#其它特殊字符" class="headerlink" title="其它特殊字符"></a>其它特殊字符</h3><p>之前已经接触可几个有特殊意义的字符即元字符如:</p>
+<ul>
+<li>\d 代表数字</li>
+<li>\w 代表字母数字和_</li>
+<li>\s 代表空白符</li>
+</ul>
+<blockquote>
+<p>在正则表达式中上述几个特殊字符的大写形式所代表的匹配字符与其是相反的。如\D代表的是非数字，等等。</p>
+</blockquote>
+<p>还有一个特殊的元字符是\b。它是一个类似于^和$的匹配字符，用户匹配字符边界，<strong>它是0宽度的</strong>。</p>
+<blockquote>
+<p>0宽度的意思是它并不会匹配字符串之前的任何符号，而是匹配边界占用一个位置而已。</p>
+</blockquote>
+<p><strong>可以看做字符边界的位置</strong></p>
+<ul>
+<li>字符串第一个字符之前，第一个字符必须是一个word符</li>
+<li>字符串第一个字符之后，最后一个字符必须是word符</li>
+<li>字符串中两个字符之间，这两个字符必须满足一个是word符另一个不是word符<blockquote>
+<p>什么是word符？不同的编程语言有不同的定义，一般指的是\w所匹配的字符。</p>
+</blockquote>
+</li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+    </div>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/muzichen">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">1.</span> <span class="toc-text">.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配特定的字符"><span class="toc-number">2.</span> <span class="toc-text">匹配特定的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排除特定的字符"><span class="toc-number">3.</span> <span class="toc-text">排除特定的字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符范围"><span class="toc-number">4.</span> <span class="toc-text">字符范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配多个重复字符如zzz"><span class="toc-number">5.</span> <span class="toc-text">匹配多个重复字符如zzz</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#和"><span class="toc-number">6.</span> <span class="toc-text">*和+</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">7.</span> <span class="toc-text">?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#空白符"><span class="toc-number">8.</span> <span class="toc-text">空白符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符的开始和结束"><span class="toc-number">9.</span> <span class="toc-text">字符的开始和结束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匹配组"><span class="toc-number">10.</span> <span class="toc-text">匹配组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套组"><span class="toc-number">11.</span> <span class="toc-text">嵌套组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件判断"><span class="toc-number">12.</span> <span class="toc-text">条件判断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其它特殊字符"><span class="toc-number">13.</span> <span class="toc-text">其它特殊字符</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://chenzimu.com/正则表达式基础知识总结.html"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://chenzimu.com/正则表达式基础知识总结.html&text=正则表达式基础知识总结"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://chenzimu.com/正则表达式基础知识总结.html&is_video=false&description=正则表达式基础知识总结"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=正则表达式基础知识总结&body=Check out this article: http://chenzimu.com/正则表达式基础知识总结.html"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://chenzimu.com/正则表达式基础知识总结.html&title=正则表达式基础知识总结"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://chenzimu.com/正则表达式基础知识总结.html&name=正则表达式基础知识总结&description=&lt;p&gt;对正则表达式一些基础知识的记录和总结。&lt;br&gt;"><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2016 臣子木
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="http://github.com/muzichen">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    <script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'chenzimu';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
