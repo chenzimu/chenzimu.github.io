@@ -330,30 +330,6 @@ function doSomething(e) {
   </entry>
   
   <entry>
-    <title>360浏览器的两种渲染模式</title>
-    <link href="http://chenzimu.com/360%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%B8%B2%E6%9F%93%E6%A8%A1%E5%BC%8F.html"/>
-    <id>http://chenzimu.com/360浏览器的两种渲染模式.html</id>
-    <published>2015-10-19T05:32:27.000Z</published>
-    <updated>2016-12-16T12:30:53.786Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天在做一个页面的时候出现了一个问题，页面在谷歌等浏览器中没有问题，但是打开360浏览器一看，尼玛，直接变样了，但是将浏览器模式调为极速模式就正常了，于是google了一下，果然问题出在SB360身上。在此记录一下。<br><a id="more"></a><br>在head标签中添加一行代码：<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta <span class="built_in">name</span>=<span class="string">"renderer"</span> content=<span class="string">"webkit|ie-comp|ie-stand"</span>&gt;</div></pre></td></tr></table></figure><br><blockquote><p>content的取值为webkit,ie-comp,ie-stand之一，区分大小写，分别代表用webkit内核，IE兼容内核，IE标准内核。</p>
-</blockquote></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天在做一个页面的时候出现了一个问题，页面在谷歌等浏览器中没有问题，但是打开360浏览器一看，尼玛，直接变样了，但是将浏览器模式调为极速模式就正常了，于是google了一下，果然问题出在SB360身上。在此记录一下。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="记录" scheme="http://chenzimu.com/categories/%E8%AE%B0%E5%BD%95/"/>
-    
-    
-      <category term="360" scheme="http://chenzimu.com/tags/360/"/>
-    
-  </entry>
-  
-  <entry>
     <title>javascript闭包</title>
     <link href="http://chenzimu.com/javascript%E9%97%AD%E5%8C%85.html"/>
     <id>http://chenzimu.com/javascript闭包.html</id>
